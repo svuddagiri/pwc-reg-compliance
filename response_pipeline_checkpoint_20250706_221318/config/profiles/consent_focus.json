@@ -1,0 +1,35 @@
+{
+  "profile_id": "consent_focus",
+  "name": "Individual Rights Processing - Consent Only",
+  "description": "Focuses exclusively on consent-related queries from 41 consent chunks",
+  "enabled": true,
+  "filters": {
+    "search_filters": {
+      "filter_name": "consent_filters",
+      "clause_domain": {
+        "operator": "contains",
+        "values": ["Individual Rights Processing"]
+      },
+      "clause_subdomain": {
+        "operator": "contains",
+        "values": ["Consent", "consent"]
+      }
+    },
+    "chunk_limit": 50,
+    "expected_chunks": 41,
+    "min_relevance_score": 0.5
+  },
+  "jurisdictions": {
+    "expected": [
+      "Estonia",
+      "Denmark", 
+      "Costa Rica",
+      "US",
+      "Georgia",
+      "Iceland",
+      "Missouri",
+      "Alabama",
+      "Republic of Gabon"
+    ]
+  }
+}

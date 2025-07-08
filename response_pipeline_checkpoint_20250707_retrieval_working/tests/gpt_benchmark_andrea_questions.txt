@@ -1,0 +1,131 @@
+1. Which countries or states require consent opt-in consent for processing of sensitive personal information?
+
+ANSWER:
+
+Summary
+The knowledge-base documents show three jurisdictions that expressly require an opt-in (explicit, affirmative) consent before a controller may lawfully process sensitive personal information:
+
+Jurisdiction	Primary legal instrument	Consent rule for sensitive data
+Denmark	Act No. 502 of 23 May 2018 (Danish Data Protection Act)	Processing of “sensitive personal data” (GDPR Art. 9 (1)) is prohibited unless one of the GDPR Art. 9 (2) conditions—most notably explicit consent in Art. 9 (2)(a)—has been met.
+Republic of Gabon	Ordinance No. 00002/PR/2020 amending Law 001/2011 on Personal Data Protection	Automated decisions may not rely on sensitive data “unless the data subject has given their explicit consent”.
+Costa Rica	Regulation No. 37554-JP to Law 8968 on Protection of the Person Against Processing of Personal Data	“Whoever collects personal data must, in all cases, obtain the express consent of the owner for the processing of personal data” (Articles 4–5). No exception is made for sensitive data, so express opt-in applies to it as well.
+
+Detailed information & exact citations
+Regulation / Topic	Document name	Page (where found)	Article / Section	Exact text
+Sensitive data – legal basis	Act on supplementary provisions to the GDPR (Denmark)	Extract p. 3 of returned snippet	§ 7(1)	“The prohibition against processing sensitive personal data covered by Article 9(1)… shall not apply in cases where the conditions… of Article 9(2) of the General Data Protection Regulation have been complied with.”
+Automated decision-making	Ordinance 00002/PR/2020 (Gabon)	Extract p. 4 of returned snippet	Art. 14 ter (final paragraph)	“The decisions… may not be based on sensitive personal data, unless the data subject has given their explicit consent…”
+General consent requirement	Regulation 37554-JP (Costa Rica)	Extract p. 5 of returned snippet	Art. 5	“Whoever collects personal data must, in all cases, obtain the express consent of the owner for the processing of personal data…”
+
+Additional context
+Denmark – Because the Act directly incorporates GDPR Article 9, controllers have only a few alternatives to explicit consent (e.g., vital interests, substantial public interest). Where none of those apply, opt-in consent is mandatory for any sensitive-data processing.
+
+Gabon – The Ordinance tightens earlier Law 001/2011: any adverse automated decision that touches sensitive data demands prior explicit consent, effectively creating an opt-in regime whenever sensitive attributes are used in profiling or similar analytics.
+
+Costa Rica – The Regulation treats all personal data the same for consent purposes; Article 5’s blanket rule therefore requires express, individualized consent before a controller may handle sensitive categories (and indeed any personal data).
+
+No other uploaded state- or country-level instruments in the knowledge base impose an explicit opt-in for sensitive data beyond the three jurisdictions listed above.
+
+
+----------------------------------------------------------------------------------------------------------------
+
+2. Which countries or states have requirements around obtaining consent from parents or guardians for processing data of minors (under 18 years of age)?
+
+ANSWER: 
+
+Summary
+Among the uploaded materials, three jurisdictions expressly require that a parent or other legal guardian give (or approve) consent before a controller may process a child’s personal data in the circumstances listed below. All three rules treat children under 13 as lacking capacity to consent on their own; for Georgia, the statute also allows the child (an “eligible student”) to consent once old enough under state law.
+
+Jurisdiction	Age threshold	Context in which parent/guardian consent is mandatory
+Denmark	< 13	Information-society services relying on GDPR Art. 6 (1)(a) “consent”
+Estonia	< 13	Same as Denmark – info-society services given directly to a child
+U.S.-Georgia (state)	< 18 (unless “eligible student”)	Operators of educational websites / apps must not use, profile, sell, or disclose K-12 student data without written consent from the parent or guardian – or from the student if legally eligible (≥ 18 or emancipated)
+
+Detailed information (with exact clauses)
+Regulation / Topic	Document name	Page*	Article / Section	Exact quoted text
+Children’s consent – Denmark	8 - 2257969a-b379-4eac-8c04-f8eebb276090.pdf	digital p. 7 (Sec. 6)	§ 6 (3)	“If the child is under 13, the processing is only lawful if and to the extent that consent is given or approved by the holder of parental responsibility for the child.”
+Children’s consent – Estonia	4 - d6e380f3-ea47-4306-a1fa-bbc9bb44a267.pdf	digital p. 3	§ 8 (2)	“If the child is below the age of 13 years, processing of personal data is permitted only in the case and to the extent for which consent has been given by the legal representative of the child.”
+Parental consent for student data – Georgia (USA)	10 - 1f6c8eb0-241e-41b9-8a00-c8679a0ca28e.pdf	digital p. 2 (§ 20-2-666)	§ 20-2-666 (a)	“An operator shall not knowingly engage in any of the following activities … without explicit written consent from the student’s parent or guardian, or an eligible student.”
+
+*The Georgia and Denmark PDFs are not paginated in print layout; page numbers refer to the PDF’s digital sequence.
+
+Additional context & interpretation
+Denmark & Estonia both implement GDPR Article 8, but each sets the national age at 13 (below the maximum 16 allowed by the Regulation). For consent-based processing directed at younger children, the controller must obtain and verify the parent’s/guardian’s approval before collecting or using the child’s data.
+
+Georgia targets vendors that hold K-12 student data. A wide range of actions—behavioural advertising, profiling, sale, or disclosure—are prohibited unless there is explicit, written parental consent (or the student is old enough to be an “eligible student,” typically 18).
+
+No other uploaded statute or regulation contains a parental-consent trigger for processing minors’ data; Costa Rica, Gabon, HIPAA extracts, and the Missouri insurance statutes are silent on this point.
+
+Source table for quick reference
+Jurisdiction	Doc name	Page	Clause cited
+Denmark	8 - 2257969a-b379-4eac-8c04-f8eebb276090.pdf	p. 7	§ 6 (3)
+Estonia	4 - d6e380f3-ea47-4306-a1fa-bbc9bb44a267.pdf	p. 3	§ 8 (2)
+Georgia (USA)	10 - 1f6c8eb0-241e-41b9-8a00-c8679a0ca28e.pdf	p. 2	§ 20-2-666 (a)
+
+These entries use the exact text and pinpoint references required for verification.
+--------------------------------------------------------------------------------------------------------------------
+
+3. When listing the requirements for valid consent for data processing, what requirements are most common across the different regulations?
+
+ANSWER:
+Summary
+Across the regulations in the knowledge base the same five elements re-appear most often whenever “valid consent” is defined:
+
+Freely given / voluntary
+
+Specific to one or more clearly described purposes
+
+Informed (the data subject knows who, what, why, how)
+
+Unambiguous – usually expressed in an explicit or written form
+
+Revocable at any time, with the burden on the controller to prove consent was obtained
+
+These elements surface in both Latin-American (Costa Rica) and several very different “GDPR-family” or sectoral statutes (Denmark, Estonia, Georgia, Iceland). Because EU-derived laws incorporate GDPR Article 7 by reference, they implicitly adopt the same four substantive tests (freely given, specific, informed, unambiguous) and the duty to allow withdrawal.
+
+Where each requirement is spelled out
+#	Consent requirement (most common)	Illustrative clauses from at least two regulations*	Exact text
+1	Free / freely given	Costa Rica – Reg. 37554-JP Art. 4(a) • Denmark – any consent “in accordance with Article 7 of the GDPR”	“Obtaining consent must be: a) Free…” • “…may process … where the data subject has given consent in accordance with Article 7…”
+2	Specific (purpose-bound)	Costa Rica Art. 4(b) • Same Danish reference to GDPR Art. 7 (which requires it)	“b) Specific: referring to one or several determined and defined purposes…”
+3	Informed	Costa Rica Art. 4(c) • GDPR Art. 7 (via Danish Act)	“c) Informed: that the owner has prior knowledge of the treatment…”
+4	Unambiguous / explicit expression	Costa Rica Art. 4(d) & Art. 5 (“express consent”) • Georgia O.C.G.A. §20-2-666(a) (“explicit written consent”)	“d) Unequivocal: … so that its granting can be demonstrated without doubt” • “An operator shall not … without explicit written consent from the student’s parent or guardian…”
+5	Right to withdraw / revoke at any time	Costa Rica Art. 7 (“the owner may revoke their consent at any time”) • Iceland Electronic-Communications Act Art. 42 (“Consent may be revoked at any time”)	quoted above
+6	Demonstrable / burden of proof on controller (closely linked to 4 & 5, and present in several regimes)	Costa Rica Art. 4(d) (granting must be “demonstrated without doubt”) • Costa Rica Art. 6 (“burden of proof will fall… on the person in charge”) • GDPR Art. 7(1) (via Danish Act)	quoted above
+
+*Denmark and Estonia do not restate the adjectives inside their national acts; instead they tie validity to “consent in accordance with Article 7 of the GDPR,” which contains exactly the same four substantive criteria.
+
+Interpretation
+The first four criteria (free, specific, informed, unambiguous) appear verbatim in Costa Rica and by incorporation in every GDPR-based statute (Denmark, Estonia).
+
+Explicit or written form is required whenever the data are especially sensitive (Denmark) or the data subject is a minor/student (Georgia).
+
+Revocability and a controller proof-of-consent duty are also replicated, ensuring that consent is not a one-time waiver but an ongoing, verifiable permission.
+
+Therefore, when drafting a “valid consent” checklist that will satisfy more than one of these laws, include all five baseline elements above and keep records that show when and how consent was obtained and later withdrawn.
+
+------------------------------------------------------------------------------------------------------------------------------
+
+4. Retrieve and summarize all the definitions/considerations for affirmative consent for all the sources within the knowledge base.
+
+ANSWER:
+Affirmative (opt-in) consent — everything the KB statutes say
+
+#	Jurisdiction / instrument	Where you find it (PDF name ▶ page ▶ clause)	What the text says about valid consent	Key take-aways
+1	Costa Rica – Regulation No. 37554-JP to Law 8968	3 - 4a05d2d7-…pdf ▶ Art. 2 (f) & Ch. II (Arts 4-7)	Definition – consent is “any expression of free, unequivocal, informed and specific wish … granted in writing or digital media for a specific purpose” (Art. 2 f). Requirements – it must be free, specific, informed, unequivocal and individualized (Art. 4). Formalities – must be express and documented; online consents need a bespoke procedure (Art. 5). Controller duties – burden of proof lies on the controller (Art. 6) and the data subject may revoke at any time (Art. 7).	Sets the most detailed checklist in the KB; explicitly characterises “affirmative” consent and insists it be revocable and provable.
+2	Denmark – Act No. 502/2018 (Data Protection Act)	8 - 2257969a-…pdf ▶ § 11(3) & § 13(1) (marketing / ID numbers) • § 6(2-3) (child consent)	Consent must be “in accordance with Article 7 GDPR”; e.g., an identification number may not be made public unless such consent exists (§ 11(3)); direct-marketing disclosure likewise needs explicit consent obtained per § 10 of the Marketing Act (§ 13(1)). For information-society services, a child under 13 can only be served if the holder of parental responsibility gives or approves the consent (§ 6(3)).	Denmark adopts the GDPR’s four-part test (free, specific, informed, unambiguous) by reference and adds that certain high-risk uses require the explicit variety.
+3	Estonia – Personal Data Protection Act 2018	4 - d6e380f3-…pdf ▶ § 8(1-2) (info-society services to children)	Where processing relies on Art. 6(1)(a) GDPR, a child ≥ 13 may consent directly; < 13 requires consent “given by the legal representative of the child”.	Only explicit parental consent counts for under-13s, mirroring GDPR Art. 8; the Act otherwise defers to GDPR for the substantive definition of “consent”.
+4	Georgia (USA) – O.C.G.A. § 20-2-666 (Student Data Privacy)	10 - 1f6c8eb0-…pdf ▶ § 20-2-666(a) & (4)	Operators may not profile, sell, disclose or ad-target K-12 student data “without explicit written or electronic consent” from a parent/guardian or eligible student. Consent must follow “clear and conspicuous notice” of the activity (¶ (4)).	Statute ties validity to explicit, written permission plus advance notice, thereby meeting the affirmative-action standard.
+5	Gabon – Ordinance 00002/PR/2020	2 - f4791602-…pdf ▶ Art. 14 ter (final para.)	Any fully automated decision that would prejudice a person may not rely on sensitive data unless “the data subject has given their explicit consent … for one or more specific purposes.”	Introduces explicit-consent opt-in, but only for the specialised context of automated decision-making involving sensitive data.
+6	Iceland – Electronic-Communications Act (extract)	9 - 9aef0742-…pdf ▶ Art. 42 (telecom traffic)	Traffic-usage data may be processed for marketing or value-added services “with the subscriber’s consent … [which] may be revoked at any time.” Operators must tell subscribers in advance what will be processed and for how long.	Captures two core affirmative-consent ideas: prior information and an any-time right of withdrawal.
+
+What is common across these definitions?
+Affirmative action – every instrument insists on a positive act (written, explicit, unequivocal).
+
+Free & Specific – where detailed (Costa Rica, GDPR-linked rules), consent cannot be coerced and must target defined purposes.
+
+Informed – the data subject (or parent) must know who is processing what, and why (Costa Rica Art. 4 c; Denmark/Estonia/Georgia via notice provisions).
+
+Demonstrable & Revocable – controllers bear the proof burden (Costa Rica Art. 6) and, in several laws, must let the subject withdraw at will (Costa Rica Art. 7; Iceland Art. 42).
+
+Heightened form for higher risk – “explicit written” or “explicit consent” is demanded for sensitive data (Gabon, Denmark) or for minors’ records (Georgia).
+
+Taken together, the KB sources converge on voluntary, purpose-bound, informed, explicit and reversible as the universal hallmarks of affirmative consent for personal-data processing.

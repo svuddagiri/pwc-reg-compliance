@@ -1,0 +1,43 @@
+{
+  "filter_name": "consent_only_v2",
+  "description": "Enhanced filters for v2 index using consent lifecycle stages and concepts",
+  "azure_search_filters": {
+    "text_search": {
+      "search_text": "Consent",
+      "search_fields": ["clause_subdomain", "concepts"],
+      "search_mode": "any"
+    },
+    "filter_expression": {
+      "option1_legacy": "search.ismatch('Consent', 'clause_subdomain') and search.ismatch('Individual Rights Processing', 'clause_domain')",
+      "option2_lifecycle": "search.in(consent_lifecycle_stage, 'obtaining|managing|withdrawing|refusing|transferring', '|')",
+      "option3_concepts": "search.ismatch('\"Consent\"', 'concepts')",
+      "option4_combined": "(search.ismatch('Consent', 'clause_subdomain') or search.in(consent_lifecycle_stage, 'obtaining|managing|withdrawing|refusing|transferring', '|') or search.ismatch('\"Consent\"', 'concepts'))",
+      "option5_clause_type": "clause_type eq 'consent'",
+      "option6_comprehensive": "(clause_type eq 'consent' or search.ismatch('Consent', 'clause_subdomain'))",
+      "recommended": "option5_clause_type"
+    },
+    "quality_filters": {
+      "min_completeness_score": 0.5,
+      "min_extraction_confidence": 0.5,
+      "filter": "completeness_score ge 0.5 and extraction_confidence ge 0.5"
+    }
+  },
+  "expected_results": {
+    "total_chunks": 158,
+    "jurisdictions": 9,
+    "document_count": 9
+  },
+  "validation": {
+    "min_results": 100,
+    "max_results": 200,
+    "alert_if_outside_range": true
+  },
+  "new_metadata_fields": {
+    "consent_lifecycle_stage": ["obtaining", "managing", "withdrawing", "refusing", "transferring"],
+    "concepts": {
+      "Consent": ["explicit_consent", "informed_consent", "unambiguous_consent", "withdrawal"]
+    },
+    "regulatory_provisions": ["gdpr_article_7", "gdpr_article_13", "gdpr_article_4_11"],
+    "regulation_normalized": ["gdpr", "denmark_dpa", "costa_rica", "estonia_pdpa", "gabon", "iceland", "hipaa", "ferpa", "wiretap", "alabama"]
+  }
+}

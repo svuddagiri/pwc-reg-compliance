@@ -1,0 +1,292 @@
+{
+  "consent_terms": {
+    "explicit_consent": [
+      "explicit consent",
+      "express consent",
+      "affirmative consent",
+      "clear consent",
+      "unambiguous consent",
+      "specific consent",
+      "freely given consent",
+      "informed consent",
+      "consentimiento expreso",
+      "consentimiento explícito",
+      "consentimiento afirmativo",
+      "consentimiento claro",
+      "consentimiento inequívoco",
+      "consentimiento específico"
+    ],
+    "express_consent": [
+      "express consent",
+      "explicit consent",
+      "affirmative consent",
+      "clear consent",
+      "unambiguous consent",
+      "consentimiento expreso",
+      "consentimiento explícito",
+      "consentimiento afirmativo"
+    ],
+    "affirmative_consent": [
+      "affirmative consent",
+      "explicit consent",
+      "express consent",
+      "positive consent",
+      "active consent",
+      "consentimiento afirmativo",
+      "consentimiento positivo",
+      "consentimiento activo"
+    ],
+    "implied_consent": [
+      "implied consent",
+      "tacit consent",
+      "inferred consent",
+      "consentimiento implícito",
+      "consentimiento tácito",
+      "consentimiento inferido"
+    ],
+    "opt_in": [
+      "opt-in",
+      "opt in",
+      "active consent",
+      "affirmative consent",
+      "optar por participar",
+      "consentimiento activo"
+    ],
+    "opt_out": [
+      "opt-out",
+      "opt out",
+      "withdrawal of consent",
+      "revoke consent",
+      "optar por no participar",
+      "retirada del consentimiento",
+      "revocar consentimiento"
+    ],
+    "withdraw_consent": [
+      "withdraw consent",
+      "withdrawal of consent",
+      "revoke consent",
+      "revocation of consent",
+      "terminate consent",
+      "cancel consent",
+      "rescind consent",
+      "opt-out",
+      "opt out",
+      "end consent",
+      "stop consent",
+      "consent withdrawal",
+      "consent revocation",
+      "retract consent",
+      "remove consent"
+    ],
+    "refuse_consent": [
+      "refuse consent",
+      "deny consent",
+      "withhold consent",
+      "not provide consent",
+      "object to processing",
+      "decline consent",
+      "reject consent",
+      "consent refusal",
+      "do not consent",
+      "non-consent",
+      "absence of consent"
+    ]
+  },
+  "data_categories": {
+    "sensitive_data": [
+      "sensitive data",
+      "special categories of data",
+      "sensitive personal data",
+      "special categories of personal data",
+      "sensitive information",
+      "special category data",
+      "datos sensibles",
+      "categorías especiales de datos",
+      "datos personales sensibles",
+      "información sensible",
+      "datos de categoría especial"
+    ],
+    "personal_data": [
+      "personal data",
+      "personal information",
+      "personally identifiable information",
+      "PII",
+      "individual data",
+      "data subject information",
+      "datos personales",
+      "información personal",
+      "información de identificación personal",
+      "datos individuales",
+      "información del interesado"
+    ],
+    "biometric_data": [
+      "biometric data",
+      "biometric information",
+      "biometric identifiers",
+      "biological data"
+    ],
+    "health_data": [
+      "health data",
+      "medical data",
+      "health information",
+      "medical information",
+      "health records",
+      "medical records"
+    ]
+  },
+  "processing_terms": {
+    "data_processing": [
+      "data processing",
+      "processing of data",
+      "processing of personal data",
+      "data treatment",
+      "information processing"
+    ],
+    "data_collection": [
+      "data collection",
+      "collection of data",
+      "data gathering",
+      "information collection",
+      "data acquisition"
+    ],
+    "data_transfer": [
+      "data transfer",
+      "transfer of data",
+      "data transmission",
+      "cross-border transfer",
+      "cross-border data transfer",
+      "international transfer",
+      "international data transfer",
+      "data export",
+      "data import",
+      "third-country transfer",
+      "transborder data flow",
+      "data flow",
+      "offshore transfer",
+      "overseas transfer",
+      "data movement",
+      "data portability",
+      "transfer abroad"
+    ],
+    "data_sharing": [
+      "data sharing",
+      "sharing of data",
+      "data disclosure",
+      "information sharing",
+      "data dissemination"
+    ]
+  },
+  "rights_terms": {
+    "right_to_access": [
+      "right to access",
+      "access right",
+      "right of access",
+      "data access right",
+      "information access right"
+    ],
+    "right_to_erasure": [
+      "right to erasure",
+      "right to be forgotten",
+      "deletion right",
+      "right to delete",
+      "erasure right"
+    ],
+    "right_to_rectification": [
+      "right to rectification",
+      "right to correction",
+      "rectification right",
+      "correction right",
+      "right to amend"
+    ],
+    "right_to_portability": [
+      "right to portability",
+      "data portability",
+      "portability right",
+      "right to data portability",
+      "data transfer right"
+    ]
+  },
+  "legal_basis": {
+    "legitimate_interest": [
+      "legitimate interest",
+      "legitimate interests",
+      "lawful interest",
+      "legitimate business interest",
+      "justified interest"
+    ],
+    "legal_obligation": [
+      "legal obligation",
+      "statutory obligation",
+      "regulatory requirement",
+      "legal requirement",
+      "compliance obligation"
+    ],
+    "vital_interests": [
+      "vital interests",
+      "life or death",
+      "emergency situation",
+      "critical interests"
+    ],
+    "public_interest": [
+      "public interest",
+      "public task",
+      "official authority",
+      "governmental function"
+    ]
+  },
+  "controller_processor": {
+    "data_controller": [
+      "data controller",
+      "controller",
+      "responsible party",
+      "data responsible",
+      "information controller"
+    ],
+    "data_processor": [
+      "data processor",
+      "processor",
+      "processing party",
+      "service provider",
+      "information processor"
+    ],
+    "joint_controller": [
+      "joint controller",
+      "co-controller",
+      "joint controllers",
+      "shared controller"
+    ]
+  },
+  "breach_terms": {
+    "data_breach": [
+      "data breach",
+      "personal data breach",
+      "security breach",
+      "data security incident",
+      "breach of security",
+      "data incident"
+    ],
+    "breach_notification": [
+      "breach notification",
+      "data breach notification",
+      "incident notification",
+      "security incident notification",
+      "breach reporting"
+    ]
+  },
+  "privacy_terms": {
+    "privacy_policy": [
+      "privacy policy",
+      "privacy notice",
+      "privacy statement",
+      "data protection policy",
+      "privacy information"
+    ],
+    "privacy_by_design": [
+      "privacy by design",
+      "data protection by design",
+      "built-in privacy",
+      "privacy by default",
+      "data protection by default"
+    ]
+  }
+}

@@ -1,0 +1,496 @@
+#!/usr/bin/env python3
+"""
+Test script for all 15 simple consent questions with automatic JSON output
+Tests Q1-Q15 from simple_questions.md and saves results for analysis
+"""
+import asyncio
+import sys
+import json
+import os
+from pathlib import Path
+from datetime import datetime
+from typing import List, Dict, Any
+
+# Add src to path
+sys.path.append(str(Path(__file__).parent.parent))
+
+# Set DEMO_MODE before loading
+os.environ['DEMO_MODE'] = 'true'
+
+# Load environment variables
+from dotenv import load_dotenv
+load_dotenv()
+
+from src.services.query_manager import QueryManager
+from src.services.enhanced_retriever_service import EnhancedRetrieverService
+from src.services.response_generator import ResponseGenerator, GenerationRequest
+from src.services.conversation_manager import ConversationManager
+from src.services.query_manager import QueryAnalysisResult
+from src.utils.logger import get_logger
+from src.clients.sql_manager import get_sql_client
+from rich.console import Console
+from rich.table import Table
+from rich.panel import Panel
+from rich.progress import track
+
+logger = get_logger(__name__)
+console = Console()
+
+# All 15 simple questions from simple_questions.md
+SIMPLE_QUESTIONS = [
+    {
+        "id": "Q1",
+        "question": "What is consent in the context of personal data processing?",
+        "expected_keywords": ["freely given", "specific", "informed", "unambiguous"]
+    },
+    {
+        "id": "Q2",
+        "question": "Which jurisdictions require explicit consent for processing sensitive data?",
+        "expected_keywords": ["Estonia", "Costa Rica", "US", "HIPAA"]
+    },
+    {
+        "id": "Q3",
+        "question": "Can consent be withdrawn after it is given?",
+        "expected_keywords": ["yes", "withdraw", "any time", "GDPR"]
+    },
+    {
+        "id": "Q4",
+        "question": "Does parental consent apply to minors under 13 or 18?",
+        "expected_keywords": ["yes", "parental", "guardian", "13", "18"]
+    },
+    {
+        "id": "Q5",
+        "question": "Is verbal consent acceptable under GDPR?",
+        "expected_keywords": ["no", "documented", "written", "electronic"]
+    },
+    {
+        "id": "Q6",
+        "question": "What happens if consent is not obtained lawfully?",
+        "expected_keywords": ["unlawful", "erasure", "penalties"]
+    },
+    {
+        "id": "Q7",
+        "question": "Does consent need to be specific to each processing purpose?",
+        "expected_keywords": ["specific", "granular", "purpose"]
+    },
+    {
+        "id": "Q8",
+        "question": "Is blanket consent valid?",
+        "expected_keywords": ["no", "not valid", "blanket", "general"]
+    },
+    {
+        "id": "Q9",
+        "question": "Can consent be bundled with terms and conditions?",
+        "expected_keywords": ["no", "separate", "distinguishable"]
+    },
+    {
+        "id": "Q10",
+        "question": "What rights does a data subject have if they refuse to give consent?",
+        "expected_keywords": ["cannot be denied", "access", "rectify", "delete"]
+    },
+    {
+        "id": "Q11",
+        "question": "Is consent a valid basis for cross-border data transfer?",
+        "expected_keywords": ["yes", "weakest", "GDPR", "international"]
+    },
+    {
+        "id": "Q12",
+        "question": "Is consent valid indefinitely?",
+        "expected_keywords": ["no", "time-bound", "reviewed", "periodically"]
+    },
+    {
+        "id": "Q13",
+        "question": "Do data controllers need to maintain records of consent?",
+        "expected_keywords": ["yes", "demonstrate", "records", "obtained"]
+    },
+    {
+        "id": "Q14",
+        "question": "What is 'informed' consent?",
+        "expected_keywords": ["clear", "concise", "understandable", "information"]
+    },
+    {
+        "id": "Q15",
+        "question": "Can a child give valid consent?",
+        "expected_keywords": ["no", "parental", "guardian", "13", "16"]
+    }
+]
+
+# Out of scope questions
+OUT_OF_SCOPE_QUESTIONS = [
+    {
+        "id": "OOS1",
+        "question": "What are the data retention requirements?",
+        "expected_redirect": True
+    },
+    {
+        "id": "OOS2",
+        "question": "How should I handle a data breach notification?",
+        "expected_redirect": True
+    }
+]
+
+
+class ConsentQuestionTester:
+    """Test consent questions through the pipeline"""
+    
+    def __init__(self):
+        self.query_manager = QueryManager()
+        self.retriever = EnhancedRetrieverService()
+        self.response_generator = ResponseGenerator()
+        self.conversation_manager = ConversationManager()
+        self.sql_client = get_sql_client()
+        self.results = []
+        self.test_user_id = None
+        self.test_metadata = {
+            "test_date": datetime.now().isoformat(),
+            "demo_mode": os.getenv("DEMO_MODE", "false").lower() == "true",
+            "test_script": "test_simple_questions.py"
+        }
+    
+    async def ensure_test_user(self):
+        """Use existing satya.vuddagiri user for testing"""
+        try:
+            # Use existing satya.vuddagiri user
+            check_query = "SELECT user_id FROM reg_users WHERE email = ?"
+            result = await self.sql_client.fetch_one(check_query, ('satya.vuddagiri@example.com',))
+            
+            if result:
+                self.test_user_id = result['user_id']
+                logger.info(f"Using existing user satya.vuddagiri with user_id = {self.test_user_id}")
+                return
+            
+            # If exact email doesn't match, use the known valid user_id
+            self.test_user_id = 13  # satya.s.vuddagiri@pwc.com
+            logger.info(f"Using known valid user_id = {self.test_user_id}")
+            
+        except Exception as e:
+            logger.warning(f"Failed to get test user: {e}")
+            # Use default user ID
+            self.test_user_id = 1
+            logger.info(f"Using default test user_id = {self.test_user_id}")
+        
+    async def test_question(self, question_data: Dict[str, Any]) -> Dict[str, Any]:
+        """Test a single question through the pipeline"""
+        try:
+            console.print(f"\n[cyan]Testing {question_data['id']}:[/cyan] {question_data['question']}")
+            
+            start_time = datetime.now()
+            
+            # Step 1: Check scope boundary
+            scope_redirect = self.conversation_manager.check_query_scope(question_data['question'])
+            if scope_redirect:
+                console.print(f"  [yellow]Scope check redirected: {scope_redirect[:100]}...[/yellow]")
+                return {
+                    "id": question_data['id'],
+                    "question": question_data['question'],
+                    "redirected": True,
+                    "redirect_message": scope_redirect,
+                    "success": False,
+                    "response_time": (datetime.now() - start_time).total_seconds()
+                }
+            
+            # Step 2: Analyze query
+            console.print("  Analyzing query...")
+            query_analysis = await self.query_manager.analyze_query(question_data['question'])
+            
+            console.print(f"  Intent: {query_analysis.primary_intent}")
+            console.print(f"  Legal concepts: {', '.join(query_analysis.legal_concepts[:3])}")
+            
+            # Check if profile filter was applied
+            if query_analysis.search_filters.get('profile_filter'):
+                console.print(f"  [green]✓ Consent filter applied[/green]")
+            else:
+                console.print(f"  [red]✗ No consent filter applied[/red]")
+            
+            # Step 3: Retrieve chunks
+            console.print("  Retrieving chunks...")
+            search_results = await self.retriever.retrieve(
+                query_analysis=query_analysis
+            )
+            
+            chunk_count = len(search_results.results)
+            console.print(f"  Retrieved {chunk_count} chunks")
+            
+            # Check jurisdictions
+            jurisdictions = set()
+            for result in search_results.results[:5]:
+                if result.chunk.metadata.get('jurisdiction'):
+                    jurisdictions.add(result.chunk.metadata['jurisdiction'])
+            if jurisdictions:
+                console.print(f"  Jurisdictions: {', '.join(jurisdictions)}")
+            
+            # Step 4: Generate response using the correct method
+            console.print("  Generating response...")
+            
+            # Create GenerationRequest with correct parameters
+            generation_request = GenerationRequest(
+                user_id=self.test_user_id,  # Use dynamic test user ID
+                session_id="test_session",
+                conversation_id=1,
+                message_id=1,
+                query=question_data['question'],
+                query_analysis=query_analysis,
+                search_results=search_results.results,  # Pass search results, not chunks
+                conversation_history=[],
+                stream=False,  # Non-streaming for testing
+                model="gpt-4",
+                temperature=0.0,
+                max_tokens=1500  # Explicitly set to avoid token allocation issues
+            )
+            
+            # Use the generate method
+            response = await self.response_generator.generate(generation_request)
+            
+            elapsed = (datetime.now() - start_time).total_seconds()
+            
+            # Check response
+            result = {
+                "id": question_data['id'],
+                "question": question_data['question'],
+                "response_time": elapsed,
+                "response_text": response.content,  # Changed from response.response to response.content
+                "chunk_count": chunk_count,
+                "citations": len(response.citations) if response.citations else 0,
+                "redirected": False,
+                "success": False,
+                "checks": {},
+                "jurisdictions": list(jurisdictions),
+                "intent": query_analysis.primary_intent,
+                "legal_concepts": query_analysis.legal_concepts,
+                "confidence_score": response.confidence_score,
+                "model_used": response.model_used
+            }
+            
+            # Check for expected keywords
+            for keyword in question_data.get("expected_keywords", []):
+                found = keyword.lower() in response.content.lower()  # Changed to response.content
+                result["checks"][keyword] = found
+                if found:
+                    console.print(f"  ✓ Found: '{keyword}'", style="green")
+                else:
+                    console.print(f"  ✗ Missing: '{keyword}'", style="red")
+            
+            # Success if most checks pass
+            if result["checks"]:
+                passed = sum(1 for v in result["checks"].values() if v)
+                result["success"] = passed >= len(result["checks"]) * 0.5
+            else:
+                result["success"] = chunk_count > 0
+            
+            console.print(f"  Response time: {elapsed:.2f}s")
+            console.print(f"  Citations: {result['citations']}")
+            console.print(f"  Confidence: {response.confidence_score:.2f}")
+            
+            # Show response preview
+            preview = response.content[:300] + "..." if len(response.content) > 300 else response.content
+            console.print(Panel(preview, title="Response Preview", border_style="blue"))
+            
+            return result
+            
+        except Exception as e:
+            logger.error(f"Error testing question {question_data['id']}: {e}", exc_info=True)
+            return {
+                "id": question_data['id'],
+                "question": question_data['question'],
+                "error": str(e),
+                "error_type": type(e).__name__,
+                "success": False,
+                "response_time": (datetime.now() - start_time).total_seconds()
+            }
+    
+    async def test_out_of_scope(self, question_data: Dict[str, Any]) -> Dict[str, Any]:
+        """Test out-of-scope question for proper redirect"""
+        try:
+            console.print(f"\n[yellow]Testing Out-of-Scope {question_data['id']}:[/yellow] {question_data['question']}")
+            
+            start_time = datetime.now()
+            
+            # Check scope boundary
+            scope_redirect = self.conversation_manager.check_query_scope(question_data['question'])
+            
+            result = {
+                "id": question_data['id'],
+                "question": question_data['question'],
+                "properly_redirected": bool(scope_redirect),
+                "redirect_message": scope_redirect,
+                "response_time": (datetime.now() - start_time).total_seconds()
+            }
+            
+            if scope_redirect:
+                console.print(f"  [green]✓ Properly redirected[/green]")
+                console.print(f"  Message: {scope_redirect[:100]}...")
+            else:
+                console.print(f"  [red]✗ Not redirected - will process normally[/red]")
+            
+            return result
+            
+        except Exception as e:
+            logger.error(f"Error testing out-of-scope {question_data['id']}: {e}")
+            return {
+                "id": question_data['id'],
+                "question": question_data['question'],
+                "error": str(e),
+                "properly_redirected": False,
+                "response_time": (datetime.now() - start_time).total_seconds()
+            }
+    
+    async def run_all_tests(self):
+        """Run all test questions"""
+        console.print("\n[bold cyan]Testing All 15 Simple Questions Through Pipeline[/bold cyan]")
+        console.print("=" * 80)
+        
+        # Ensure test user exists
+        await self.ensure_test_user()
+        
+        all_results = {
+            "metadata": self.test_metadata,
+            "test_user_id": self.test_user_id,
+            "consent_questions": [],
+            "out_of_scope_questions": [],
+            "summary": {}
+        }
+        
+        # Test consent questions
+        console.print("\n[bold]Testing In-Scope Consent Questions:[/bold]")
+        for question in SIMPLE_QUESTIONS:
+            result = await self.test_question(question)
+            self.results.append(result)
+            all_results["consent_questions"].append(result)
+        
+        # Test out-of-scope questions
+        console.print("\n[bold]Testing Out-of-Scope Boundaries:[/bold]")
+        out_of_scope_results = []
+        for question in OUT_OF_SCOPE_QUESTIONS:
+            result = await self.test_out_of_scope(question)
+            out_of_scope_results.append(result)
+            all_results["out_of_scope_questions"].append(result)
+        
+        # Calculate summary statistics
+        successful = sum(1 for r in self.results if r.get("success"))
+        errors = sum(1 for r in self.results if "error" in r)
+        redirected = sum(1 for r in self.results if r.get("redirected"))
+        avg_time = sum(r.get("response_time", 0) for r in self.results if not r.get("redirected") and "error" not in r) / max(1, len(self.results) - redirected - errors)
+        
+        all_results["summary"] = {
+            "total_consent_questions": len(self.results),
+            "successful": successful,
+            "errors": errors,
+            "redirected": redirected,
+            "average_response_time": avg_time,
+            "out_of_scope_properly_redirected": sum(1 for r in out_of_scope_results if r.get("properly_redirected"))
+        }
+        
+        # Save to JSON file
+        output_file = Path(__file__).parent / f"simple_questions_test_results_{datetime.now().strftime('%Y%m%d_%H%M%S')}.json"
+        with open(output_file, 'w', encoding='utf-8') as f:
+            json.dump(all_results, f, indent=2, ensure_ascii=False)
+        
+        console.print(f"\n[green]✓ Results saved to: {output_file}[/green]")
+        
+        # Show summary
+        self.show_summary(out_of_scope_results)
+    
+    def show_summary(self, out_of_scope_results: List[Dict]):
+        """Show test results summary"""
+        console.print("\n[bold cyan]Test Results Summary[/bold cyan]")
+        console.print("=" * 80)
+        
+        # In-scope results table
+        table = Table(title="Consent Questions Results")
+        table.add_column("ID", style="cyan")
+        table.add_column("Question", style="white", overflow="fold", max_width=40)
+        table.add_column("Success", style="green")
+        table.add_column("Chunks", style="yellow")
+        table.add_column("Citations", style="blue")
+        table.add_column("Time (s)", style="blue")
+        table.add_column("Checks", style="magenta")
+        
+        total_success = 0
+        total_time = 0
+        valid_count = 0
+        
+        for result in self.results:
+            if result.get("redirected"):
+                table.add_row(
+                    result["id"],
+                    result["question"][:40] + "...",
+                    "[yellow]REDIRECT[/yellow]",
+                    "-",
+                    "-",
+                    f"{result['response_time']:.2f}",
+                    "Out of scope"
+                )
+            elif "error" in result:
+                table.add_row(
+                    result["id"],
+                    result["question"][:40] + "...",
+                    "[red]ERROR[/red]",
+                    "-",
+                    "-",
+                    f"{result['response_time']:.2f}",
+                    result.get("error", "Unknown")[:30]
+                )
+            else:
+                success = "✓" if result["success"] else "✗"
+                if result["success"]:
+                    total_success += 1
+                
+                checks = result.get("checks", {})
+                checks_passed = f"{sum(1 for v in checks.values() if v)}/{len(checks)}" if checks else "N/A"
+                
+                total_time += result["response_time"]
+                valid_count += 1
+                
+                table.add_row(
+                    result["id"],
+                    result["question"][:40] + "...",
+                    f"[green]{success}[/green]" if result["success"] else f"[red]{success}[/red]",
+                    str(result.get("chunk_count", 0)),
+                    str(result.get("citations", 0)),
+                    f"{result['response_time']:.2f}",
+                    checks_passed
+                )
+        
+        console.print(table)
+        
+        # Out-of-scope results
+        if out_of_scope_results:
+            oos_table = Table(title="Out-of-Scope Boundary Tests")
+            oos_table.add_column("ID", style="yellow")
+            oos_table.add_column("Question", style="white", overflow="fold", max_width=40)
+            oos_table.add_column("Properly Redirected", style="green")
+            
+            for result in out_of_scope_results:
+                redirected = "✓" if result.get("properly_redirected") else "✗"
+                oos_table.add_row(
+                    result["id"],
+                    result["question"][:40] + "...",
+                    f"[green]{redirected}[/green]" if result.get("properly_redirected") else f"[red]{redirected}[/red]"
+                )
+            
+            console.print(oos_table)
+        
+        # Overall statistics
+        if valid_count > 0:
+            avg_time = total_time / valid_count
+            console.print("\n[bold]Overall Statistics:[/bold]")
+            console.print(f"- Total Questions: {len(self.results)}")
+            console.print(f"- Successful: {total_success}/{valid_count} ({total_success/valid_count*100:.1f}%)")
+            console.print(f"- Average Response Time: {avg_time:.2f}s")
+            console.print(f"- Out-of-Scope Redirects: {sum(1 for r in out_of_scope_results if r.get('properly_redirected'))}/{len(out_of_scope_results)}")
+            
+            # Performance check
+            if avg_time < 5:
+                console.print(f"\n[green]✓ Performance Goal Met: Average response time < 5 seconds![/green]")
+            else:
+                console.print(f"\n[red]✗ Performance Goal Not Met: Average response time > 5 seconds[/red]")
+
+
+async def main():
+    """Main test function"""
+    tester = ConsentQuestionTester()
+    await tester.run_all_tests()
+
+
+if __name__ == "__main__":
+    asyncio.run(main())

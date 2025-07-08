@@ -1,0 +1,93 @@
+{
+  "scope_name": "consent_only",
+  "description": "Defines what is in and out of scope for consent-focused queries",
+  "in_scope": {
+    "concepts": [
+      "consent",
+      "affirmative consent",
+      "explicit consent",
+      "implied consent",
+      "withdrawal of consent",
+      "revocation of consent",
+      "parental consent",
+      "guardian consent",
+      "consent conditions",
+      "consent requirements",
+      "consent exceptions",
+      "consent validity",
+      "consent documentation",
+      "consent records",
+      "freely given consent",
+      "informed consent",
+      "specific consent",
+      "unambiguous consent",
+      "consent bundling",
+      "consent renewal"
+    ],
+    "question_patterns": [
+      ".*consent.*",
+      ".*withdraw.*",
+      ".*revoke.*consent.*",
+      ".*parental.*permission.*",
+      ".*guardian.*approval.*",
+      ".*opt-in.*",
+      ".*opt-out.*"
+    ]
+  },
+  "out_of_scope": {
+    "concepts": [
+      "data retention",
+      "data deletion",
+      "data breach",
+      "breach notification",
+      "privacy by design",
+      "data portability",
+      "data minimization",
+      "purpose limitation",
+      "accountability",
+      "data protection officer",
+      "impact assessment",
+      "security measures",
+      "encryption",
+      "pseudonymization",
+      "access rights",
+      "rectification rights",
+      "erasure rights"
+    ],
+    "redirect_message": "I understand you're asking about {detected_topic}. However, I'm currently focused exclusively on consent-related questions under Individual Rights Processing. Would you like to ask something specific about consent, such as consent conditions, withdrawal, or parental consent?",
+    "suggest_alternatives": [
+      "What are the conditions for valid consent?",
+      "How can consent be withdrawn?",
+      "When is parental consent required?",
+      "What are the exceptions to consent requirements?"
+    ]
+  },
+  "confidence_handling": {
+    "high_confidence": {
+      "threshold": 0.8,
+      "action": "proceed"
+    },
+    "medium_confidence": {
+      "threshold": 0.6,
+      "action": "clarify",
+      "response": "I believe you're asking about {detected_intent} related to consent. Let me search for relevant information about consent and {detected_topic}."
+    },
+    "low_confidence": {
+      "threshold": 0.4,
+      "action": "request_clarification",
+      "response": "I'm not certain if your question relates to consent. Could you please rephrase your question to be more specific about consent requirements, conditions, or processes? For example: {suggested_question}"
+    },
+    "no_confidence": {
+      "threshold": 0.0,
+      "action": "suggest_rephrase",
+      "response": "I'm focused on consent-related questions. Here are some examples of questions I can help with: {example_questions}"
+    }
+  },
+  "edge_cases": {
+    "consent_adjacent_topics": {
+      "lawful_basis": "While lawful basis includes consent, I can only discuss the consent aspect specifically.",
+      "data_subject_rights": "I can discuss consent-related rights like withdrawal, but not other data subject rights.",
+      "children_data": "I can discuss parental consent requirements, but not broader children's data protection."
+    }
+  }
+}

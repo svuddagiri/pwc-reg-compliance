@@ -1,0 +1,27 @@
+{
+  "citation_filtering": {
+    "enabled": true,
+    "max_citations_per_jurisdiction": 5,
+    "max_total_citations": 25,
+    "filter_negative_contexts": true,
+    "negative_indicators": [
+      "does not contain any information",
+      "does not provide",
+      "no definition",
+      "no information",
+      "not found",
+      "not contain",
+      "no references"
+    ],
+    "positive_indicators": [
+      "explicit consent",
+      "affirmative consent",
+      "clear action",
+      "express consent",
+      "freely given",
+      "specific",
+      "informed",
+      "unambiguous"
+    ]
+  }
+}

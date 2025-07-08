@@ -1,0 +1,288 @@
+{
+  "timestamp": "2025-07-07T11:46:54.411093",
+  "total_time": 64.34520435333252,
+  "summary": {
+    "overall_performance": "FAIR",
+    "average_benchmark_score": "45.8%",
+    "success_rate": "2/2 (100%)",
+    "average_response_time": "31.2s",
+    "total_time": "64.3s",
+    "key_issues": [
+      "Q1: Missing jurisdictions (eea states, the act, or states)",
+      "Q1: Missing article references",
+      "Q1: Slow response (29.5s)",
+      "Q3: Missing jurisdictions (or states, georgia, transparency)",
+      "Q3: Missing article references"
+    ],
+    "recommendations": [
+      "Optimize performance - target <5s response time",
+      "Improve citation extraction with exact article numbers",
+      "Fix jurisdiction detection and inclusion logic"
+    ],
+    "detailed_scores": {
+      "quote_accuracy": "100.0%",
+      "jurisdiction_coverage": "41.8%",
+      "article_accuracy": "0.0%",
+      "content_similarity": "3.3%"
+    }
+  },
+  "detailed_results": {
+    "1": {
+      "question": "Which countries or states require consent opt-in consent for processing of sensitive personal information?",
+      "our_result": {
+        "success": true,
+        "content": "### Overview of the Topic\n\nThe requirement for opt-in consent for the processing of sensitive personal information is a critical aspect of data protection laws across various jurisdictions. This consent is typically required to be explicit, express, or affirmative, ensuring that individuals are fully aware and agreeable to the processing of their sensitive data, which may include information related to health, racial or ethnic origin, political opinions, religious beliefs, and more.\n\n### Key Regulatory Requirements\n\nOpt-in consent for sensitive personal data generally mandates that:\n- Consent must be freely given, specific, informed, and unambiguous.\n- Individuals must perform a clear affirmative action to signify consent.\n- The consent must be documented and verifiable.\n\n### Important Definitions or Concepts\n\n**Sensitive Personal Information**: This refers to categories of personal data which are considered more sensitive, and hence require higher levels of protection. This can include genetic data, biometric data, data concerning health, information about a person's sex life or sexual orientation, and more.\n\n**Explicit/Express Consent**: These terms are used interchangeably and refer to a form of consent which must be clearly and affirmatively given by the data subject, leaving no room for doubt about the intent to consent.\n\n### Jurisdiction-Specific Requirements\n\n**[Gabon]:**\n- No specific provisions found in the available documents.\n\n**[Costa Rica]:**\n- In Costa Rica, the processing of sensitive personal data requires \"express consent.\" This is a higher standard of consent ensuring that such data is handled with additional care and explicit approval from the data subject [\"Regulation to the Law of Protection of the Person Against the Treatment of Their Personal Data Article 5\"].\n\n**[Denmark]:**\n- Denmark mandates that explicit consent is required for the processing of sensitive personal data. This aligns with the general principles of data protection where heightened sensitivity of data necessitates clearer consent [\"Danish Act on Data Protection Section 12\"].\n\n**[Estonia]:**\n- Similar to Denmark, Estonia requires explicit consent for the processing of sensitive personal data. This ensures that the data subjects are fully aware and agreeable to how their sensitive information is being used [\"Estonian Personal Data Protection Act Article 6\"].\n\n### Practical Examples\n\nIn practical terms, obtaining explicit consent for sensitive data might involve:\n- Providing a clear and detailed explanation of what data is being collected and for what purpose.\n- Using consent forms that require an active check or signature from the data subject.\n- Ensuring that the consent mechanism is separate from other terms and conditions to avoid confusion.\n\nThis structured approach to consent helps in maintaining transparency and trust between data controllers and subjects, aligning with both legal obligations and ethical considerations in data handling.",
+        "content_length": 2983,
+        "response_time": 29.529517650604248,
+        "citations": [],
+        "citation_count": 0,
+        "exact_quotes": [
+          {
+            "text": "express consent.",
+            "length": 16
+          },
+          {
+            "text": "Regulation to the Law of Protection of the Person Against the Treatment of Their Personal Data Article 5",
+            "length": 104
+          },
+          {
+            "text": "Danish Act on Data Protection Section 12",
+            "length": 40
+          },
+          {
+            "text": "Estonian Personal Data Protection Act Article 6",
+            "length": 47
+          }
+        ],
+        "jurisdictions": [
+          "Costa Rica",
+          "Danish",
+          "Denmark",
+          "Estonia",
+          "Gabon",
+          "Protection",
+          "the"
+        ],
+        "articles": [
+          "Article 5",
+          "Article 6"
+        ],
+        "sources": [
+          "Personal Data Protection Act"
+        ],
+        "has_table_format": false,
+        "chunks_retrieved": 129
+      },
+      "gpt_result": {
+        "question": "Which countries or states require consent opt-in consent for processing of sensitive personal information?",
+        "full_content": "1. Which countries or states require consent opt-in consent for processing of sensitive personal information?\n\nSummary\nAcross the documents supplied, opt-in (express / explicit) consent is singled-out as a lawful basis for handling sensitive-category personal data (health, biometrics, beliefs, etc.) in four jurisdictions:\n\nJurisdiction\tCore rule in the text (exact quotation)\tPractical effect\nCosta Rica\t“Quien recopile datos personales deberá, en todos los casos, obtener el consentimiento expreso del titular para el tratamiento de los datos personales” (Art. 5)\nCollecting “datos sensibles … sin el consentimiento de su titular” is listed as an infringement (Art. 59 h)\tProcessing of any personal data—and therefore all sensitive data—requires an affirmative, opt-in consent, save for the narrow statutory exceptions set out in Art. 5.\nGabon\t“Las decisiones… no podrán basarse en datos personales sensibles, salvo que el interesado haya dado su consentimiento explícito para uno o varios fines específicos” (Art. 14 ter)\tA controller may rely on sensitive data only after obtaining the data subject’s explicit, purpose-specific consent (or another public-interest ground named in the same article).\nDenmark (illustrative of all EU/EEA states applying the GDPR)\t“La prohibición de tratar datos personales sensibles… no se aplica cuando se cumplen las condiciones… punto a) del artículo 9(2) del RGPD” —i.e., “consentimiento explícito” (s. 7(1))\nPrivate actors may handle criminal-offence data “si el interesado ha dado consentimiento explícito” (s. 8(3))\tArticle 9(1) GDPR bans processing of special-category data; Article 9(2)(a) lifts the ban only where the person has given explicit consent. Denmark’s Act repeats that rule, so controllers must obtain an opt-in unless another Art. 9(2) exception applies.\nEstonia\tThe Act applies the GDPR in full (§ 2) and repeatedly refers to “datos de las categorías especiales según el artículo 9(1) del RGPD” (§ 10 (2))\tBecause the GDPR is directly applicable, Estonian controllers need explicit consent (Art. 9(2)(a) GDPR) or another Art. 9 ground before processing sensitive data.\n\nDetailed explanation\nLatin-American models (Costa Rica & Gabon)\n\nBoth systems adopt consent-first approaches. Costa Rica’s Regulation No. 37554-JP demands express consent for all personal-data processing, with only narrow carve-outs, making opt-in unavoidable for sensitive data. Gabon’s 2020 Ordinance is narrower—focusing on automated decision-making—but still conditions any use of sensitive data on the data-subject’s explicit consent unless an overriding public-interest ground is met.\n\nEU / EEA models (example: Denmark & Estonia)\n\nThe GDPR (incorporated verbatim in Denmark’s Act and made directly applicable by Estonia’s Act) forbids processing of “special categories of personal data” (Art. 9 (1)) unless one of the Art. 9 (2) derogations applies.\n\nThe first derogation, Art. 9 (2)(a), is the data subject’s “explicit consent to one or more specified purposes.”\n\nNational statutes reiterate or cross-reference that rule; hence controllers in every EU/EEA country must secure an opt-in where no other Art. 9 ground fits.\n\nScope of obligation\n\nIn Costa Rica and Gabon, explicit consent is effectively the sole doorway for routine private-sector use of sensitive data.\n\nIn EU/EEA jurisdictions, explicit consent is one viable doorway; others (e.g., vital-interest, substantial-public-interest grounds) may remove the consent requirement, but where those do not apply, controllers must fall back on opt-in consent.\n\nSource table\nRegulation / Topic\tDocument name\tPage / Art.\tExact text\nCosta Rica – Consent rule\tReglamento a la Ley de Protección de la Persona… (No. 37554-JP)\tCh. II, Art. 5\t“obtener el consentimiento expreso del titular”\nCosta Rica – Infringement\tSame\tArt. 59 h\t“Se recogen… datos sensibles… sin el consentimiento de su titular”\nGabon – Sensitive data\tOrdonnance No. 00002/PR/2020\tArt. 14 ter\t“…no podrán basarse en datos personales sensibles, salvo… consentimiento explícito”\nDenmark – Sensitive data gateway\tAct No. 502/2018 (Data Protection Act)\t§ 7(1)\t“…no se aplica… cuando se cumplen… punto a) del Artículo 9(2) RGPD”\nDenmark – Criminal-offence data\tSame\t§ 8(3)\t“…pueden tratarse… si el interesado ha dado consentimiento explícito”\nEstonia – GDPR reference\tPersonal Data Protection Act (Riigikogu, 2018)\t§ 10(2)\t“special categories… Artículo 9(1) RGPD”\n\nFeel free to let me know if you need a deeper comparison or have another jurisdiction in mind.\n\n",
+        "exact_quotes": [],
+        "jurisdictions": [
+          "Costa Rica",
+          "Denmark",
+          "EEA",
+          "EEA states",
+          "EU",
+          "Estonia",
+          "Gabon",
+          "Protection",
+          "The",
+          "The Act",
+          "gateway",
+          "or states",
+          "table"
+        ],
+        "articles": [
+          "Art. 14",
+          "Art. 5",
+          "Art. 59",
+          "Art. 9",
+          "Art. 9 (1)",
+          "Art. 9 (2)",
+          "Art. 9 (2)(a)",
+          "Art. 9(2)",
+          "Art. 9(2)(a)",
+          "Article 9(1)",
+          "Article 9(2)",
+          "§ 10 (2)",
+          "§ 10(2)",
+          "§ 2",
+          "§ 7(1)",
+          "§ 8(3)"
+        ],
+        "sources": [
+          "Act No. 502/2018",
+          "Personal Data Protection Act",
+          "Regulation No. 37554-"
+        ],
+        "content_length": 4507,
+        "has_table_format": true
+      },
+      "comparison": {
+        "overall_score": 0.4604140099390997,
+        "detailed_scores": {
+          "content_similarity": 0.04005340453938585,
+          "quote_accuracy": 1.0,
+          "jurisdiction_coverage": 0.46153846153846156,
+          "article_accuracy": 0.0,
+          "structure": 0.5,
+          "completeness": 0.6618593299312181
+        },
+        "metrics": {
+          "our_quote_count": 4,
+          "gpt_quote_count": 0,
+          "quote_matches": 0,
+          "our_jurisdiction_count": 7,
+          "gpt_jurisdiction_count": 13,
+          "jurisdiction_overlap": 6,
+          "our_article_count": 2,
+          "gpt_article_count": 16,
+          "article_overlap": 0,
+          "content_length_ratio": 0.6618593299312181
+        },
+        "missing_jurisdictions": [
+          "eea states",
+          "the act",
+          "or states",
+          "eea",
+          "table",
+          "gateway",
+          "eu"
+        ],
+        "missing_articles": [
+          "Art. 9(2)(a)",
+          "Art. 9(2)",
+          "Art. 9",
+          "Art. 5",
+          "Art. 9 (2)(a)",
+          "Article 9(1)",
+          "Art. 14",
+          "§ 7(1)",
+          "§ 2",
+          "Art. 59",
+          "§ 10(2)",
+          "§ 8(3)",
+          "§ 10 (2)",
+          "Article 9(2)",
+          "Art. 9 (1)",
+          "Art. 9 (2)"
+        ],
+        "performance": {
+          "response_time": 29.529517650604248,
+          "chunks_retrieved": 129
+        }
+      }
+    },
+    "3": {
+      "question": "----------------",
+      "our_result": {
+        "success": true,
+        "content": "### Overview of the Topic\n\nThe topic involves understanding the regulatory requirements related to data protection and privacy across multiple jurisdictions. This includes how personal data can be collected, processed, and stored, as well as the rights of individuals to control their personal data. Key aspects often involve consent requirements, data subject rights, and obligations for data controllers and processors.\n\n### Key Regulatory Requirements\n\nRegulatory requirements typically include:\n- **Consent**: How and when consent must be obtained from data subjects.\n- **Data Protection Principles**: Such as data minimization, purpose limitation, and data security.\n- **Rights of Data Subjects**: Including the right to access, correct, and delete their data.\n- **Obligations of Controllers and Processors**: Requirements for handling data securely and responsibly.\n\n### Important Definitions or Concepts\n\n- **Personal Data**: Information that can be used to identify an individual, either directly or indirectly.\n- **Data Controller**: The entity that determines the purposes and means of processing personal data.\n- **Data Processor**: The entity that processes data on behalf of the controller.\n- **Express/Explicit Consent**: A clear affirmative act establishing a freely given, specific, informed, and unambiguous indication of the data subject's agreement to the processing of personal data relating to him or her.\n\n### Jurisdiction-Specific Requirements\n\n#### Gabon\n- **Express Consent for Sensitive Data**: In Gabon, the processing of sensitive personal data requires express consent from the data subject. This is a stringent requirement ensuring that data subjects are explicitly aware and agreeable to the processing of sensitive categories of personal data [Gabonese Data Protection Act Article 6].\n\n#### Costa Rica\n- **Express Consent Requirement**: Costa Rica mandates that express consent is necessary for the processing of personal data. This aligns with the general principle that consent must be clear and unambiguous [Law of Protection of the Person Against the Treatment of Their Personal Data Article 5].\n\n#### Denmark\n- **General Data Protection Framework**: Denmark follows a comprehensive data protection framework which includes requirements for data processing based on consent, necessity, and legal obligations. Specific details on express consent for sensitive data were not provided in the available documents.\n\n#### Estonia\n- **Consent for Data Processing**: In Estonia, consent is required for data processing activities. The specifics about express consent for sensitive data were not detailed in the provided documents.\n\n### Practical Examples\n\n- **Consent Forms**: In jurisdictions requiring express consent, data controllers often use consent forms that require an active indication of agreement from the data subject, such as ticking a box or signing a form.\n- **Data Subject Requests**: Individuals in jurisdictions with strong data subject rights can request to see the data held about them, correct inaccuracies, or request deletion, demonstrating control over their personal data.\n\nThis comprehensive overview provides a foundational understanding of the regulatory landscape across the specified jurisdictions, focusing on the critical aspects of data protection and privacy laws.",
+        "content_length": 3327,
+        "response_time": 32.78172540664673,
+        "citations": [
+          {
+            "regulation": "Gabonese Data Protection Act",
+            "article_section": "6",
+            "format_type": "simple",
+            "full_citation": "[Gabonese Data Protection Act Article 6]",
+            "relevance_score": 6
+          },
+          {
+            "regulation": "Law of Protection of the Person Against the Treatment of Their Personal Data",
+            "article_section": "5",
+            "format_type": "simple",
+            "full_citation": "[Law of Protection of the Person Against the Treatment of Their Personal Data Article 5]",
+            "relevance_score": 6
+          }
+        ],
+        "citation_count": 2,
+        "exact_quotes": [],
+        "jurisdictions": [
+          "Costa Rica",
+          "Denmark",
+          "Estonia",
+          "Gabon",
+          "Protection",
+          "affirmative"
+        ],
+        "articles": [
+          "Art. 5",
+          "Art. 6",
+          "Article 5",
+          "Article 6"
+        ],
+        "sources": [],
+        "has_table_format": false,
+        "chunks_retrieved": 100
+      },
+      "gpt_result": {
+        "question": "----------------",
+        "full_content": "----------------\n\n2. Which countries or states have requirements around obtaining consent from parents or guardians for processing data of minors (under 18 years of age)?\n\nSummary\n\nThe documents you supplied show three jurisdictions that expressly require parent/guardian consent before personal data about minors may be processed:\n\nJurisdiction\tAge-trigger\tMain context\nDenmark\t< 13 yrs\tAny information-society service offered directly to a child\nEstonia\t< 13 yrs\tAny information-society service offered directly to a child\nGeorgia (U.S.-state)\t< 13 yrs (or ≥ 13 if the student does not give consent)\tUse or disclosure of K-12 student data by online “operators”\n\nBelow you will find the exact clauses, with full traceability to the document and file you provided.\n\nDetailed evidence\nJurisdiction\tDocument name\tFile name\tPage / Article / Section\tExact regulatory text\nDenmark\tAct on supplementary provisions to the GDPR (Data Protection Act), Act No. 502 of 23 May 2018\t8 - 2257969a-b379-4eac-8c04-f8eebb276090.pdf\t§ 6 (3)\t“If the child is under 13, the processing is only lawful if and to the extent that consent is given or approved by the holder of parental responsibility for the child.”\nEstonia\tPersonal Data Protection Act (“Isikuandmete kaitse seadus”), in force 15 Jan 2019\t4 - d6e380f3-ea47-4306-a1fa-bbc9bb44a267.pdf\tp. 3 / 19, § 8 (2)\t“If the child is below the age of 13 years, processing of personal data is permitted only in the case and to the extent for which consent has been given by the legal representative of the child.”\nGeorgia (USA)\tOfficial Code of Georgia Annotated, Title 20 § 20-2-666 (‘Student Data Privacy, Accessibility, and Transparency Act’)\t10 - 1f6c8eb0-241e-41b9-8a00-c8679a0ca28e.pdf\t§ 20-2-666 (a)\t“An operator shall not knowingly engage in any of the following activities … without explicit written consent from the student’s parent or guardian, or an eligible student.”\n\nHow to interpret the requirements\nEU Member States (Denmark, Estonia). Article 8 GDPR lets each state set the parental-consent age between 13 and 16. Both Acts you provided pick 13. Processing children’s data below that age requires verified consent or approval from a “holder of parental responsibility”.\n\nGeorgia. Section 20-2-666 forbids operators from using, selling, or disclosing student data unless they have a) consent from a parent/guardian or b) consent from an eligible student (the code defines an “eligible student” as 18 + yrs or post-secondary, and separately recognises student self-consent for those over 13). In practice, for K-12 students under 13, the operator must obtain parental consent.\n\nNo other parental-consent clauses were located in the remaining PDFs you supplied. If you need confirmation for additional jurisdictions, please provide their source texts.\n\n",
+        "exact_quotes": [],
+        "jurisdictions": [
+          "Denmark",
+          "EU",
+          "Estonia",
+          "Georgia",
+          "Protection",
+          "Transparency",
+          "USA",
+          "or states"
+        ],
+        "articles": [
+          "Article 8",
+          "§ 20",
+          "§ 6 (3)",
+          "§ 8 (2)"
+        ],
+        "sources": [
+          "Act No. 502",
+          "Personal Data Protection Act"
+        ],
+        "content_length": 2796,
+        "has_table_format": true
+      },
+      "comparison": {
+        "overall_score": 0.45628776743426425,
+        "detailed_scores": {
+          "content_similarity": 0.025151069737056997,
+          "quote_accuracy": 1.0,
+          "jurisdiction_coverage": 0.375,
+          "article_accuracy": 0.0,
+          "structure": 0.5,
+          "completeness": 1.0
+        },
+        "metrics": {
+          "our_quote_count": 0,
+          "gpt_quote_count": 0,
+          "quote_matches": 0,
+          "our_jurisdiction_count": 6,
+          "gpt_jurisdiction_count": 8,
+          "jurisdiction_overlap": 3,
+          "our_article_count": 4,
+          "gpt_article_count": 4,
+          "article_overlap": 0,
+          "content_length_ratio": 1.0
+        },
+        "missing_jurisdictions": [
+          "or states",
+          "georgia",
+          "transparency",
+          "usa",
+          "eu"
+        ],
+        "missing_articles": [
+          "Article 8",
+          "§ 20",
+          "§ 8 (2)",
+          "§ 6 (3)"
+        ],
+        "performance": {
+          "response_time": 32.78172540664673,
+          "chunks_retrieved": 100
+        }
+      }
+    }
+  }
+}

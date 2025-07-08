@@ -1,0 +1,668 @@
+chunk_id,chunk_text,clause_type,clause_domain,clause_subdomain,jurisdiction,regulation,document_name,clause_title,clause_number,keywords,entities,hierarchy_path,search_score,reranker_score,caption
+4f2ee06a-c2fe-4c16-9add-558278cec55c,"Article 4. Consent Requirements. Obtaining consent must be:
+a) Free: there must be no error, bad faith, physical or psychological violence
+or intent, which may affect the owner's expression of will;
+b) Specific: referring to one or several determined and defined purposes that
+justify the treatment;
+c) Informed: that the owner has prior knowledge of the treatment, to what their
+personal data will be subjected and the consequences of giving their consent.
+Likewise, to know who is responsible for t...",consent,Individual Rights Processing|Policy Management,Consent|Notice and Disclosure,Costa Rica,GDPR,"""Regulation to Personal Data Protection Law - Costa Rica 2012""",Article 4. Consent Requirements. Obtaining consent must be:,4,consent|informed consent|express consent|personal data|controller,personal data,"Chapter I > Article 1. Object. The purpose of these provisions is to regulate the Law on > Article 2. Definitions, acronyms and acronyms. In addition to the definitions > Chapter II > Article 4. Consent Requirements. Obtaining consent must be:",36.449215,0,
+dd1851a6-c334-4a2c-bf8c-c109ac3c66af,"Article 6. Burden of proof of consent. In order to demonstrate obtaining
+consent, the burden of proof will fall, in all cases, on the person in charge of the
+database.
+
+Article 7. Of the revocation. At any time, the owner may revoke their consent
+to the processing of their personal data, for which the person responsible must
+establish expeditious, simple and free mechanisms that allow the owner to revoke
+their consent.",consent,Individual Rights Processing|Data Lifecycle Management,Consent|Data Subject Rights,Costa Rica,GDPR,"""Regulation to Personal Data Protection Law - Costa Rica 2012""",Article 6. Burden of proof of consent. In order to demonstrate obtaining,6,consent|burden of proof|revocation|personal data,personal data,"Chapter I > Article 1. Object. The purpose of these provisions is to regulate the Law on > Article 2. Definitions, acronyms and acronyms. In addition to the definitions > Chapter II > Article 6. Burden of proof of consent. In order to demonstrate obtaining",31.926777,0,
+3b8f4c16-2365-40e2-8b9d-e2dece251740,"(4) The consent specified in subsection (1) of this section is not required if the processed personal data only
+contain the data subject's name, sex, date of birth and death, the fact of death, and the time and place of burial.
+
+§ 10. Processing of personal data in connection with violation of obligation",consent,Individual Rights Processing|Data Lifecycle Management,Consent|Data Minimization,Estonia,GDPR,"""Personal Data Protection Act - Estonia 2019""",(4) The consent specified in subsection (1) of this section is not required if the processed personal data only,General,consent|personal data|data subject,data subject|personal data,Chapter 1 > § 1. Scope of regulation of Act > (1) This Act regulates: > Chapter 3 > § 8. Processing of children's personal data for provision of information society services > § 9. Processing of personal data after death of data subject > (4) The consent specified in subsection (1) of this section is not required if the processed personal data only,23.753347,0,
+54b0e041-1104-4782-86f9-0b69967b75d7,"(1) To the extent that it may be necessary to carry out the purposes of sections 354.400
+to 354.636;
+
+(2) Upon the express consent of the enrollee or applicant;",consent,Individual Rights Processing,Consent,Missouri,HIPAA,"""Health Services Corporations Act - Missouri 1983""",(2) Upon the express consent of the enrollee or applicant;,General,consent,,"(1) ""Corporation"", a domestic health services corporation subject to the provisions of > (2) ""Director"", the director of the department of commerce and insurance of the state of > (3) ""Health services"", the health care and services provided by hospitals, or other > (4) ""Health services corporation"", any not-for-profit corporation heretofore or > (5) ""Member"" or ""beneficiary"", a natural person who is entitled to receive health > (6) ""Membership contract"", any agreement, contract or certificate by which a health > (2) Upon the express consent of the enrollee or applicant;",21.692427,0,
+991a9d25-a2e9-4153-84d7-7fc1d77a68b3,"§ 9. Processing of personal data after death of data subject
+
+(1) The consent of a data subject shall remain valid during the lifetime of the data subject and for 10 years after
+the death of the data subject, unless the data subject decided otherwise. If the data subject died as a minor, his or
+her consent shall be valid for the term of 20 years after the death of the data subject.",consent,Individual Rights Processing|Data Lifecycle Management,Consent|Data Retention,Estonia,GDPR,"""Personal Data Protection Act - Estonia 2019""",(1) The consent of a data subject shall remain valid during the lifetime of the data subject and for 10 years after,General,consent|data subject,20 years|data subject|10 years|personal data,Chapter 1 > § 1. Scope of regulation of Act > (1) This Act regulates: > Chapter 3 > § 8. Processing of children's personal data for provision of information society services > § 9. Processing of personal data after death of data subject > (1) The consent of a data subject shall remain valid during the lifetime of the data subject and for 10 years after,20.91682,0,
+8c0344ca-ecf4-4ce0-9808-05df047137dc,"(6) Consent as required by subsection (5) must be obtained in accordance with section 10
+of the Danish Marketing Practices Act.
+
+(7) The processing of data as mentioned in subsection (5) may not, however, include data
+as mentioned in Article 9(1) of the General Data Processing Regulation or section 8 of this
+Act.",consent,Individual Rights Processing|Data Lifecycle Management,"Consent|Lawfulness, Fairness, Transparency",Denmark,GDPR,"""Data Protection Act - Denmark 2018""",(6) Consent as required by subsection (5) must be obtained in accordance with section 10,6,consent|processing of data,,"Chapter I > Part 3 > (2) To ascertain whether processing for another purpose is compatible with the purpose for > (3) Regardless of subsections (1) and (2), in consultation with the Minister of Justice and > Article 6 of the General Data Protection Regulation processed solely in connection with > (2) The data covered by subsection (1) may not subsequently be processed for other than > (6) Consent as required by subsection (5) must be obtained in accordance with section 10",20.07433,0,
+00a9ae77-6d04-4071-a5ae-3d820bbb9aed,"(2) After the death of the data subject, processing of his or her personal data is permitted only with the consent
+of the successors of the data subject, except in the case:
+1) 10 years have passed since the death of the data subject;
+2) 20 years have passed since the death of a data subject who was a minor;
+3) personal data are processed under any other legal bases.
+
+(3) In the case of several successors, processing of the personal data of the data subject is permitted with the
+consent of any o...",consent,Individual Rights Processing|Data Lifecycle Management,Consent|Data Retention,Estonia,GDPR,"""Personal Data Protection Act - Estonia 2019""","(2) After the death of the data subject, processing of his or her personal data is permitted only with the consent",General,consent|data subject|personal data|processing|legal bases,20 years|data subject|10 years|personal data,"Chapter 1 > § 1. Scope of regulation of Act > (1) This Act regulates: > Chapter 3 > § 8. Processing of children's personal data for provision of information society services > § 9. Processing of personal data after death of data subject > (2) After the death of the data subject, processing of his or her personal data is permitted only with the consent",18.636898,0,
+c44371ae-e4f5-4739-9ab8-f4cc73224583,"§ 20-2-666. Activities by operators; limitations
+
+(a) An operator shall not knowingly engage in any of the following activities with respect to such
+operator's site, service, or application without explicit written consent from the student's parent or
+guardian, or an eligible student:",consent,Individual Rights Processing,Consent,Georgia,FERPA,"""Student Data Privacy Act - Georgia 2015""",(a) An operator shall not knowingly engage in any of the following activities with respect to such,15,explicit consent,,"TITLE 20. EDUCATION > CHAPTER 2. ELEMENTARY > ARTICLE 15. STUDENT DATA PRIVACY, ACCESSIBILITY, AND > § 20-2-666. Activities by operators; limitations > (a) An operator shall not knowingly engage in any of the following activities with respect to such",18.437933,0,
+627ca20d-dfd4-4640-a5b0-0bd8d1c78b39,"(1) If Article 6(1)(a) of Regulation (EU) 2016/679 of the European Parliament and of the Council applies in
+connection with provision of information society services directly to a child, processing of the child's personal
+data is permitted only in the case the child is at least 13 years old.
+
+(2) If the child is below the age of 13 years, processing of personal data is permitted only in the case and to the
+extent for which consent has been given by the legal representative of the child.
+Page 2 /...",consent,Individual Rights Processing|Data Lifecycle Management,"Consent|Lawfulness, Fairness, Transparency",Estonia,GDPR,"""Personal Data Protection Act - Estonia 2019""",(1) If Article 6(1)(a) of Regulation (EU) 2016/679 of the European Parliament and of the Council applies in,General,consent|personal data|processing|legal representative,representative|13 years|personal data|Personal Data,Chapter 1 > § 1. Scope of regulation of Act > (1) This Act regulates: > Chapter 3 > § 8. Processing of children's personal data for provision of information society services > (1) If Article 6(1)(a) of Regulation (EU) 2016/679 of the European Parliament and of the Council applies in,16.360905,0,
+3f448060-e0a6-4f08-91be-c7dcf183f524,"(2) Private individuals and entities may process data concerning identification numbers
+where:
+1) this follows from the law; or
+2) the data subject has given consent in accordance with Article 7 of the General Data
+Protection Regulation; or
+3) the processing is carried out solely for scientific or statistical purposes or if it is a matter
+of disclosing an identification number where such disclosure is a natural element of the
+ordinary operation of enterprises etc. of the type in question and the...",consent,Individual Rights Processing|Data Lifecycle Management,"Consent|Lawfulness, Fairness, Transparency",Denmark,GDPR,"""Data Protection Act - Denmark 2018""",(2) Private individuals and entities may process data concerning identification numbers,6,consent|data subject|processing|controller|personal data|General Data Protection Regulation|Article 7|Article 6(1)|Article 9(1),data subject|controller|personal data,"Chapter I > Part 3 > (2) To ascertain whether processing for another purpose is compatible with the purpose for > (3) Regardless of subsections (1) and (2), in consultation with the Minister of Justice and > Article 6 of the General Data Protection Regulation processed solely in connection with > (2) The data covered by subsection (1) may not subsequently be processed for other than > (2) Private individuals and entities may process data concerning identification numbers",15.126521,0,
+cc3142b5-5c06-49ee-a7f2-990683762871,"§ 65. Violation of personal data processing principles
+
+(1) Violation of the principles of processing personal data provided for in Article 5 of Regulation (EU)
+2016/679 of the European Parliament and Council, and violation of the procedure for giving the data subject's
+consent provided for in Articles 5-7 and 9 of the same Regulation
+is punishable by a fine of up to 20,000,000 euros.",consent,Data Lifecycle Management|Individual Rights Processing|Design Principles,"Lawfulness, Fairness, Transparency|Consent",Estonia,GDPR,"""Personal Data Protection Act - Estonia 2019""",(1) Violation of the principles of processing personal data provided for in Article 5 of Regulation (EU),General,consent|data subject consent|controller,"data subject|personal data|20,000,000",Chapter 1 > § 1. Scope of regulation of Act > Division 2 > Chapter 6 > § 62. Violation of obligations of controller and processor > § 65. Violation of personal data processing principles > (1) Violation of the principles of processing personal data provided for in Article 5 of Regulation (EU),14.74966,0,
+39358857-5b4f-4698-99f7-d4b476b1d2a7,"Article 40Conditions for transfer. The transfer will always require the
+unequivocal consent of the owner. The transfer implies the transfer of personal data
+by the sole and exclusive party of the person responsible who transfers the person
+responsible for receiving the personal data. Said transfer of personal data will always
+require the informed consent of the owner, unless otherwise provided by law, also
+that the data to be transferred has been lawfully collected or collected and according
+to ...",consent,Individual Rights Processing|Data Lifecycle Management|Third-Party Risk Management,"Consent|Lawfulness, Fairness, Transparency|Third-Party Contract and Service Initiation",Costa Rica,GDPR,"""Regulation to Personal Data Protection Law - Costa Rica 2012""",Article 40Conditions for transfer. The transfer will always require the,40,consent|informed consent|personal data|transfer|controller|processor,personal data,"Chapter I > Article 1. Object. The purpose of these provisions is to regulate the Law on > Article 2. Definitions, acronyms and acronyms. In addition to the definitions > Chapter IV > Article 40Conditions for transfer. The transfer will always require the",14.690858,0,
+05311cbd-2ff5-4aed-be11-597b61ec487a,"Article 58. Start of the Rights Protection procedure. Any person who has a
+subjective right or a legitimate interest can denounce, before the Agency, that a
+public or private database acts in contravention of the rules or basic principles for
+data protection and informative self-determination, established by the Law and these
+Regulations.
+Likewise, the Agency may automatically initiate a procedure to verify whether
+a database is being used or not, in accordance with the Law and these Regulations...",consent,Individual Rights Processing|Information Security|Data Lifecycle Management,"Consent|Data Subject Rights|Information Protection Processes and Procedures|Lawfulness, Fairness, Transparency",Costa Rica,GDPR,"""Regulation to Personal Data Protection Law - Costa Rica 2012""",Article 58. Start of the Rights Protection procedure. Any person who has a,58,consent|explicit consent|informed consent|controller|right to access|right to erasure|right to rectification|legitimate interests|data minimization|purpose limitation|integrity and confidentiality,personal data|third party|Personal data|Sensitive data,"Chapter I > Article 1. Object. The purpose of these provisions is to regulate the Law on > Article 2. Definitions, acronyms and acronyms. In addition to the definitions > Chapter VII > Article 58. Start of the Rights Protection procedure. Any person who has a",13.9961195,0,
+70757873-e0b8-4a5f-a445-d364ce4c05e6,"(2) The processing of data as mentioned in subsection (1) may also take place where the
+processing is necessary to enable the data controller or a third party to pursue a legitimate
+interest that arises from other law or collective agreements, provided the interests or
+fundamental rights or freedoms of the data subject are not overridden.
+
+(3) The processing of personal data in an employment context may take place on the basis
+of consent given by the data subject in accordance with Article 7 of ...",consent,Individual Rights Processing|Data Lifecycle Management|Policy Management,"Consent|Lawfulness, Fairness, Transparency|Notice and Disclosure",Denmark,GDPR,"""Data Protection Act - Denmark 2018""",(2) The processing of data as mentioned in subsection (1) may also take place where the,6,consent|explicit consent|data subject|data controller|legitimate interest|personal data|General Data Protection Regulation,data subject|controller|personal data|third party,"Chapter I > Part 3 > (2) To ascertain whether processing for another purpose is compatible with the purpose for > (3) Regardless of subsections (1) and (2), in consultation with the Minister of Justice and > Article 6 of the General Data Protection Regulation processed solely in connection with > (2) The data covered by subsection (1) may not subsequently be processed for other than > (2) The processing of data as mentioned in subsection (1) may also take place where the",13.91973,0,
+05882fd2-9031-48f3-8a2b-bdfe97f3e999,"(2) If point a) of Article 6(1) of the General Data Protection Regulation is applied in
+connection with the offering of information society services direct to children, the
+processing of personal data concerning a child is lawful, provided the child is no younger
+than 13.
+
+(3) If the child is under 13, the processing is only lawful if and to the extent that consent is
+given or approved by the holder of parental responsibility for the child.
+7 .- (1) The prohibition against processing sensitive p...",consent,Individual Rights Processing|Data Lifecycle Management,"Consent|Lawfulness, Fairness, Transparency",Denmark,GDPR,"""Data Protection Act - Denmark 2018""",(2) If point a) of Article 6(1) of the General Data Protection Regulation is applied in,General,consent|processing of personal data|sensitive personal data|lawful basis,personal data,"Chapter I > Part 3 > (2) To ascertain whether processing for another purpose is compatible with the purpose for > (3) Regardless of subsections (1) and (2), in consultation with the Minister of Justice and > (2) If point a) of Article 6(1) of the General Data Protection Regulation is applied in",13.909281,0,
+84a8ae12-3dd6-40ff-be73-7cad79a3a654,"(3) Private individuals or entities may process data about criminal offences if the data
+subject has given explicit consent. Processing may also take place if necessary for the
+purpose of safeguarding a legitimate interest and this interest clearly overrides the interests
+of the data subject.
+
+(4) The data mentioned in subsection (3) may not be disclosed without the explicit consent
+of the data subject. However, disclosure may take place without consent for the purpose of
+safeguarding public or ...",consent,Individual Rights Processing|Data Lifecycle Management,"Consent|Data Subject Rights|Lawfulness, Fairness, Transparency",Denmark,GDPR,"""Data Protection Act - Denmark 2018""",(3) Private individuals or entities may process data about criminal offences if the data,9,explicit consent|data subject|legitimate interest,data subject,"Chapter I > Part 3 > (2) To ascertain whether processing for another purpose is compatible with the purpose for > (3) Regardless of subsections (1) and (2), in consultation with the Minister of Justice and > Article 9(1) of the General Data Protection Regulation. > (4) The processing of data covered by Article 9(1) of the General Data Protection > (3) Private individuals or entities may process data about criminal offences if the data",13.497405,0,
+691b5ea5-3f5c-474e-b50b-3bfa75679baa,"(i) This Code section shall not be construed to prohibit an operator from marketing educational products
+directly to parents so long as the marketing did not result from the use of student data obtained without
+parental consent by the operator through the provision of services covered under this Code section.
+
+(j) This Code section shall not be construed to impose a duty upon a provider of an electronic store,
+gateway, marketplace, or other means of purchasing or downloading software or applicat...",consent,Policy Management|Third-Party Risk Management,Data Use|Third-Party Monitoring,Georgia,FERPA,"""Student Data Privacy Act - Georgia 2015""",(i) This Code section shall not be construed to prohibit an operator from marketing educational products,15,consent|compliance,,"TITLE 20. EDUCATION > CHAPTER 2. ELEMENTARY > ARTICLE 15. STUDENT DATA PRIVACY, ACCESSIBILITY, AND > § 20-2-666. Activities by operators; limitations > (a) An operator shall not knowingly engage in any of the following activities with respect to such > (1) Use student data to engage in behaviorally targeted advertising on the operator's site, service, or > (i) This Code section shall not be construed to prohibit an operator from marketing educational products",13.48413,0,
+52530fde-fa8e-46c4-9bc4-32b54c29f1e3,"(b) A person or entity providing electronic communication service to the public may divulge the contents of any such
+communication-
+
+(i) as otherwise authorized in section 2511(2)(a) or 2517 of this title;
+(ii) with the lawful consent of the originator or any addressee or intended recipient of such communication;
+(iii) to a person employed or authorized, or whose facilities are used, to forward such communication to its
+destination; or
+(iv) which were inadvertently obtained by the service provid...",consent,Policy Management|Information Security|Incident Response,Notice and Disclosure|Incident Management|Breach Notification,US,GDPR,"""Wiretap Act - US 1968""",(b) A person or entity providing electronic communication service to the public may divulge the contents of any such,General,consent|lawful consent,recipient,"§2511. Interception and disclosure of wire, oral, or electronic communications > (1) Except as otherwise specifically provided in this chapter any person who- > (a) intentionally intercepts, endeavors to intercept, or procures any other person to intercept or endeavor to > (b) intentionally uses, endeavors to use, or procures any other person to use or endeavor to use any electronic, > (i) such device is affixed to, or otherwise transmits a signal through, a wire, cable, or other like connection used > (v) such person acts in the District of Columbia, the Commonwealth of Puerto Rico, or any territory or > (b) A person or entity providing electronic communication service to the public may divulge the contents of any such",13.477529,0,
+05a60cc6-0df6-4b6e-a091-1f72b68e5172,"12. A health carrier shall require a provider to make health records available to
+appropriate state and federal authorities involved in assessing the quality of care but shall
+not disclose individual identities, or investigating the grievances or complaints of
+enrollees, and to comply with the applicable state and federal laws related to the
+confidentiality of medical or health records.
+
+13. The rights and responsibilities of a provider under a contract between a health
+carrier and a participati...",consent,Data Lifecycle Management|Third-Party Risk Management,Data Use|Third-Party Contract and Service Initiation,Missouri,HIPAA,"""Health Services Corporations Act - Missouri 1983""",12. A health carrier shall require a provider to make health records available to,12,consent|confidentiality,,"(1) ""Corporation"", a domestic health services corporation subject to the provisions of > (2) ""Director"", the director of the department of commerce and insurance of the state of > (3) ""Health services"", the health care and services provided by hospitals, or other > (4) ""Health services corporation"", any not-for-profit corporation heretofore or > (5) ""Member"" or ""beneficiary"", a natural person who is entitled to receive health > (6) ""Membership contract"", any agreement, contract or certificate by which a health > (3) The provisions of sections 354.600 to 354.636 shall not require a health carrier, its > 12. A health carrier shall require a provider to make health records available to",13.091417,0,
+30f3617e-fc92-4b54-b8a4-671f964f070a,"Article 43 Equipment location information.
+Therefore, information on the location of equipment in public telecommunications networks or
+general electronic communications services that it is not possible to connect them to individual users or after receiving them
+their consent.
+[Notwithstanding the provisions of the first paragraph. electronic communications undertakings shall, without the consent of the user, send, free of charge,
+information under this Article, to the extent technically feasibl...",consent,Individual Rights Processing|Information Security,Consent|Data Subject Rights|Information Protection Processes and Procedures,Iceland,GDPR,"""Telecommunications Act - Iceland 2003""",Article 43 Equipment location information.,43,consent|controller,,Chapter I. Objectives and scope. Electronic Communications Board. > Article 1 Objectives and scope. > Article 2 Electronic Communications Board. > Chapter V. Markets. > Article 43 Equipment location information.,12.0916395,0,
+f1beafc9-e1cc-47c5-ab62-399dce2942b6,"(3) Sell a student's data. This prohibition does not apply to the purchase, merger, or other type of
+acquisition of an operator by another entity, provided that the operator or successor entity continues to
+be subject to the provisions of this Code section with respect to previously acquired student data that is
+subject to this article; or
+
+(4) Disclose student personally identifiable data without explicit written or electronic consent from a
+student over the age of 13 or a student's parent or g...",consent,Data Lifecycle Management|Individual Rights Processing|Information Security|Third-Party Risk Management,Consent|Data Use|Third-Party Contract and Service Initiation,Georgia,FERPA,"""Student Data Privacy Act - Georgia 2015""","(3) Sell a student's data. This prohibition does not apply to the purchase, merger, or other type of",15,explicit consent|student personally identifiable data|security|service provider|reasonable security procedures and practices,recipient,"TITLE 20. EDUCATION > CHAPTER 2. ELEMENTARY > ARTICLE 15. STUDENT DATA PRIVACY, ACCESSIBILITY, AND > § 20-2-666. Activities by operators; limitations > (a) An operator shall not knowingly engage in any of the following activities with respect to such > (1) Use student data to engage in behaviorally targeted advertising on the operator's site, service, or > (3) Sell a student's data. This prohibition does not apply to the purchase, merger, or other type of",11.751816,0,
+a7688dc0-9892-476d-af6d-1ebe5878278f,"(2) Depseudonymisation or any other method by which the data not enabling identification of persons are
+changed again into the data which enable identification of persons are only permitted for the needs of additional
+scientific and historical research or official statistics. Processors of personal data shall designate a person
+identified by name who has access to the information allowing pseudonymisation.
+
+(3) Processing of data concerning any data subjects for the needs of scientific and histo...",consent,Data Lifecycle Management|Individual Rights Processing|Design Principles,Consent|Privacy and Security Enhancing Techniques|Data Ethics,Estonia,GDPR,"""Personal Data Protection Act - Estonia 2019""",(2) Depseudonymisation or any other method by which the data not enabling identification of persons are,General,depseudonymisation|processors of personal data|pseudonymisation|data subject|scientific and historical research|official statistics|consent|personal data|data processing,data subject|personal data,Chapter 1 > § 1. Scope of regulation of Act > (1) This Act regulates: > Chapter 2 > § 4. Processing of personal data for journalistic purposes > § 6. Processing of personal data for needs of scientific and historical research and official statistics > (2) Depseudonymisation or any other method by which the data not enabling identification of persons are,11.641653,0,
+f2be0938-40f8-4689-a515-699912ef3118,"Article 10. Refusal to revoke. In case of refusal, express or tacit, on the part
+of the person in charge, to process the revocation of consent, the owner may submit
+to the Agency the corresponding complaint referred to in the Law and these
+Regulations.
+
+Article 11.Right to be forgotten. The conservation of personal data that may
+affect the owner, must not exceed a period of ten years, from the date of termination
+of the data processing object, unless special regulatory provision establishes
+anot...",consent,Individual Rights Processing|Data Lifecycle Management,Consent|Data Subject Rights|Data Retention,Costa Rica,GDPR,"""Regulation to Personal Data Protection Law - Costa Rica 2012""","Article 10. Refusal to revoke. In case of refusal, express or tacit, on the part",10,consent|revocation of consent|right to be forgotten|personal data|data processing,personal data,"Chapter I > Article 1. Object. The purpose of these provisions is to regulate the Law on > Article 2. Definitions, acronyms and acronyms. In addition to the definitions > Chapter II > Article 10. Refusal to revoke. In case of refusal, express or tacit, on the part",11.623191,0,
+84eee9b5-7268-4cc1-926a-8c3f5b799b87,"4. Health maintenance organizations shall not set a limit on the quantity of drugs
+which an enrollee may obtain at any one time with a prescription, unless such limit is
+applied uniformly to all pharmacy providers in the health maintenance organization's
+network.
+
+5. Health maintenance organizations shall not insist or mandate any physician or other
+licensed health care practitioner to change an enrollee's maintenance drug unless the
+provider and enrollee agree to such change. For the purposes o...",consent,Policy Management,"Policies, Standards, and Guidelines Management",Missouri,HIPAA,"""Health Services Corporations Act - Missouri 1983""",4. Health maintenance organizations shall not set a limit on the quantity of drugs,4,consent,,"(1) ""Corporation"", a domestic health services corporation subject to the provisions of > (2) ""Director"", the director of the department of commerce and insurance of the state of > (3) ""Health services"", the health care and services provided by hospitals, or other > (4) ""Health services corporation"", any not-for-profit corporation heretofore or > (5) ""Member"" or ""beneficiary"", a natural person who is entitled to receive health > (6) ""Membership contract"", any agreement, contract or certificate by which a health > (4) In the event of a claim or litigation between such person and the health > 4. Health maintenance organizations shall not set a limit on the quantity of drugs",11.574648,0,
+9d9bee02-890d-4843-ae00-d4e90452a45f,"Chapter 3
+OTHER CASES OF PROCESSING PERSONAL DATA
+
+§ 8. Processing of children's personal data for provision of information society services",consent,Individual Rights Processing|Policy Management,Consent|Notice and Disclosure,Estonia,GDPR,"""Personal Data Protection Act - Estonia 2019""",§ 8. Processing of children's personal data for provision of information society services,General,processing|personal data|children|information society services,PERSONAL DATA|personal data,Chapter 1 > § 1. Scope of regulation of Act > (1) This Act regulates: > Chapter 3 > § 8. Processing of children's personal data for provision of information society services,11.233923,0,
+7d60a64a-6aa4-4728-ae87-e817decf3a11,"Article 28Treatment conditions. It corresponds to the person in charge or the
+person in charge, the diffusion, commercialization and distribution of said data,
+according to what is determined by the informed consent granted by the owner, even
+when these data are stored or hosted by a technological intermediary.
+
+Article 29Contracting or subcontracting services. In the contracting or
+subcontracting of services provided by a technological intermediary or service
+provider, it will be considered tha...",consent,Data Lifecycle Management|Information Security|Third-Party Risk Management,"Lawfulness, Fairness, Transparency|Third-Party Contract and Service Initiation|Third-Party Monitoring",Costa Rica,GDPR,"""Regulation to Personal Data Protection Law - Costa Rica 2012""",Article 28Treatment conditions. It corresponds to the person in charge or the,28,informed consent|technological intermediary|personal data|processing of personal data|security measures|integrity|security,personal data,"Chapter I > Article 1. Object. The purpose of these provisions is to regulate the Law on > Article 2. Definitions, acronyms and acronyms. In addition to the definitions > Chapter IV > Article 28Treatment conditions. It corresponds to the person in charge or the",11.064023,0,
+79ac39e0-6f91-441c-abcf-8243f96e54d6,"Article 1er: The provisions of Articles 13, 14, 20, 37, 101, 102 and 104 are amended and now
+read as follows:
+""New Article 13: Any natural person has the right to oppose, for legitimate reasons, the
+processing of personal data concerning them. They have the right to oppose by any means, free of charge, the communication or use
+on any medium of their personal data, for various purposes if they have not previously
+consented. The right to object does not apply when the processing is subject to publ...",consent,Individual Rights Processing|Data Lifecycle Management,"Consent|Data Subject Rights|Data Quality|Lawfulness, Fairness, Transparency",Republic of Gabon,GDPR,"""Personal Data Protection Ordinance - Gabon 2020""","Article 1er: The provisions of Articles 13, 14, 20, 37, 101, 102 and 104 are amended and now",1,consent|controller|right to object|right to rectification|right to erasure|data subject|lawful basis|legitimate reasons|public interest|legal obligation,Personal Data|third party|data subject|personal data|controller,"Article 1er: The provisions of Articles 13, 14, 20, 37, 101, 102 and 104 are amended and now",10.972298,0,
+59a775f6-7a3f-44e5-aca0-32bfa07adabf,"(b) It shall not be unlawful under this chapter for an officer, employee, or agent of the Federal Communications
+Commission, in the normal course of his employment and in discharge of the monitoring responsibilities exercised by
+the Commission in the enforcement of chapter 5 of title 47 of the United States Code, to intercept a wire or electronic
+communication, or oral communication transmitted by radio, or to disclose or use the information thereby obtained.
+
+(c) It shall not be unlawful under ...",consent,Policy Management|Information Security,Notice and Disclosure|Information Protection Processes and Procedures,US,GDPR,"""Wiretap Act - US 1968""","(b) It shall not be unlawful under this chapter for an officer, employee, or agent of the Federal Communications",General,consent|intercept|wire communication|oral communication|electronic communication,,"§2511. Interception and disclosure of wire, oral, or electronic communications > (1) Except as otherwise specifically provided in this chapter any person who- > (a) intentionally intercepts, endeavors to intercept, or procures any other person to intercept or endeavor to > (b) intentionally uses, endeavors to use, or procures any other person to use or endeavor to use any electronic, > (i) such device is affixed to, or otherwise transmits a signal through, a wire, cable, or other like connection used > (v) such person acts in the District of Columbia, the Commonwealth of Puerto Rico, or any territory or > (b) It shall not be unlawful under this chapter for an officer, employee, or agent of the Federal Communications",10.909551,0,
+c54848de-8a3f-46de-9887-110aacec5959,"§ 11. Processing of personal data in public places
+Unless otherwise provided by law, upon making in public places of audio or visual recordings intended for
+future disclosure, the consent of data subjects shall be substituted by an obligation to notify the data subjects
+thereof in a manner which allows the persons to understand the fact of the recording of the audio or visual
+images and to give the persons an opportunity to prevent the recording of their person if they so wish. The
+notification ...",consent,Individual Rights Processing|Data Lifecycle Management,"Consent|Data Subject Rights|Lawfulness, Fairness, Transparency",Estonia,GDPR,"""Personal Data Protection Act - Estonia 2019""",§ 11. Processing of personal data in public places,General,consent|data subjects|notification obligation|processing of personal data,personal data|PERSONAL DATA,Chapter 1 > § 1. Scope of regulation of Act > (1) This Act regulates: > Chapter 3 > § 8. Processing of children's personal data for provision of information society services > § 11. Processing of personal data in public places,10.690578,0,
+fe86d5f7-82da-4f1c-a7ff-fb3c9f158d54,"Article 8. Processing of revocation. The person in charge of the database,
+upon presentation of the request for revocation of consent, will have a period of five
+working days from the receipt of the same, to proceed according to the revocation.
+Likewise, within the same period of five business days, you must inform those
+physical or legal persons to whom you have transferred the data of said revocation,
+which must proceed within five business days from the notification to execute the
+revocation ...",consent,Individual Rights Processing|Data Lifecycle Management,Consent|Data Subject Rights,Costa Rica,GDPR,"""Regulation to Personal Data Protection Law - Costa Rica 2012""","Article 8. Processing of revocation. The person in charge of the database,",8,consent|revocation of consent|processing|controller,,"Chapter I > Article 1. Object. The purpose of these provisions is to regulate the Law on > Article 2. Definitions, acronyms and acronyms. In addition to the definitions > Chapter II > Article 8. Processing of revocation. The person in charge of the database,",10.523358,0,
+a178bad2-a33c-488f-9dbf-a072a15bbde5,"Chapter VI
+Of the Inscription of the Registry of Databases and Files before the Agency
+
+Article 44Registration of the database record. The natural or legal persons
+who own personal databases, in accordance with the Law and these Regulations,
+must register with the Agency a registry of said databases, providing the following
+information:
+to)Request from the physical or legal owner, duly authenticated by notary
+public or confronted with the signature. In the case of a legal person, a legal entity
+...",consent,Strategy and Governance|Policy Management|Data Lifecycle Management|Individual Rights Processing|Third-Party Risk Management,Accountability|Record of Processing|Consent|Notice and Disclosure|Regulatory Affairs,Costa Rica,GDPR,"""Regulation to Personal Data Protection Law - Costa Rica 2012""",Article 44Registration of the database record. The natural or legal persons,44,informed consent|controller|processor|security measures|personal data|database record|data subject|recipients of transfers|notification|responsibilities|registry|technical description,personal data,"Chapter I > Article 1. Object. The purpose of these provisions is to regulate the Law on > Article 2. Definitions, acronyms and acronyms. In addition to the definitions > Chapter VI > Article 44Registration of the database record. The natural or legal persons",10.352868,0,
+4579a563-6f8e-42d9-9c70-5fe928e73209,"Section 27-21A-24
+Filings and reports as public documents.
+All applications, filings, and reports required under this chapter, except those which
+are trade secrets or privileged or confidential commercial or financial information,
+other than any annual financial statement that may be required under Section 27-21A-
+8, shall be treated as public documents. All testimony, documents, and other evidence
+required to be submitted to the commissioner or State Health Officer in connection
+with enforcemen...",consent,Data Lifecycle Management|Information Security|Individual Rights Processing,Data Retention|Consent|Information Protection Processes and Procedures|Data Subject Rights,Alabama,HIPAA,"""Health Maintenance Organization Act - Alabama 1986""",Section 27-21A-24,27,consent|confidential|privileged|confidentiality|statutory privileges,,"Title 10, Chapter 4, Article 6 and Title 27, an insurer or a health care service plan may > Section 27-21A-16 > (a) The commissioner may make an examination of the affairs of any health > (b) The State Health Officer may make an examination concerning health care service > (c) Every health maintenance organization shall submit its relevant books and records > Section 27-21A-24",9.786056,0,
+f36d106e-8fd8-41cf-a90a-9cda241cb66f,"(4) Before an enterprise discloses data concerning a consumer to another enterprise for the
+purpose of direct marketing, or uses the data on behalf of another enterprise for this
+purpose, it must check in the CPR register whether the consumer has filed a statement to
+the effect that he does not want to be contacted for the purpose of marketing activities.
+
+(5) Data controllers who sell lists of groups of persons for direct marketing purposes or
+who print addresses or distributes messages to such...",consent,Individual Rights Processing|Third-Party Risk Management|Data Lifecycle Management,"Consent|Data Use|Lawfulness, Fairness, Transparency",Denmark,GDPR,"""Data Protection Act - Denmark 2018""",(4) Before an enterprise discloses data concerning a consumer to another enterprise for the,6,explicit consent|data subject|data controllers|direct marketing|process,data subject|third party,"Chapter I > Part 3 > (2) To ascertain whether processing for another purpose is compatible with the purpose for > (3) Regardless of subsections (1) and (2), in consultation with the Minister of Justice and > Article 6 of the General Data Protection Regulation processed solely in connection with > (2) The data covered by subsection (1) may not subsequently be processed for other than > (4) Before an enterprise discloses data concerning a consumer to another enterprise for the",9.636897,0,
+3bb94a50-1e5b-4809-87ea-9b01f0bfbd9c,"(2) The security check of the candidate for the head of Estonian Data Protection Inspectorate shall be carried
+out by the Security Police Board pursuant to the procedure provided for in the Security Authorities Act.
+
+(3) In order to pass the security check, the candidate for the head of Estonian Data Protection Inspectorate shall
+submit a completed form for an applicant for an authorisation to access state secrets classified as top secret to
+the Security Police Board through the Ministry of Just...",consent,Policy Management|Information Security,Notice and Disclosure|Information Protection Processes and Procedures,Estonia,GDPR,"""Personal Data Protection Act - Estonia 2019""",(2) The security check of the candidate for the head of Estonian Data Protection Inspectorate shall be carried,General,consent,,Chapter 1 > § 1. Scope of regulation of Act > Division 1 > § 51. Formation of independent supervisory authority > (1) An independent supervisory authority for the purposes of Article 51(1) of Regulation (EU) 2016/679 of the > § 53. Security check of candidate for head of Estonian Data Protection Inspectorate > (2) The security check of the candidate for the head of Estonian Data Protection Inspectorate shall be carried,9.554747,0,
+0de1f10f-35bb-4b53-83c0-6c1ed85e5ce5,"§ 4. Processing of personal data for journalistic purposes
+Personal data may be processed and disclosed in the media for journalistic purposes without the consent of the
+data subject, in particular disclosed in the media, if there is public interest therefor and this is in accordance with
+the principles of journalism ethics. Disclosure of personal data must not cause excessive damage to the rights of
+any data subjects.
+Personal Data Protection Act
+Page 1 / 19
+
+§ 5. Processing of personal data fo...",consent,Individual Rights Processing|Data Lifecycle Management,"Consent|Data Subject Rights|Lawfulness, Fairness, Transparency",Estonia,GDPR,"""Personal Data Protection Act - Estonia 2019""",§ 4. Processing of personal data for journalistic purposes,General,consent|data subject|personal data|journalistic purposes|academic purposes|artistic expression|literary expression,data subject|Personal data|personal data|Personal Data,Chapter 1 > § 1. Scope of regulation of Act > (1) This Act regulates: > Chapter 2 > § 4. Processing of personal data for journalistic purposes,9.186412,0,
+fc6ae0b6-d0da-4fc8-ace5-3b3aba02ed2f,"§ 46. General terms and conditions of transmission of personal data to third countries and international
+organisations
+
+(1) It is permitted to transmit personal data to third countries or international organisations only in the case all
+the following terms and conditions are met:
+1) transmission is necessary for prevention, detection or processing of offences or execution of punishments;
+2) personal data are transmitted to the controller in any third country or international organisation that is...",consent,Cross-Border Data Strategy|Policy Management|Third-Party Risk Management,"Transfer Mechanisms|Policies, Standards, and Guidelines Management",Estonia,GDPR,"""Personal Data Protection Act - Estonia 2019""",§ 46. General terms and conditions of transmission of personal data to third countries and international,General,consent|controller|personal data|European Commission|Directive (EU) 2016/680,personal data|controller,Chapter 1 > § 1. Scope of regulation of Act > Division 7 > § 46. General terms and conditions of transmission of personal data to third countries and international,9.184596,0,
+e85891ac-d845-4444-97df-c3e8945c1542,"(5) In other cases than those mentioned in subsections (1) - (4), in consultation with the
+Minister of Justice and within the scope of the General Data Protection Regulation, the
+competent minister may lay down more detailed rules regarding the processing of personal
+data covered by Article 1(9) of the General Data Protection Regulation.
+8 .- (1) No data about criminal offences may be processed on behalf of a public ad-
+ministrative authority, unless such processing is necessary for the performa...",consent,Policy Management|Individual Rights Processing|Third-Party Risk Management,Notice and Disclosure|Consent|Data Use,Denmark,GDPR,"""Data Protection Act - Denmark 2018""","(5) In other cases than those mentioned in subsections (1) - (4), in consultation with the",9,explicit consent|data subject|processing of personal data|General Data Protection Regulation,data subject|third party,"Chapter I > Part 3 > (2) To ascertain whether processing for another purpose is compatible with the purpose for > (3) Regardless of subsections (1) and (2), in consultation with the Minister of Justice and > Article 9(1) of the General Data Protection Regulation. > (4) The processing of data covered by Article 9(1) of the General Data Protection > (5) In other cases than those mentioned in subsections (1) - (4), in consultation with the",9.131634,0,
+abe47d39-2668-4d4f-b411-8dcb856d25d6,"40. Any person who has suffered a material or non-material loss as a consequence of an
+unlawful processing activity or any other processing contrary to the provisions of this Act
+and the General Data Protection Regulation shall be entitled to compensation according to
+
+Article 82 of the General Data Protection Regulation.
+41 .- (1) Unless a higher penalty must be imposed under other legislation, a person shall be
+liable to a fine or imprisonment for a term not exceeding six months if that person...",consent,Individual Rights Processing|Design Principles|Cross-Border Data Strategy,Consent|Data Subject Rights|Transfer Mechanisms,Denmark,GDPR,"""Data Protection Act - Denmark 2018""",40. Any person who has suffered a material or non-material loss as a consequence of an,40,consent|data controller obligations|processor|supervisory body|fundamental principles of processing|conditions for consent|rights of data subjects|transfer of personal data,personal data|controller|processor|recipient,Chapter I > Part 12 > (2) Decisions made by the supervisory authorities or their failure to consider a complaint > (3) The data subject or the data subject's representative may bring issues of whether data > 40. Any person who has suffered a material or non-material loss as a consequence of an,9.079863,0,
+0b4e5975-39eb-45f9-ada5-10eacc0f00f6,"CHAPTER 2. ELEMENTARY
+
+ARTICLE 15. STUDENT DATA PRIVACY, ACCESSIBILITY, AND",consent,Policy Management|Data Lifecycle Management|Individual Rights Processing|Information Security,"Policies, Standards, and Guidelines Management",Georgia,FERPA,"""Student Data Privacy Act - Georgia 2015""","ARTICLE 15. STUDENT DATA PRIVACY, ACCESSIBILITY, AND",15,student data privacy,,"TITLE 20. EDUCATION > CHAPTER 2. ELEMENTARY > ARTICLE 15. STUDENT DATA PRIVACY, ACCESSIBILITY, AND",8.980539,0,
+b115e359-e8c9-49ef-b028-502b8978c994,"§17936. Conditions on certain contacts as part of health care operations
+
+(a) Marketing",consent,Policy Management|Individual Rights Processing,"Policies, Standards, and Guidelines Management",US,HIPAA,"""HITECH Act - US Health Information Technology for Economic and Clinical Health 2009""",(a) Marketing,General,consent|marketing,,CHAPTER 156-HEALTH INFORMATION TECHNOLOGY > PART A-IMPROVED PRIVACY PROVISIONS AND SECURITY PROVISIONS > §17931. Application of security provisions and penalties to business associates of > (a) Application of security provisions > (b) Application of civil and criminal penalties > §17936. Conditions on certain contacts as part of health care operations > (a) Marketing,8.7385,0,
+2366fcc3-a985-4826-8bd5-18f16cc47852,"(2) However, the disclosure and use of data as mentioned in subsection (1) may take place
+without consent in the case of general data on customers which form the basis for
+classification into customer categories, and if the conditions of point f) of Article 6(1) of
+the General Data Protection Regulation are complied with.
+
+(3) Data of the type mentioned in Article 9(1) of the General Data Protection Regulation or
+section 8 of this Act may not be disclosed or used pursuant to subsection (2).",consent,Data Lifecycle Management|Individual Rights Processing,"Consent|Lawfulness, Fairness, Transparency",Denmark,GDPR,"""Data Protection Act - Denmark 2018""","(2) However, the disclosure and use of data as mentioned in subsection (1) may take place",6,consent|General Data Protection Regulation|Article 6(1)|Article 9(1)|lawful basis,,"Chapter I > Part 3 > (2) To ascertain whether processing for another purpose is compatible with the purpose for > (3) Regardless of subsections (1) and (2), in consultation with the Minister of Justice and > Article 6 of the General Data Protection Regulation processed solely in connection with > (2) The data covered by subsection (1) may not subsequently be processed for other than > (2) However, the disclosure and use of data as mentioned in subsection (1) may take place",8.451998,0,
+b7b77a9d-bc9e-403b-8078-9b10cb88220e,"(d) It shall not be unlawful under this chapter for a person not acting under color of law to intercept a wire, oral, or
+electronic communication where such person is a party to the communication or where one of the parties to the
+communication has given prior consent to such interception unless such communication is intercepted for the purpose
+of committing any criminal or tortious act in violation of the Constitution or laws of the United States or of any State.
+
+(e) Notwithstanding any other ...",consent,Policy Management|Information Security,Notice and Disclosure|Information Protection Processes and Procedures,US,GDPR,"""Wiretap Act - US 1968""","(d) It shall not be unlawful under this chapter for a person not acting under color of law to intercept a wire, oral, or",General,consent|electronic communication|interception|electronic surveillance,,"§2511. Interception and disclosure of wire, oral, or electronic communications > (1) Except as otherwise specifically provided in this chapter any person who- > (a) intentionally intercepts, endeavors to intercept, or procures any other person to intercept or endeavor to > (b) intentionally uses, endeavors to use, or procures any other person to use or endeavor to use any electronic, > (i) such device is affixed to, or otherwise transmits a signal through, a wire, cable, or other like connection used > (v) such person acts in the District of Columbia, the Commonwealth of Puerto Rico, or any territory or > (d) It shall not be unlawful under this chapter for a person not acting under color of law to intercept a wire, oral, or",8.398945,0,
+1eb469f4-f137-4a89-ade5-b17d070d109a,"""(3) access an electronic communication system used exclusively by a foreign power or agent of a
+foreign power as defined by the Foreign Intelligence Surveillance Act of 1978.""
+CONGRESSIONAL FINDINGS
+Pub. L. 90-351, title III, §801, June 19, 1968, 82 Stat. 211, provided that: ""On the basis of its own
+investigations and of published studies, the Congress makes the following findings:
+""(a) Wire communications are normally conducted through the use of facilities which form part of an
+interstate net...",consent,Cross-Border Data Strategy|Individual Rights Processing|Information Security,Consent|Information Protection Processes and Procedures,US,GDPR,"""Wiretap Act - US 1968""",,General,consent|unauthorized access|interception|privacy|court of competent jurisdiction,,,8.14731,0,
+c0e8c320-070f-4110-99bd-2392ead30755,"(d) GAO report on treatment disclosures
+Not later than one year after February 17, 2009, the Comptroller General of the United States shall submit to the
+Committee on Health, Education, Labor, and Pensions of the Senate and the Committee on Ways and Means and the
+Committee on Energy and Commerce of the House of Representatives a report on the best practices related to the
+disclosure among health care providers of protected health information of an individual for purposes of treatment of
+such ind...",consent,Strategy and Governance|Policy Management|Data Lifecycle Management|Individual Rights Processing,Notice and Disclosure|Consent|Data Quality|Regulatory Affairs,US,HIPAA,"""HITECH Act - US Health Information Technology for Economic and Clinical Health 2009""",(d) GAO report on treatment disclosures,1178,informed consent|protected health information|electronic health records|health information exchanges|regional health information organizations,5 years,"CHAPTER 156-HEALTH INFORMATION TECHNOLOGY > PART B-RELATIONSHIP TO OTHER LAWS; REGULATORY REFERENCES; EFFECTIVE DATE; REPORTS > §17951. Relationship to other laws > (a) Application of HIPAA State preemption > Section 1178 of the Social Security Act (42 U.S.C. 1320d-7) shall apply to a provision or requirement under this > §17953. Studies, reports, guidance > (d) GAO report on treatment disclosures",7.955375,0,
+adff27c0-146d-4a94-8770-e6c0f3737c13,"CHAPTER 2. ELEMENTARY
+
+ARTICLE 15. STUDENT DATA PRIVACY, ACCESSIBILITY, AND",consent,Policy Management|Data Lifecycle Management|Individual Rights Processing|Information Security,"Policies, Standards, and Guidelines Management|Data Subject Rights|Notice and Disclosure",Georgia,FERPA,"""Student Data Privacy Act - Georgia 2015""","ARTICLE 15. STUDENT DATA PRIVACY, ACCESSIBILITY, AND",15,student data privacy,,"TITLE 20. EDUCATION > CHAPTER 2. ELEMENTARY > ARTICLE 15. STUDENT DATA PRIVACY, ACCESSIBILITY, AND",7.723524,0,
+3933bd8e-bbf1-4c4a-94a9-3bcfbacb8c3c,"CHAPTER 2. ELEMENTARY
+
+ARTICLE 15. STUDENT DATA PRIVACY, ACCESSIBILITY, AND",consent,Policy Management|Data Lifecycle Management|Individual Rights Processing|Information Security,"Policies, Standards, and Guidelines Management",Georgia,FERPA,"""Student Data Privacy Act - Georgia 2015""","ARTICLE 15. STUDENT DATA PRIVACY, ACCESSIBILITY, AND",15,student data privacy,,"TITLE 20. EDUCATION > CHAPTER 2. ELEMENTARY > ARTICLE 15. STUDENT DATA PRIVACY, ACCESSIBILITY, AND",7.6796827,0,
+29825a84-f9bd-4d95-b82a-4e7fb312b841,"CHAPTER 2. ELEMENTARY
+
+ARTICLE 15. STUDENT DATA PRIVACY, ACCESSIBILITY, AND",consent,Data Lifecycle Management|Individual Rights Processing|Information Security,Information Protection Processes and Procedures,Georgia,FERPA,"""Student Data Privacy Act - Georgia 2015""","ARTICLE 15. STUDENT DATA PRIVACY, ACCESSIBILITY, AND",15,student data privacy,,"TITLE 20. EDUCATION > CHAPTER 2. ELEMENTARY > ARTICLE 15. STUDENT DATA PRIVACY, ACCESSIBILITY, AND",7.6491838,0,
+d062d013-d9f7-4ee8-83a9-7785dd572c97,"(i) is reasonable in amount;
+(B) each of the following conditions apply-
+
+(i) the communication is made by the covered entity; and
+(ii) the covered entity making such communication obtains from the recipient of the communication, in
+accordance with section 164.508 of title 45, Code of Federal Regulations, a valid authorization (as described in
+paragraph (b) of such section) with respect to such communication; or
+(C) each of the following conditions apply-",consent,Individual Rights Processing|Policy Management,Consent,US,HIPAA,"""HITECH Act - US Health Information Technology for Economic and Clinical Health 2009""",(i) the communication is made by the covered entity; and,General,authorization,recipient,CHAPTER 156-HEALTH INFORMATION TECHNOLOGY > PART A-IMPROVED PRIVACY PROVISIONS AND SECURITY PROVISIONS > §17931. Application of security provisions and penalties to business associates of > (a) Application of security provisions > (b) Application of civil and criminal penalties > §17936. Conditions on certain contacts as part of health care operations > (i) the communication is made by the covered entity; and,7.6106853,0,
+e9c1bb2b-8255-40a5-8a85-7333c18ca7a2,"CHAPTER 2. ELEMENTARY
+
+ARTICLE 15. STUDENT DATA PRIVACY, ACCESSIBILITY, AND",consent,Policy Management|Data Lifecycle Management|Individual Rights Processing|Information Security,"Policies, Standards, and Guidelines Management",Georgia,FERPA,"""Student Data Privacy Act - Georgia 2015""","ARTICLE 15. STUDENT DATA PRIVACY, ACCESSIBILITY, AND",15,student data privacy,,"TITLE 20. EDUCATION > CHAPTER 2. ELEMENTARY > ARTICLE 15. STUDENT DATA PRIVACY, ACCESSIBILITY, AND",7.126047,0,
+ededf2be-d5b0-40e9-a830-e2d9a678f83a,"CHAPTER 2. ELEMENTARY
+
+ARTICLE 15. STUDENT DATA PRIVACY, ACCESSIBILITY, AND",consent,Data Lifecycle Management|Individual Rights Processing|Information Security,Data Subject Rights|Information Protection Processes and Procedures,Georgia,FERPA,"""Student Data Privacy Act - Georgia 2015""","ARTICLE 15. STUDENT DATA PRIVACY, ACCESSIBILITY, AND",15,student data privacy,,"TITLE 20. EDUCATION > CHAPTER 2. ELEMENTARY > ARTICLE 15. STUDENT DATA PRIVACY, ACCESSIBILITY, AND",7.126047,0,
+16af8b78-7f26-4535-afd0-6768d5dada44,"(2) If the authorisation specified in clause (3) 1) of this section for transmission of personal data cannot be
+obtained in due time and transmission of personal data is necessary to prevent any immediate and serious threats
+to the public order of the state or any third country or to protect essential interest of the state, the personal data
+may be transmitted without the authorisation specified in clause (3) 1) of this section. The competent authority
+of the Member State of the European Union w...",consent,Cross-Border Data Strategy|Data Lifecycle Management|Information Security,"Transfer Mechanisms|Lawfulness, Fairness, Transparency|Information Protection Processes and Procedures",Estonia,GDPR,"""Personal Data Protection Act - Estonia 2019""",(2) If the authorisation specified in clause (3) 1) of this section for transmission of personal data cannot be,General,consent|controller|processor|personal data|transmission of personal data|protection level of personal data,immediately|processor|personal data|controller,Chapter 1 > § 1. Scope of regulation of Act > Division 7 > § 46. General terms and conditions of transmission of personal data to third countries and international > (1) It is permitted to transmit personal data to third countries or international organisations only in the case all > (2) If the authorisation specified in clause (3) 1) of this section for transmission of personal data cannot be,7.085763,0,
+56eddccf-f604-465f-b73e-7165d89e7107,"CHAPTER 2. ELEMENTARY
+
+ARTICLE 15. STUDENT DATA PRIVACY, ACCESSIBILITY, AND",consent,Policy Management|Data Lifecycle Management|Individual Rights Processing|Information Security,"Policies, Standards, and Guidelines Management",Georgia,FERPA,"""Student Data Privacy Act - Georgia 2015""","ARTICLE 15. STUDENT DATA PRIVACY, ACCESSIBILITY, AND",15,student data privacy,,"TITLE 20. EDUCATION > CHAPTER 2. ELEMENTARY > ARTICLE 15. STUDENT DATA PRIVACY, ACCESSIBILITY, AND",6.4331846,0,
+405b10a9-6a96-4f0a-bfac-f3111b5478ed,"Article 42 Telecommunication data.
+Data on the electronic communications traffic of users stored and processed by an electronic communications undertaking shall be deleted or
+make anonymous when they are no longer needed for the processing of a certain electronic transmission.
+Data on electronic communications use that are necessary for invoicing for subscribers and settlement for
+interconnection can be stored until an account can no longer be challenged or expires.
+[Notwithstanding the provisio...",consent,Data Lifecycle Management|Information Security,"Data Retention|Lawfulness, Fairness, Transparency|Record of Processing",Iceland,GDPR,"""Telecommunications Act - Iceland 2003""",Article 42 Telecommunication data.,42,consent|processing|electronic communications traffic|data protection authority|deletion of data|subscriber's consent|marketing|value-added services|storage of data|personal data,personal data,Chapter I. Objectives and scope. Electronic Communications Board. > Article 1 Objectives and scope. > Article 2 Electronic Communications Board. > Chapter V. Markets. > Article 42 Telecommunication data.,6.0691013,0,
+65752e3d-a78d-4bf6-bfa5-da75192ffa01,"CHAPTER 2. ELEMENTARY
+
+ARTICLE 15. STUDENT DATA PRIVACY, ACCESSIBILITY, AND",consent,Data Lifecycle Management|Individual Rights Processing|Information Security,Data Subject Rights|Information Protection Processes and Procedures,Georgia,FERPA,"""Student Data Privacy Act - Georgia 2015""","ARTICLE 15. STUDENT DATA PRIVACY, ACCESSIBILITY, AND",15,student data privacy,,"TITLE 20. EDUCATION > CHAPTER 2. ELEMENTARY > ARTICLE 15. STUDENT DATA PRIVACY, ACCESSIBILITY, AND",5.8998756,0,
+5a3c0a04-9829-422a-a994-85f3bf5d9159,"Article 32Of the minimum protocols of action. Those responsible must
+prepare a minimum protocol of action, which must be transmitted to the person in
+charge for its faithful compliance and where at least the following must be specified:
+to)Prepare mandatory and enforceable privacy policies and manuals within
+the organization of the person responsible;
+b)Put into practice a manual for training, updating and raising awareness of
+personnel on the obligations regarding personal data protection;
+c)Es...",consent,Policy Management|Training and Awareness|Individual Rights Processing|Data Lifecycle Management|Third-Party Risk Management,"Policies, Standards, and Guidelines Management|Training, Awareness, and Communication Strategy|Data Subject Rights|Record of Processing|Consent|Third-Party Contract and Service Initiation",Costa Rica,GDPR,"""Regulation to Personal Data Protection Law - Costa Rica 2012""",Article 32Of the minimum protocols of action. Those responsible must,32,consent|controller|right to access|right to rectification|right to modify|right to block|right to delete|privacy policies|personal data protection|internal control procedure,personal data,"Chapter I > Article 1. Object. The purpose of these provisions is to regulate the Law on > Article 2. Definitions, acronyms and acronyms. In addition to the definitions > Chapter IV > Article 32Of the minimum protocols of action. Those responsible must",5.880177,0,
+5108c724-59f2-4ef6-aaea-cc9004462587,"§ 6. Processing of personal data for needs of scientific and historical research and official statistics
+
+(1) Personal data may be processed without the consent of the data subject for the needs of scientific and
+historical research and official statistic, in particular in a pseudonymised format or a format which provides
+equivalent level of protection. Prior to transmission of personal data for processing for the needs of scientific
+and historical research or official statistics, personal data ...",consent,Data Lifecycle Management|Design Principles|Information Security,"Privacy and Security Enhancing Techniques|Data Minimization|Lawfulness, Fairness, Transparency",Estonia,GDPR,"""Personal Data Protection Act - Estonia 2019""",§ 6. Processing of personal data for needs of scientific and historical research and official statistics,General,personal data|consent|data subject|pseudonymised|data protection,data subject|Personal data|personal data,Chapter 1 > § 1. Scope of regulation of Act > (1) This Act regulates: > Chapter 2 > § 4. Processing of personal data for journalistic purposes > § 6. Processing of personal data for needs of scientific and historical research and official statistics,5.844522,0,
+5ff243bb-696a-4b3e-8a0e-7ab3c5526dab,"§2511. Interception and disclosure of wire, oral, or electronic communications
+prohibited
+
+(1) Except as otherwise specifically provided in this chapter any person who-",consent,Information Security|Policy Management,Notice and Disclosure,US,GDPR,"""Wiretap Act - US 1968""",(1) Except as otherwise specifically provided in this chapter any person who-,General,interception|disclosure|wire|oral|electronic communications,,"§2511. Interception and disclosure of wire, oral, or electronic communications > (1) Except as otherwise specifically provided in this chapter any person who-",5.8072367,0,
+24ed0c77-079f-47f4-88e6-62a238a9824f,"(2) The processing of data covered by Article 9(1) of the General Data Protection
+Regulation may take place if the processing is necessary for the purposes of meeting and
+respecting the data controller's or the data subject's labour law obligations and specific
+rights, see point b) of Article 9(1) of the General Data Protection Regulation.
+
+(3) The processing of data covered by Article 9(1) of the General Data Protection
+Regulation may take place if the processing is necessary for the purposes o...",consent,Individual Rights Processing|Data Lifecycle Management,"Lawfulness, Fairness, Transparency|Record of Processing",Denmark,GDPR,"""Data Protection Act - Denmark 2018""",(2) The processing of data covered by Article 9(1) of the General Data Protection,General,data controller|data subject|processing|labour law obligations|specific rights|preventive medicine|medical diagnosis|provision of care|treatment|management of medical and health care services|health professional|professional secrecy,data subject|controller,"Chapter I > Part 3 > (2) To ascertain whether processing for another purpose is compatible with the purpose for > (3) Regardless of subsections (1) and (2), in consultation with the Minister of Justice and > (2) If point a) of Article 6(1) of the General Data Protection Regulation is applied in > (3) If the child is under 13, the processing is only lawful if and to the extent that consent is > (2) The processing of data covered by Article 9(1) of the General Data Protection",5.326706,0,
+0c32774c-23be-4ef0-a083-321ca8fa476e,"Article 45 Subscriber lists.
+Page 21
+Subscribers to electronic communications services shall have the right to be registered in public numbers and
+address files and view information recorded about them. Subscribers are required to be unregistered telephone
+directory database and you may not charge them for it.
+Before personal information about subscribers is recorded in printed or electronic records
+subscribers, they shall have access to the information. Personal information recorded in print
+an...",consent,Individual Rights Processing|Data Lifecycle Management|Policy Management,Consent|Data Subject Rights|Data Minimization|Notice and Disclosure,Iceland,GDPR,"""Telecommunications Act - Iceland 2003""",Article 45 Subscriber lists.,45,consent|right to access|right to object|controller|processor|data minimization|purpose limitation,,Chapter I. Objectives and scope. Electronic Communications Board. > Article 1 Objectives and scope. > Article 2 Electronic Communications Board. > Chapter V. Markets. > Article 45 Subscriber lists.,5.267561,0,
+fbfdc525-5c08-43b2-a8cf-74491fa49ebf,"(4) Direct or indirect payment
+For purposes of paragraph (2), the term ""direct or indirect payment"" shall not include any payment for treatment
+(as defined in section 164.501 of title 45, Code of Federal Regulations) of an individual.
+
+(b) Opportunity to opt out of fundraising
+The Secretary shall by rule provide that any written fundraising communication that is a healthcare operation as
+defined under section 164.501 of title 45, Code of Federal Regulations, shall, in a clear and conspicuous man...",consent,Individual Rights Processing|Policy Management,Consent|Data Subject Rights,US,HIPAA,"""HITECH Act - US Health Information Technology for Economic and Clinical Health 2009""",(4) Direct or indirect payment,General,opt out|revocation of authorization,recipient,CHAPTER 156-HEALTH INFORMATION TECHNOLOGY > PART A-IMPROVED PRIVACY PROVISIONS AND SECURITY PROVISIONS > §17931. Application of security provisions and penalties to business associates of > (a) Application of security provisions > (b) Application of civil and criminal penalties > §17936. Conditions on certain contacts as part of health care operations > (4) Direct or indirect payment,4.1323004,0,
+8007180d-10e5-47db-91f6-fb221e18b874,"Article 4: Articles 13, 14, 24, 40 and 102 are added as follows:
+""Article 13 bis: Everyone has the right to be informed before information concerning them is
+communicated to third parties or used on behalf of third parties for prospecting or profiling
+purposes.""
+""Article 14 bis: Anyone proving their identity has the right to receive the personal data
+concerning them that they have provided to a data controller, in a digital file, commonly used
+and machine-readable. The latter has the right to tr...",consent,Individual Rights Processing|Data Lifecycle Management,"Data Subject Rights|Lawfulness, Fairness, Transparency",Republic of Gabon,GDPR,"""Personal Data Protection Ordinance - Gabon 2020""","Article 4: Articles 13, 14, 24, 40 and 102 are added as follows:",4,explicit consent|controller|data controller|right to portability|profiling|automated processing|sensitive personal data|legitimate interests|personal data|protection of personal data|privacy,personal data|data subject|Personal Data|controller,"Article 1er: The provisions of Articles 13, 14, 20, 37, 101, 102 and 104 are amended and now > Article 2: Three bullet points are added to Article 6 which read as follows: > Article 3: Article 51 is added as follows: > Article 4: Articles 13, 14, 24, 40 and 102 are added as follows:",3.7986023,0,
+a3fcac52-2216-48ed-9d4f-fe7f54dfcdd8,"(f) All income from deposits shall belong to the depositing organization and shall be
+paid to it as it becomes available. A health maintenance organization that has made a
+securities deposit may withdraw that deposit or any part thereof after making a
+substitute deposit of cash, securities, or any combination of these or other measures of
+equal amount and value. Any securities shall be approved by the commissioner before
+being substituted.
+
+(g) In any year in which an annual deposit is not requi...",consent,Policy Management|Strategy and Governance,"Policies, Standards, and Guidelines Management|Regulatory Affairs|Compliance Monitoring",Alabama,HIPAA,"""Health Maintenance Organization Act - Alabama 1986""",(f) All income from deposits shall belong to the depositing organization and shall be,27,withdrawal of consent,"immediately|250,000|100,000","Section 27-21A-1 > (1) AGENT. A person who is appointed or employed by a health maintenance > (2) BASIC HEALTH CARE SERVICES. Emergency care, inpatient hospital and > (3) COMMISSIONER. The Commissioner of Insurance. > (4) ENROLLEE. An individual who is enrolled in a health maintenance organization. > Section 27-21A-12 > (f) All income from deposits shall belong to the depositing organization and shall be",2.9555159,0,
+092341ab-ab25-4c92-ab9e-d554832ffa05,"(b) The first time a health maintenance organization is offered by an employer, either
+public or private, each covered employee must make an affirmative written selection
+among the different alternatives included in the health benefits plan. Thereafter, those
+who wish to change from one plan to another will be allowed to do so annually,
+provided, that nothing in this section shall prevent any health maintenance
+organization or insurer from requiring evidence of insurability or imposing
+underwrit...",consent,Policy Management|Individual Rights Processing,Notice and Disclosure|Consent,Alabama,HIPAA,"""Health Maintenance Organization Act - Alabama 1986""","(b) The first time a health maintenance organization is offered by an employer, either",27,affirmative written selection,,"Title 10, Chapter 4, Article 6 and Title 27, an insurer or a health care service plan may > Section 27-21A-16 > (a) The commissioner may make an examination of the affairs of any health > (b) The State Health Officer may make an examination concerning health care service > (c) Every health maintenance organization shall submit its relevant books and records > Section 27-21A-32 > (b) The first time a health maintenance organization is offered by an employer, either",2.7094824,0,
+4b15bd48-d0e7-4863-a341-4b623ac1b007,"(1) In general
+Except as provided in paragraph (2), a covered entity or business associate shall not directly or indirectly receive
+remuneration in exchange for any protected health information of an individual unless the covered entity obtained
+from the individual, in accordance with section 164.508 of title 45, Code of Federal Regulations, a valid authorization
+that includes, in accordance with such section, a specification of whether the protected health information can be
+further exchanged f...",consent,Individual Rights Processing|Data Lifecycle Management,"Consent|Lawfulness, Fairness, Transparency",US,HIPAA,"""HITECH Act - US Health Information Technology for Economic and Clinical Health 2009""",(1) In general,1178,authorization|protected health information|business associate agreement,,"CHAPTER 156-HEALTH INFORMATION TECHNOLOGY > PART B-RELATIONSHIP TO OTHER LAWS; REGULATORY REFERENCES; EFFECTIVE DATE; REPORTS > §17951. Relationship to other laws > (a) Application of HIPAA State preemption > Section 1178 of the Social Security Act (42 U.S.C. 1320d-7) shall apply to a provision or requirement under this > §17953. Studies, reports, guidance > (1) In general",2.708277,0,
+86949535-56a7-4aad-8340-09a2d2e9e776,"4. A health carrier shall have a procedure by which an enrollee with a life-threatening
+condition or disease, or a degenerative and disabling condition or disease, either of which
+requires specialized medical care over a prolonged period of time, may receive a referral
+to a specialty care center with expertise in treating the life-threatening or degenerative
+and disabling disease or condition. If the health carrier, or the primary care provider or a
+specialist designated pursuant to this section...",consent,Policy Management|Individual Rights Processing,"Policies, Standards, and Guidelines Management|Consent",Missouri,HIPAA,"""Health Services Corporations Act - Missouri 1983""",4. A health carrier shall have a procedure by which an enrollee with a life-threatening,4,,,"(1) ""Corporation"", a domestic health services corporation subject to the provisions of > (2) ""Director"", the director of the department of commerce and insurance of the state of > (3) ""Health services"", the health care and services provided by hospitals, or other > (4) ""Health services corporation"", any not-for-profit corporation heretofore or > (5) ""Member"" or ""beneficiary"", a natural person who is entitled to receive health > (6) ""Membership contract"", any agreement, contract or certificate by which a health > (5) Requests a hearing or review pursuant to this section. > 4. A health carrier shall have a procedure by which an enrollee with a life-threatening",2.5766497,0,
+69318ae5-1387-438d-9bb8-d11d4caa000c,"Chapter V
+Processing authorisation
+
+Part 9
+Authorisation to process data
+26 .- (1) Before a data processor initiates processing to be carried out for a private data
+controller, authorisation has to be obtained from the Data Protection Agency where
+1) the processing of data is carried out for the purpose of warning others against having
+business relations or accepting employment with a data subject,
+2) the processing is carried out for the purpose of commercial disclosure of data for the
+assessme...",consent,Data Lifecycle Management|Third-Party Risk Management,"Third-Party Contract and Service Initiation|Lawfulness, Fairness, Transparency|Record of Processing",Denmark,GDPR,"""Data Protection Act - Denmark 2018""",Part 9,General,data processor|data controller|processing|Data Protection Agency,data subject|controller|processor,Chapter I > Part 9,2.5108964,0,
+fc1b2de3-c0dc-4696-8a6a-fad6b6b7a1a0,"(7) ""Intermediary"", a person authorized to negotiate and execute provider contracts
+with health carriers on behalf of health care providers or on behalf of a network;
+
+(8) ""Managed care plan"", a health benefit plan that either requires an enrollee to use,
+or creates incentives, including financial incentives, for an enrollee to use health care
+providers managed, owned, under contract with or employed by the health carrier;",consent,Third-Party Risk Management|Policy Management,"Third-Party Contract and Service Initiation|Policies, Standards, and Guidelines Management",Missouri,HIPAA,"""Health Services Corporations Act - Missouri 1983""","(7) ""Intermediary"", a person authorized to negotiate and execute provider contracts",General,,,"(1) ""Corporation"", a domestic health services corporation subject to the provisions of > (2) ""Director"", the director of the department of commerce and insurance of the state of > (3) ""Health services"", the health care and services provided by hospitals, or other > (4) ""Health services corporation"", any not-for-profit corporation heretofore or > (5) ""Member"" or ""beneficiary"", a natural person who is entitled to receive health > (6) ""Membership contract"", any agreement, contract or certificate by which a health > (7) ""Intermediary"", a person authorized to negotiate and execute provider contracts",2.461776,0,
+c8879bf2-af82-4301-ba14-0094a71b15fa,"19. - 21. gr. Act on the Security of Network and Information Systems of Important Infrastructure.] »,
+„Act No. 78/2019, Article 30.
+[47. gr. d. Regulatory authority.
+The Minister, after receiving a statement from the Data Protection Authority and the National Commissioner of Police, shall issue further instructions in
+Regulation „on the activities of a network security team in accordance with this Act. It shall, among other things, deal with
+handling notifications and classification systems for ...",consent,Policy Management|Information Security|Incident Response|Individual Rights Processing,"Notice and Disclosure|Policies, Standards, and Guidelines Management|Incident Management|Information Protection Processes and Procedures",Iceland,GDPR,"""Telecommunications Act - Iceland 2003""","19. - 21. gr. Act on the Security of Network and Information Systems of Important Infrastructure.] »,",19,consent|privacy policy|personal information|processing|data protection authority|security incident,,"Chapter I. Objectives and scope. Electronic Communications Board. > Article 1 Objectives and scope. > Article 2 Electronic Communications Board. > Chapter V. Markets. > Article 14 Act on the Security of Network and Information Systems of Important Infrastructure. The cyber security team shall promptly urge > 19. - 21. gr. Act on the Security of Network and Information Systems of Important Infrastructure.] »,",2.2412384,0,
+4d413bad-c7a5-498b-94af-dcdd5b998bae,"Article 50 Access locks.
+Electronic communications undertakings entrusted with universal service shall, at the request of the subscriber, lock in certain
+
+Article 51 Number display.
+types of calls or for calls in certain number ranges, free of charge.
+Electronic communications companies that operate public [voice and mobile phone services] „shall offer users
+number publication in accordance with the provisions of the Act on Personal Data Protection [and the Processing of Personal Data]. „Post an...",consent,Individual Rights Processing|Policy Management,Data Subject Rights|Notice and Disclosure,Iceland,GDPR,"""Telecommunications Act - Iceland 2003""",Article 51 Number display.,51,personal data|data protection|processing of personal data,Personal Data,Chapter I. Objectives and scope. Electronic Communications Board. > Article 1 Objectives and scope. > Article 2 Electronic Communications Board. > Chapter X [Voice and mobile services.] . > Article 51 Number display.,2.1885767,0,
+637f3fc2-3321-497f-953f-2cd4a05f2da9,"(1) In general
+A communication by a covered entity or business associate that is about a product or service and that encourages
+recipients of the communication to purchase or use the product or service shall not be considered a health care
+operation for purposes of subpart E of part 164 of title 45, Code of Federal Regulations, unless the communication is
+made as described in subparagraph (i), (ii), or (iii) of paragraph (1) of the definition of marketing in section 164.501
+of such title.
+
+(2) P...",consent,Policy Management|Data Lifecycle Management|Individual Rights Processing,"Notice and Disclosure|Lawfulness, Fairness, Transparency",US,HIPAA,"""HITECH Act - US Health Information Technology for Economic and Clinical Health 2009""",(1) In general,1178,covered entity|business associate|health care operation|marketing|payment|communication,recipient,"CHAPTER 156-HEALTH INFORMATION TECHNOLOGY > PART B-RELATIONSHIP TO OTHER LAWS; REGULATORY REFERENCES; EFFECTIVE DATE; REPORTS > §17951. Relationship to other laws > (a) Application of HIPAA State preemption > Section 1178 of the Social Security Act (42 U.S.C. 1320d-7) shall apply to a provision or requirement under this > §17953. Studies, reports, guidance > (1) In general",2.076882,0,
+611d634d-7d7b-484a-9fb4-1668748eb911,"(c) Indemnity benefits, in addition to those relating to out-of-area and emergency
+services, provided through insurers or health services corporations;
+
+(7) Offer as an option one or more health benefit plans which contain deductibles,
+coinsurance, coinsurance differentials, or variable co-payments. Health benefit plans
+offered under this section that contain deductibles shall be permitted only when
+combined with any health savings account or health reimbursement account as described
+in the Medi...",consent,Policy Management|Strategy and Governance,"Policies, Standards, and Guidelines Management|Regulatory Affairs|Program Principles and Strategy",Missouri,HIPAA,"""Health Services Corporations Act - Missouri 1983""","(c) Indemnity benefits, in addition to those relating to out-of-area and emergency",General,health savings account|health reimbursement account,,"(1) ""Corporation"", a domestic health services corporation subject to the provisions of > (2) ""Director"", the director of the department of commerce and insurance of the state of > (3) ""Health services"", the health care and services provided by hospitals, or other > (4) ""Health services corporation"", any not-for-profit corporation heretofore or > (5) ""Member"" or ""beneficiary"", a natural person who is entitled to receive health > (6) ""Membership contract"", any agreement, contract or certificate by which a health > (c) Indemnity benefits, in addition to those relating to out-of-area and emergency",1.8243864,0,
+1a6f8165-e342-48ff-9b7c-8a35a1f92691,"(2) the protected health information pertains solely to a health care item or service for which the health care
+provider involved has been paid out of pocket in full.
+
+(b) Disclosures required to be limited to the limited data set or the minimum necessary",consent,Individual Rights Processing|Data Lifecycle Management,Data Subject Rights|Data Minimization,US,HIPAA,"""HITECH Act - US Health Information Technology for Economic and Clinical Health 2009""",(2) the protected health information pertains solely to a health care item or service for which the health care,General,protected health information|limited data set|minimum necessary,,CHAPTER 156-HEALTH INFORMATION TECHNOLOGY > PART A-IMPROVED PRIVACY PROVISIONS AND SECURITY PROVISIONS > §17931. Application of security provisions and penalties to business associates of > (a) Application of security provisions > (b) Application of civil and criminal penalties > §17935. Restrictions on certain disclosures and sales of health information; > (2) the protected health information pertains solely to a health care item or service for which the health care,1.823163,0,
+9ff32e94-7735-47ed-b59b-6f3c94fd9edb,"(1) In the case of group health plans offered to employers of fifty or fewer employees,
+the decision to accept or reject the additional open referral plan offering shall be made by
+the group contract holder. For health plans marketed to employers of over fifty
+employees, the decision to accept or reject shall be made by the employee;
+
+(2) Contracts currently in existence shall offer the additional open referral health plan
+at the next annual renewal after August 28, 1997; however, multiyear grou...",consent,Policy Management,"Notice and Disclosure|Policies, Standards, and Guidelines Management",Missouri,HIPAA,"""Health Services Corporations Act - Missouri 1983""","(1) In the case of group health plans offered to employers of fifty or fewer employees,",General,group contract holder,,"(1) ""Corporation"", a domestic health services corporation subject to the provisions of > (2) ""Director"", the director of the department of commerce and insurance of the state of > (3) ""Health services"", the health care and services provided by hospitals, or other > (4) ""Health services corporation"", any not-for-profit corporation heretofore or > (5) ""Member"" or ""beneficiary"", a natural person who is entitled to receive health > (6) ""Membership contract"", any agreement, contract or certificate by which a health > (1) In the case of group health plans offered to employers of fifty or fewer employees,",1.6011513,0,
+ef36efaf-6899-4335-aecb-87a796ad58b8,"Section 27-21A-26
+State Health Officer's and commissioner's authority to contract.
+The State Health Officer and the commissioner, in carrying out their obligations under
+this chapter, may contract with qualified persons to make recommendations
+concerning the determinations required to be made by them. Such recommendations
+may be accepted in full or in part by the State Health Officer or commissioner.
+(Acts 1986, No. 86-471, p. 854, §26.)
+
+Section 27-21A-27
+Acquisition of control of or merger of ...",consent,Strategy and Governance|Third-Party Risk Management,Regulatory Affairs|Third-Party Contract and Service Initiation,Alabama,HIPAA,"""Health Maintenance Organization Act - Alabama 1986""",Section 27-21A-26,27,control,,"Title 10, Chapter 4, Article 6 and Title 27, an insurer or a health care service plan may > Section 27-21A-16 > (a) The commissioner may make an examination of the affairs of any health > (b) The State Health Officer may make an examination concerning health care service > (c) Every health maintenance organization shall submit its relevant books and records > Section 27-21A-26",0.037640743,0,
+f24fcc14-8c6c-4fa1-902e-9112db094c3e,"(2) To demonstrate the effectiveness of the operator's products or services, including their marketing.
+
+(f) This Code section shall not be construed to limit the authority of a law enforcement agency to obtain
+any content or student data from an operator as authorized by law or pursuant to an order of a court of
+competent jurisdiction.",consent,Data Lifecycle Management|Information Security,"Lawfulness, Fairness, Transparency|Data Retention",Georgia,FERPA,"""Student Data Privacy Act - Georgia 2015""","(2) To demonstrate the effectiveness of the operator's products or services, including their marketing.",15,operator|student data|law enforcement agency,,"TITLE 20. EDUCATION > CHAPTER 2. ELEMENTARY > ARTICLE 15. STUDENT DATA PRIVACY, ACCESSIBILITY, AND > § 20-2-666. Activities by operators; limitations > (a) An operator shall not knowingly engage in any of the following activities with respect to such > (1) Use student data to engage in behaviorally targeted advertising on the operator's site, service, or > (2) To demonstrate the effectiveness of the operator's products or services, including their marketing.",0.037640743,0,
+42a54e70-7daa-4db4-adf5-d7ef400580c1,"(m) Nothing in this Code section or this article prevents the department or local board of education and
+their employees from recommending, directly or via a product or service, any educational materials,
+online content, services, or other products to any student or his or her family if the department or local
+board of education determines that such products will benefit the student and does not receive
+compensation for developing, enabling, or communicating such recommendations.
+History
+Code 19...",consent,Policy Management|Strategy and Governance,"Notice and Disclosure|Policies, Standards, and Guidelines Management|Regulatory Affairs",Georgia,FERPA,"""Student Data Privacy Act - Georgia 2015""",(m) Nothing in this Code section or this article prevents the department or local board of education and,15,transparency,,"TITLE 20. EDUCATION > CHAPTER 2. ELEMENTARY > ARTICLE 15. STUDENT DATA PRIVACY, ACCESSIBILITY, AND > § 20-2-666. Activities by operators; limitations > (a) An operator shall not knowingly engage in any of the following activities with respect to such > (1) Use student data to engage in behaviorally targeted advertising on the operator's site, service, or > (m) Nothing in this Code section or this article prevents the department or local board of education and",0.037640743,0,
+6b43733d-965f-42c0-8af6-893c1296e399,"Article 72 Suspension of telecommunications.
+During times of war, the [Minister] may, in accordance with a decision of the Government, order the suspension of electronic
+communicationswhich are considered dangerous to the security of the state.
+In emergencies, such as volcanic eruptions, earthquakes, avalanches, etc., the [Minister] „may, upon request
+National Commissioner of Police ... . prescribes restrictions on electronic communications that may interfere with emergency and security communic...",consent,Policy Management|Information Security|Incident Response,"Policies, Standards, and Guidelines Management|Incident Management|Recovery Planning",Iceland,GDPR,"""Telecommunications Act - Iceland 2003""",Article 72 Suspension of telecommunications.,72,compliance|security|authorization|general authorization|special obligations|rights|breach|rectify|violations|measures|decision,,Chapter I. Objectives and scope. Electronic Communications Board. > Article 1 Objectives and scope. > Article 2 Electronic Communications Board. > Chapter X [Voice and mobile services.] . > Article 72 Suspension of telecommunications.,0.037640743,0,
+0cafd5cb-f7ed-487d-8fd5-6715fe7369c8,"(16) ""Uncovered expenditures"", the costs of health care services that are covered by a
+health maintenance organization, but that are not guaranteed, insured, or assumed by a
+person or organization other than the health maintenance organization, or those costs
+which a provider has not agreed to forgive enrollees if the provider is not paid by the
+health maintenance organization.
+(L. 1983 H.B. 127, A.L. 1997 H.B. 335, A.L. 2007 S.B. 66)
+354.400 8/28/2007
+354.405. Certificate of authority, who may ...",consent,Strategy and Governance|Third-Party Risk Management,Regulatory Affairs|Third-Party Contract and Service Initiation,Missouri,HIPAA,"""Health Services Corporations Act - Missouri 1983""","(16) ""Uncovered expenditures"", the costs of health care services that are covered by a",General,compliance,,"(1) ""Corporation"", a domestic health services corporation subject to the provisions of > (2) ""Director"", the director of the department of commerce and insurance of the state of > (3) ""Health services"", the health care and services provided by hospitals, or other > (4) ""Health services corporation"", any not-for-profit corporation heretofore or > (5) ""Member"" or ""beneficiary"", a natural person who is entitled to receive health > (6) ""Membership contract"", any agreement, contract or certificate by which a health > (16) ""Uncovered expenditures"", the costs of health care services that are covered by a",0.037640743,0,
+b7b4214e-98d4-4cda-9b90-2d04f854903c,"(c) A distribution from the health savings account or health reimbursement account to
+pay a health care provider for a qualified medical expense is made within thirty days of
+the submission of a claim.
+
+2. Prior to the exercise of any power granted in subdivision (1) or (2) of subsection 1 of
+this section, involving an amount in excess of five hundred thousand dollars, a health
+maintenance organization shall file notice, with adequate supporting information, with
+the director. The director shall...",consent,Policy Management|Strategy and Governance,Notice and Disclosure|Regulatory Affairs|Compliance Monitoring,Missouri,HIPAA,"""Health Services Corporations Act - Missouri 1983""",(c) A distribution from the health savings account or health reimbursement account to,General,,,"(1) ""Corporation"", a domestic health services corporation subject to the provisions of > (2) ""Director"", the director of the department of commerce and insurance of the state of > (3) ""Health services"", the health care and services provided by hospitals, or other > (4) ""Health services corporation"", any not-for-profit corporation heretofore or > (5) ""Member"" or ""beneficiary"", a natural person who is entitled to receive health > (6) ""Membership contract"", any agreement, contract or certificate by which a health > (c) A distribution from the health savings account or health reimbursement account to",0.037640743,0,
+b6880e0c-5cb3-452c-b666-09386c9f53c7,"(6) The contracting with an insurance company licensed in this state to do business in
+this state, or a health care service plan authorized to transact business in this state, for
+the provision of insurance, indemnity, or reimbursement against the cost of health care
+services provided by the health maintenance organization.
+
+(7) The offering of other health care services, in addition to basic health care services
+or other required health care services.
+(b)(1) A health maintenance organization sh...",consent,Strategy and Governance|Third-Party Risk Management,Regulatory Affairs|Third-Party Contract and Service Initiation|Compliance Monitoring,Alabama,HIPAA,"""Health Maintenance Organization Act - Alabama 1986""",(6) The contracting with an insurance company licensed in this state to do business in,27,compliance,30 days,"Section 27-21A-1 > (1) AGENT. A person who is appointed or employed by a health maintenance > (2) BASIC HEALTH CARE SERVICES. Emergency care, inpatient hospital and > (3) COMMISSIONER. The Commissioner of Insurance. > (4) ENROLLEE. An individual who is enrolled in a health maintenance organization. > Section 27-21A-4 > (6) The contracting with an insurance company licensed in this state to do business in",0.035842545,0,
+d20e0761-0fd0-401b-971d-8fa2744c2cc2,"Section 27-21A-32
+HMO enrollment requirements.
+
+(a) The state government, or any agency, board, commission, institution, or political
+subdivision thereof, and any city or county, or board of education, which offers its
+employees a health benefits plan may make available to and inform its employees or
+members of the option to enroll in at least one health maintenance organization
+holding a valid certificate of authority which provides health care services in the
+geographic areas in which such emp...",consent,Policy Management,"Notice and Disclosure|Policies, Standards, and Guidelines Management",Alabama,HIPAA,"""Health Maintenance Organization Act - Alabama 1986""","(a) The state government, or any agency, board, commission, institution, or political",27,,,"Title 10, Chapter 4, Article 6 and Title 27, an insurer or a health care service plan may > Section 27-21A-16 > (a) The commissioner may make an examination of the affairs of any health > (b) The State Health Officer may make an examination concerning health care service > (c) Every health maintenance organization shall submit its relevant books and records > Section 27-21A-32 > (a) The state government, or any agency, board, commission, institution, or political",0.035842545,0,
+b4e8ad3d-c3c5-4cf6-8ac5-7aa8f980b85d,"§ 15. Lawfulness of processing of personal data
+Law enforcement authorities may process personal data pursuant to law if the processing thereof is required for
+performance of the functions arising from the purpose of prevention, detection and proceedings of offences and
+execution of punishments.
+
+§ 16. Processing of personal data for purposes different from initial ones",consent,Data Lifecycle Management|Individual Rights Processing,"Lawfulness, Fairness, Transparency",Estonia,GDPR,"""Personal Data Protection Act - Estonia 2019""",§ 15. Lawfulness of processing of personal data,General,processing of personal data|lawfulness|law enforcement authorities|purpose of prevention|detection|execution of punishments,personal data,Chapter 1 > § 1. Scope of regulation of Act > Division 2 > § 14. Principles of processing personal data > § 15. Lawfulness of processing of personal data,0.035842545,0,
+e0e58bce-9fcc-46ca-82f8-819e7eab3e73,"2. A claim by a health care provider for any uncovered expenditures has priority over
+claims of other health care providers, provided such provider of services agrees not to
+assert such claim against any enrollee of the health maintenance organization.
+(L. 1983 H.B. 127)
+*Word ""chapter"" appears in original rolls.
+354.480 8/28/1983
+354.485. Rules and regulations authorized. - The director may promulgate such
+reasonable rules and regulations in accordance with chapter 536 as are necessary or
+prope...",consent,Policy Management|Strategy and Governance,Notice and Disclosure|Regulatory Affairs|Compliance Monitoring,Missouri,HIPAA,"""Health Services Corporations Act - Missouri 1983""",2. A claim by a health care provider for any uncovered expenditures has priority over,2,rules and regulations|certificate of authority|denial|suspension|revocation|restrictions|conditions|hearing|written findings|review|jurisdiction,,"(1) ""Corporation"", a domestic health services corporation subject to the provisions of > (2) ""Director"", the director of the department of commerce and insurance of the state of > (3) ""Health services"", the health care and services provided by hospitals, or other > (4) ""Health services corporation"", any not-for-profit corporation heretofore or > (5) ""Member"" or ""beneficiary"", a natural person who is entitled to receive health > (6) ""Membership contract"", any agreement, contract or certificate by which a health > (10) The health maintenance organization has otherwise failed to substantially comply > 2. A claim by a health care provider for any uncovered expenditures has priority over",0.035842545,0,
+832f597b-36c7-4003-b312-caf6f95370d6,"2. By January 1, 1988, any person or other legal entity that is operating a prepaid
+dental plan in this state must submit an application for a certificate of authority to the
+director. Each such applicant may continue to operate until the director acts upon the
+application.
+
+3. A prepaid dental plan corporation shall not be subject to the laws of this state
+relating to insurance or insurance companies except as herein provided.
+(L. 1987 S.B. 272 § 2)
+354.702 8/28/1987
+354.703. Director may order...",consent,Policy Management|Strategy and Governance,Notice and Disclosure|Compliance Monitoring|Regulatory Affairs,Missouri,HIPAA,"""Health Services Corporations Act - Missouri 1983""","2. By January 1, 1988, any person or other legal entity that is operating a prepaid",2,certificate of authority|director|cease and desist|noncompliance|hearing|judicial review,,"(1) ""Corporation"", a domestic health services corporation subject to the provisions of > (2) ""Director"", the director of the department of commerce and insurance of the state of > (3) ""Health services"", the health care and services provided by hospitals, or other > (4) ""Health services corporation"", any not-for-profit corporation heretofore or > (5) ""Member"" or ""beneficiary"", a natural person who is entitled to receive health > (6) ""Membership contract"", any agreement, contract or certificate by which a health > (6) ""Provider"", any person licensed as a dentist pursuant to chapter 332. > 2. By January 1, 1988, any person or other legal entity that is operating a prepaid",0.035842545,0,
+8dff2dcb-45bf-4659-852a-adf486348057,"2. If a health maintenance organization plan provides that coverage of a dependent
+child terminates upon attainment of the limiting age for dependent children, such plan, so
+long as it remains in force, until the dependent child attains the limiting age, shall remain
+in force at the option of the enrollee. The enrollee's election for continued coverage under
+this section shall be furnished to the health maintenance organization within thirty-one
+days after the child's attainment of the limiting ...",consent,Policy Management|Individual Rights Processing,"Notice and Disclosure|Policies, Standards, and Guidelines Management",Missouri,HIPAA,"""Health Services Corporations Act - Missouri 1983""",2. If a health maintenance organization plan provides that coverage of a dependent,2,,,"(1) ""Corporation"", a domestic health services corporation subject to the provisions of > (2) ""Director"", the director of the department of commerce and insurance of the state of > (3) ""Health services"", the health care and services provided by hospitals, or other > (4) ""Health services corporation"", any not-for-profit corporation heretofore or > (5) ""Member"" or ""beneficiary"", a natural person who is entitled to receive health > (6) ""Membership contract"", any agreement, contract or certificate by which a health > (2001) Section falls within savings clause of Employee Retirement Income Security Act > 2. If a health maintenance organization plan provides that coverage of a dependent",0.035842545,0,
+95a38cbf-cc5c-4037-a201-d16c2660bd49,"(1) Any person who processes personal data in the name of a controller or processor is required to process these
+data only in accordance with the instructions given by the controller, unless otherwise provided by law.
+
+(2) The right of the person to process personal data in the name of the controller or processor must be based on
+law, legislation issued pursuant to law, contract entered into between the controller or processor and the person
+or the legal instrument governing the service relation...",consent,Third-Party Risk Management|Data Lifecycle Management,"Data Use|Third-Party Contract and Service Initiation|Lawfulness, Fairness, Transparency",Estonia,GDPR,"""Personal Data Protection Act - Estonia 2019""",(1) Any person who processes personal data in the name of a controller or processor is required to process these,General,personal data|controller|processor|law|contract,processor|personal data|controller,Chapter 1 > § 1. Scope of regulation of Act > Division 4 > § 29. Controller and processor of database > (1) The controller shall implement appropriate technical and organisational measures to ensure compliance > § 32. Processing of personal data in name of controller and processor > (1) Any person who processes personal data in the name of a controller or processor is required to process these,0.03449514,0,
+190e4e3c-a034-4db1-801f-bd829ca75350,"(5) The processing of data in the cases regulated by subsections (1) - (4) may otherwise
+take place if the conditions laid down in section 7 are satisfied.
+9 .- (1) Data covered by Article 9(1) and Article 10 of the General Data Protection
+Regulation may be processed where the processing is carried out for the sole purpose of
+operating legal information systems of significant public importance and the processing is
+necessary for operating such systems.
+
+(2) Data covered by subsection (1) may not...",consent,Data Lifecycle Management|Individual Rights Processing,"Lawfulness, Fairness, Transparency|Data Minimization|Record of Processing",Denmark,GDPR,"""Data Protection Act - Denmark 2018""",(5) The processing of data in the cases regulated by subsections (1) - (4) may otherwise,9,processing|General Data Protection Regulation|Article 9(1)|Article 10|Article 6|purpose limitation,,"Chapter I > Part 3 > (2) To ascertain whether processing for another purpose is compatible with the purpose for > (3) Regardless of subsections (1) and (2), in consultation with the Minister of Justice and > Article 9(1) of the General Data Protection Regulation. > (4) The processing of data covered by Article 9(1) of the General Data Protection > (5) The processing of data in the cases regulated by subsections (1) - (4) may otherwise",0.03449514,0,
+fdc6d30d-2449-4039-8c91-993d6f12d8a4,"(h) Nothing in this Code section shall authorize any additional cause of action beyond the process
+described in this Code section or as otherwise authorized by state law.
+History
+Code 1981, § 20-2-667, enacted by Ga. L. 2015, p. 1031, § 1-1/SB 89.
+OFFICIAL CODE OF GEORGIA ANNOTATED
+Document: O.C.G.A. § 20-2-668
+O.C.G.A. § 20-2-668
+Copy Citation
+Current through the 2020 Regular Session of the General Assembly
+GA - Official Code of Georgia Annotated
+AND SECONDARY EDUCATION
+TRANSPARENCY
+
+TITLE 20. ...",consent,Policy Management,"Policies, Standards, and Guidelines Management",Georgia,FERPA,"""Student Data Privacy Act - Georgia 2015""",(h) Nothing in this Code section shall authorize any additional cause of action beyond the process,15,transparency,,"TITLE 20. EDUCATION > CHAPTER 2. ELEMENTARY > ARTICLE 15. STUDENT DATA PRIVACY, ACCESSIBILITY, AND > § 20-2-667. Parental and student review of education record; model policies > (a) A parent shall have the right to inspect and review his or her child's education record maintained by > (b) A parent may request from the school or local board of education student data included in his or her > (h) Nothing in this Code section shall authorize any additional cause of action beyond the process",0.03449514,0,
+0a2ebe42-6c8a-49c5-80eb-5a8ef3808e2c,"Article 5 Minimum rights attached to a general authorization.
+Electronic communications companies that have a general authorization according to Article 4 have the right to operate an electronic communications network or
+electronic communications services and to submit applications for authorization to set up facilities according to Article 69
+General authorization provides companies that offer or intend to offer general electronic communications services and public electronic communications
+net...",consent,Strategy and Governance|Policy Management|Third-Party Risk Management,"Regulatory Affairs|Policies, Standards, and Guidelines Management|Compliance Monitoring|Risk Identification and Assessment",Iceland,GDPR,"""Telecommunications Act - Iceland 2003""",Article 5 Minimum rights attached to a general authorization.,5,protection of personal data|privacy|unauthorized access|security of public networks|integrity of public electronic communications networks,immediately|personal data,"Chapter I. Objectives and scope. Electronic Communications Board. > Article 1 Objectives and scope. > Article 2 Electronic Communications Board. > 1. achieve extensive co-operation between the market, consumers, public institutions and ministries > Article 5 Minimum rights attached to a general authorization.",0.03449514,0,
+87298d1d-bbb1-4389-afae-1f42b8351f81,"Article 74 Penalties.
+Violations of this Act and regulations issued in accordance with it are subject to fines, but [imprisonment up to
+two years] „if cases are serious or violations are repeated.
+Violations of negligence shall only be subject to fines.
+Violation of IX. chapters of the law on the protection of personal data and privacy concern penalties such as
+laid down in the first paragraph. If such an offense is committed for the benefit of others, whether for their own benefit or for the be...",consent,Policy Management|Information Security|Incident Response,"Policies, Standards, and Guidelines Management|Incident Management|Breach Notification|Information Protection Processes and Procedures",Iceland,GDPR,"""Telecommunications Act - Iceland 2003""",Article 74 Penalties.,74,personal data|privacy|electronic communications|administrative fines|violations|supervision,15 days|personal data,Chapter I. Objectives and scope. Electronic Communications Board. > Article 1 Objectives and scope. > Article 2 Electronic Communications Board. > Chapter X [Voice and mobile services.] . > Article 74 Penalties.,0.03449514,0,
+8c971114-8012-430d-889d-785db1fca553,"3. In the event that the applicant is a resident of another state in which the appropriate
+insurance official, as a general policy, has refused to permit legal residents of Missouri to
+become licensed as enrollment representatives and to transact the business of a health
+services corporation in such state, then the director shall not license any applicant from
+that state.
+(L. 1983 H.B. 127)
+354.240 8/28/1983
+354.265. Nonrenewable temporary license issued, when. - A nonrenewable
+temporary license...",consent,Policy Management,"Policies, Standards, and Guidelines Management",Missouri,HIPAA,"""Health Services Corporations Act - Missouri 1983""",3. In the event that the applicant is a resident of another state in which the appropriate,3,license|applicant|enrollment representatives|health services corporation|director|business reputation|violations|penalties|managing officers|authority to transact insurance|policyholders|stockholders|investors|creditors|members|public|illegal manipulation|fraudulent manipulation|assets|accounts,,"(1) ""Corporation"", a domestic health services corporation subject to the provisions of > (2) ""Director"", the director of the department of commerce and insurance of the state of > (3) ""Health services"", the health care and services provided by hospitals, or other > (4) ""Health services corporation"", any not-for-profit corporation heretofore or > (5) ""Member"" or ""beneficiary"", a natural person who is entitled to receive health > (6) ""Membership contract"", any agreement, contract or certificate by which a health > (2) That the appropriate official in that state certifies that the applicant holds a > 3. In the event that the applicant is a resident of another state in which the appropriate",0.03449514,0,
+5123f088-3701-4568-9457-f6fc4df8ece9,"(2) That the corporation has, by contract of reinsurance or otherwise, transferred or
+attempted to transfer substantially its entire property or business, or entered into any
+transaction, the effect of which is to merge substantially its entire property or business in
+the property or business of any other corporation, association, society, order, partnership
+or individual without first having obtained the written approval of the director of the
+department of commerce and insurance as provided by...",consent,Strategy and Governance|Third-Party Risk Management,Regulatory Affairs|Risk Identification and Assessment|Third-Party Contract and Service Initiation,Missouri,HIPAA,"""Health Services Corporations Act - Missouri 1983""","(2) That the corporation has, by contract of reinsurance or otherwise, transferred or",General,contract|transaction|property|business|approval|director|department of commerce and insurance|examination|hazardous|policyholders|creditors|public,,"(1) ""Corporation"", a domestic health services corporation subject to the provisions of > (2) ""Director"", the director of the department of commerce and insurance of the state of > (3) ""Health services"", the health care and services provided by hospitals, or other > (4) ""Health services corporation"", any not-for-profit corporation heretofore or > (5) ""Member"" or ""beneficiary"", a natural person who is entitled to receive health > (6) ""Membership contract"", any agreement, contract or certificate by which a health > (2) That the corporation has, by contract of reinsurance or otherwise, transferred or",0.03449514,0,
+4d8a079b-1d40-47fa-b5c7-72c3fba148ec,"§ 23. Information provided upon notification of data subjects
+
+(1) If an obligation to notify data subjects of processing of their personal data is provided by law, the controller
+shall provide the following additional information to the data subject:
+1) the information specified in subsection 22 (1) of this Act;
+2) the legal basis for processing of personal data;
+3) the retention period of personal data or the bases for determining the retention period;
+4) the categories of the recipients to wh...",consent,Individual Rights Processing|Data Lifecycle Management,"Data Subject Rights|Data Retention|Lawfulness, Fairness, Transparency",Estonia,GDPR,"""Personal Data Protection Act - Estonia 2019""","(1) If an obligation to notify data subjects of processing of their personal data is provided by law, the controller",General,controller|data subject|personal data|legal basis|retention period|categories of recipients,data subject|personal data|controller,"Chapter 1 > § 1. Scope of regulation of Act > Division 3 > § 22. Information to be made available to data subjects > (1) The controller is required to disclose the following information: > § 23. Information provided upon notification of data subjects > (1) If an obligation to notify data subjects of processing of their personal data is provided by law, the controller",0.029364333,0,
+656be853-43f9-416a-a612-84aedcaf3cb3,"(2) The Minister of Justice may lay down rules on exemptions from the provisions of
+subsection (1) above.
+
+(3) The Minister of Justice may lay down rules to the effect that before the initiation of
+processing other than the processing referred to in subsection (1) above, authorisation has
+to be obtained from the Data Protection Agency, including for processing carried out for a
+public authority.",consent,Policy Management|Data Lifecycle Management,"Policies, Standards, and Guidelines Management|Record of Processing",Denmark,GDPR,"""Data Protection Act - Denmark 2018""",(3) The Minister of Justice may lay down rules to the effect that before the initiation of,General,processing|Data Protection Agency|public authority,,Chapter I > Part 9 > (2) The Minister of Justice may lay down rules on exemptions from the provisions of > (3) The Minister of Justice may lay down rules to the effect that before the initiation of,0.029364333,0,
+443a623c-6a5e-43fa-bebd-9e4886b886f8,"37. tölul. a new item is inserted, but after a change in the article according to Art. l. 72/2018, Article 2. , that item has become item 38. and is
+the new number is then placed after them in the correct alphabetical order. . L. 72/2018, Art. . L. 145/2009, Art.
+III. chapter. Authorization for electronic communications activities.
+
+Article 4 Sources.
+Electronic communications companies have a general authorization to operate electronic communications networks and electronic communications servi...",consent,Strategy and Governance|Policy Management|Cross-Border Data Strategy,Regulatory Affairs|Notice and Disclosure|Compliance Monitoring,Iceland,GDPR,"""Telecommunications Act - Iceland 2003""","37. tölul. a new item is inserted, but after a change in the article according to Art. l. 72/2018, Article 2. , that item has become item 38. and is",37,electronic communications|authorization|registration|Post and Telecom Administration,,"Chapter I. Objectives and scope. Electronic Communications Board. > Article 1 Objectives and scope. > Article 2 Electronic Communications Board. > 1. achieve extensive co-operation between the market, consumers, public institutions and ministries > Article 3 > 37. tölul. a new item is inserted, but after a change in the article according to Art. l. 72/2018, Article 2. , that item has become item 38. and is",0.029364333,0,
+e287fa40-bc55-48e7-800f-dd0fd332f478,"(3) Pursuant to statute or court order for the production of evidence or the discovery
+thereof;
+
+(4) In the event of a claim or litigation between such person and the health
+maintenance organization wherein such data or information is pertinent. A health
+maintenance organization shall be entitled to claim any statutory privileges against such
+disclosure which the provider who furnishes such information to the health maintenance
+organization is entitled to claim, but no such claim or privilege ag...",consent,Policy Management|Data Lifecycle Management|Information Security,"Notice and Disclosure|Lawfulness, Fairness, Transparency",Missouri,HIPAA,"""Health Services Corporations Act - Missouri 1983""",(4) In the event of a claim or litigation between such person and the health,General,statutory privileges|disclosure,,"(1) ""Corporation"", a domestic health services corporation subject to the provisions of > (2) ""Director"", the director of the department of commerce and insurance of the state of > (3) ""Health services"", the health care and services provided by hospitals, or other > (4) ""Health services corporation"", any not-for-profit corporation heretofore or > (5) ""Member"" or ""beneficiary"", a natural person who is entitled to receive health > (6) ""Membership contract"", any agreement, contract or certificate by which a health > (4) In the event of a claim or litigation between such person and the health",0.029364333,0,
+106150b5-cdd5-4b82-b226-3ae4fcf34b94,"(4) In connection with its grant of authorisation under subsection (1) or (3) above, the Data
+Protection Agency may establish requirements for the way data are processed to protect the
+privacy of the data subjects.
+
+(5) Before the introduction of alterations to the processing referred to in subsection (1) or
+(3), authorisation from the Data Protection Agency must be obtained again in case the
+alterations are substantial.",consent,Data Lifecycle Management|Individual Rights Processing,"Data Minimization|Lawfulness, Fairness, Transparency|Record of Processing",Denmark,GDPR,"""Data Protection Act - Denmark 2018""","(4) In connection with its grant of authorisation under subsection (1) or (3) above, the Data",General,data subjects|Data Protection Agency|processing|authorisation,,"Chapter I > Part 9 > (2) The Minister of Justice may lay down rules on exemptions from the provisions of > (3) The Minister of Justice may lay down rules to the effect that before the initiation of > (4) In connection with its grant of authorisation under subsection (1) or (3) above, the Data",0.027862383,0,
+f7fb907e-cf0e-43ca-a9d9-3d8cee879459,"(9) A power of attorney duly executed by such applicant, if not domiciled in this state,
+appointing the commissioner and his successors in office, and duly authorized
+deputies, as the true and lawful attorney of such applicant in and for this state upon
+whom all lawful process in any legal action or proceeding against the health
+maintenance organization on a cause of action arising in this state may be served;
+
+(10) A statement reasonably describing the geographic area or areas to be served;",consent,Strategy and Governance|Third-Party Risk Management,Regulatory Affairs|Third-Party Contract and Service Initiation,Alabama,HIPAA,"""Health Maintenance Organization Act - Alabama 1986""","(9) A power of attorney duly executed by such applicant, if not domiciled in this state,",27,lawful process,,"Section 27-21A-1 > (1) AGENT. A person who is appointed or employed by a health maintenance > (2) BASIC HEALTH CARE SERVICES. Emergency care, inpatient hospital and > (3) COMMISSIONER. The Commissioner of Insurance. > (4) ENROLLEE. An individual who is enrolled in a health maintenance organization. > Section 27-21A-2 > (9) A power of attorney duly executed by such applicant, if not domiciled in this state,",0.025684388,0,
+5049dfa4-e16f-47b1-85da-b992672edba4,"2. Any license issued shall authorize only the licensee named in the license to act
+individually as an enrollment representative thereunder.
+(L. 1983 H.B. 127, A.L. 1993 S.B. 709)
+354.235 8/28/1993
+354.240. Nonresident may be licensed - examination waived, when. - 1. A person
+not a legal resident of this state may be licensed to act in this state as an enrollment
+representative upon compliance with the provisions of this chapter provided that the state
+in which the person resides will accord the...",consent,Policy Management|Cross-Border Data Strategy,"Policies, Standards, and Guidelines Management|Transfer Mechanisms",Missouri,HIPAA,"""Health Services Corporations Act - Missouri 1983""",2. Any license issued shall authorize only the licensee named in the license to act,2,license|enrollment representative|director|reciprocal agreements|written examination,representative,"(1) ""Corporation"", a domestic health services corporation subject to the provisions of > (2) ""Director"", the director of the department of commerce and insurance of the state of > (3) ""Health services"", the health care and services provided by hospitals, or other > (4) ""Health services corporation"", any not-for-profit corporation heretofore or > (5) ""Member"" or ""beneficiary"", a natural person who is entitled to receive health > (6) ""Membership contract"", any agreement, contract or certificate by which a health > (4) Instituting judicial proceedings to enjoin the continuation of any act or practices > 2. Any license issued shall authorize only the licensee named in the license to act",0.025684388,0,
+df78a877-d532-4af1-aa8f-df6bacdbc291,"(e) An applicant, or a health maintenance organization holding a certificate of
+authority granted hereunder, shall file with the commissioner all contracts of
+reinsurance. Any agreement between the organization and an insurer shall be subject
+to the laws of this state regarding reinsurance. All reinsurance agreements and any
+modifications thereto must be approved by the commissioner. If the commissioner
+does not disapprove such agreements or modifications within 30 days of filing, such
+agreement...",consent,Policy Management|Third-Party Risk Management,Notice and Disclosure|Third-Party Contract and Service Initiation,Alabama,HIPAA,"""Health Maintenance Organization Act - Alabama 1986""","(e) An applicant, or a health maintenance organization holding a certificate of",27,certificate of authority|reinsurance agreements|modifications|commissioner|written notice,30 days|forthwith|90 days,"Section 27-21A-1 > (1) AGENT. A person who is appointed or employed by a health maintenance > (2) BASIC HEALTH CARE SERVICES. Emergency care, inpatient hospital and > (3) COMMISSIONER. The Commissioner of Insurance. > (4) ENROLLEE. An individual who is enrolled in a health maintenance organization. > Section 27-21A-10; > (e) An applicant, or a health maintenance organization holding a certificate of",0.020961698,0,

@@ -1,0 +1,44 @@
+# Core Web Framework
+fastapi==0.115.12
+uvicorn==0.34.3
+python-multipart==0.0.20
+
+# Data Validation & Settings
+pydantic==2.11.7
+pydantic-core==2.33.2
+pydantic-settings==2.9.1
+
+# Authentication & Security
+python-jose[cryptography]==3.5.0
+passlib[bcrypt]==1.7.4
+bcrypt==3.2.2
+
+# Azure Services
+azure-search-documents==11.5.2
+azure-identity==1.23.0
+azure-storage-blob==12.25.1
+azure-ai-formrecognizer==3.3.3
+azure-cosmos==4.5.1  # Used in cosmos_db.py
+
+# AI/ML
+openai==1.35.3
+
+# Database
+sqlalchemy==2.0.41
+pyodbc==5.2.0
+
+# Monitoring & Logging
+prometheus-client==0.22.1
+structlog==25.4.0
+
+# Utilities
+python-dotenv==1.1.0
+email-validator==2.2.0
+numpy==2.3.0
+rich==13.7.1
+
+# Essential dependencies (required by above packages)
+requests==2.32.4
+httpx==0.27.0
+typing-extensions==4.14.0
+annotated-types==0.7.0

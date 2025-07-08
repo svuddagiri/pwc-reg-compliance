@@ -1,0 +1,298 @@
+{
+  "consent_types": {
+    "affirmative_consent": {
+      "aliases": [
+        "affirmative consent",
+        "explicit agreement",
+        "yes means yes",
+        "positive consent",
+        "active consent"
+      ],
+      "definition": "A clear, voluntary, and informed agreement to a specific action, requiring a conscious affirmative act",
+      "related_terms": [
+        "explicit consent",
+        "informed consent",
+        "freely given",
+        "unambiguous",
+        "express consent"
+      ],
+      "keywords": [
+        "consent",
+        "consented",
+        "freely given",
+        "specific",
+        "informed",
+        "unambiguous",
+        "explicit",
+        "affirmative",
+        "voluntary"
+      ],
+      "jurisdictional_variants": {
+        "GDPR": [
+          "unambiguous indication of wishes",
+          "freely given, specific, informed and unambiguous",
+          "statement or by a clear affirmative action"
+        ],
+        "CCPA": [
+          "freely given, specific, informed, and unambiguous",
+          "affirmative authorization"
+        ],
+        "Gabon": [
+          "if they have not previously consented",
+          "withdraws the consent on which the processing is based"
+        ]
+      },
+      "patterns": [
+        "have.*consent",
+        "given.*consent",
+        "provide.*consent",
+        "obtain.*consent",
+        "affirmative.*action",
+        "clear.*indication",
+        "express.*agreement"
+      ]
+    },
+    "implied_consent": {
+      "aliases": [
+        "implied consent",
+        "inferred consent",
+        "presumed consent",
+        "tacit consent"
+      ],
+      "definition": "Consent inferred from actions or circumstances rather than explicitly stated",
+      "related_terms": [
+        "deemed consent",
+        "constructive consent",
+        "passive consent"
+      ],
+      "keywords": [
+        "implied",
+        "inferred",
+        "deemed",
+        "presumed",
+        "tacit",
+        "constructive"
+      ],
+      "patterns": [
+        "implied.*consent",
+        "deemed.*consent",
+        "inferred.*from",
+        "circumstances.*indicate"
+      ]
+    },
+    "written_consent": {
+      "aliases": [
+        "written consent",
+        "documented consent",
+        "signed consent",
+        "consent in writing"
+      ],
+      "definition": "Consent that is recorded in written form, often with a signature or formal documentation",
+      "related_terms": [
+        "signed agreement",
+        "written authorization",
+        "documented permission"
+      ],
+      "keywords": [
+        "written",
+        "writing",
+        "documented",
+        "signed",
+        "signature",
+        "record"
+      ],
+      "jurisdictional_variants": {
+        "HIPAA": [
+          "written authorization",
+          "signed and dated"
+        ],
+        "FERPA": [
+          "written consent must be signed and dated"
+        ]
+      },
+      "patterns": [
+        "consent.*writing",
+        "written.*consent",
+        "signed.*consent",
+        "documented.*consent"
+      ]
+    },
+    "opt_in_consent": {
+      "aliases": [
+        "opt-in consent",
+        "opt in",
+        "active choice",
+        "affirmative opt-in"
+      ],
+      "definition": "Consent that requires an active choice to participate, with no action meaning no consent",
+      "related_terms": [
+        "subscribe",
+        "enroll",
+        "join",
+        "sign up"
+      ],
+      "keywords": [
+        "opt-in",
+        "opt in",
+        "subscribe",
+        "enroll",
+        "active choice"
+      ],
+      "jurisdictional_variants": {
+        "CAN-SPAM": [
+          "affirmatively consented to receive"
+        ],
+        "GDPR": [
+          "clear affirmative action"
+        ]
+      },
+      "patterns": [
+        "opt.*in",
+        "choose.*participate",
+        "actively.*select",
+        "affirmatively.*consent"
+      ]
+    },
+    "opt_out_consent": {
+      "aliases": [
+        "opt-out consent",
+        "opt out",
+        "negative option",
+        "presumed consent unless objection"
+      ],
+      "definition": "A model where consent is presumed unless the individual actively declines",
+      "related_terms": [
+        "unsubscribe",
+        "decline",
+        "object",
+        "withdraw"
+      ],
+      "keywords": [
+        "opt-out",
+        "opt out",
+        "unsubscribe",
+        "object",
+        "decline"
+      ],
+      "jurisdictional_variants": {
+        "CCPA": [
+          "right to opt-out of sale",
+          "Do Not Sell My Personal Information"
+        ]
+      },
+      "patterns": [
+        "opt.*out",
+        "right.*object",
+        "may.*decline",
+        "unless.*object"
+      ]
+    },
+    "informed_consent": {
+      "aliases": [
+        "informed consent",
+        "educated consent",
+        "knowing consent",
+        "full disclosure consent"
+      ],
+      "definition": "Consent given with full knowledge of the risks, benefits, and alternatives",
+      "related_terms": [
+        "disclosure",
+        "transparency",
+        "notice",
+        "awareness"
+      ],
+      "keywords": [
+        "informed",
+        "knowledge",
+        "aware",
+        "understand",
+        "disclosure",
+        "information"
+      ],
+      "jurisdictional_variants": {
+        "Medical": [
+          "risks, benefits, and alternatives",
+          "sufficient information to make a decision"
+        ],
+        "GDPR": [
+          "informed of the identity of the controller",
+          "purposes of the processing"
+        ]
+      },
+      "patterns": [
+        "informed.*consent",
+        "fully.*informed",
+        "provided.*information",
+        "aware.*of"
+      ]
+    },
+    "withdrawal_of_consent": {
+      "aliases": [
+        "withdrawal of consent",
+        "revoke consent",
+        "withdraw consent",
+        "consent revocation"
+      ],
+      "definition": "The right to withdraw previously given consent at any time",
+      "related_terms": [
+        "revoke",
+        "cancel",
+        "rescind",
+        "retract"
+      ],
+      "keywords": [
+        "withdraw",
+        "withdrawal",
+        "revoke",
+        "revocation",
+        "cancel",
+        "rescind"
+      ],
+      "jurisdictional_variants": {
+        "GDPR": [
+          "right to withdraw consent at any time",
+          "as easy to withdraw as to give consent"
+        ],
+        "Gabon": [
+          "withdraws the consent on which the processing is based"
+        ]
+      },
+      "patterns": [
+        "withdraw.*consent",
+        "revoke.*consent",
+        "consent.*withdrawal",
+        "right.*withdraw"
+      ]
+    }
+  },
+  "consent_conditions": {
+    "valid_consent": {
+      "requirements": [
+        "freely given",
+        "specific",
+        "informed",
+        "unambiguous"
+      ],
+      "invalidating_factors": [
+        "coercion",
+        "power imbalance",
+        "bundled with terms",
+        "pre-ticked boxes",
+        "silence or inactivity"
+      ]
+    },
+    "parental_consent": {
+      "keywords": [
+        "parental consent",
+        "guardian consent",
+        "minor consent",
+        "child consent"
+      ],
+      "age_thresholds": {
+        "GDPR": "16 (can be lowered to 13 by member states)",
+        "COPPA": "13",
+        "FERPA": "18"
+      }
+    }
+  }
+}

@@ -1,0 +1,40 @@
+Consent Chunks Summary
+====================
+Total Chunks: 100
+Index: regulatory-analysis-hybrid-semantic-index
+Search Type: Hybrid (text + filters)
+
+Scoring:
+- Average Search Score: 7.3389
+- Average Reranker Score: 0.0000
+- Chunks with Captions: 0
+Unique Jurisdictions: 9
+Unique Regulations: 3
+
+Jurisdictions:
+- Alabama
+- Costa Rica
+- Denmark
+- Estonia
+- Georgia
+- Iceland
+- Missouri
+- Republic of Gabon
+- US
+
+Regulations:
+- FERPA
+- GDPR
+- HIPAA
+
+Chunks per Jurisdiction:
+
+- Alabama: 8 chunks
+- Costa Rica: 9 chunks
+- Denmark: 14 chunks
+- Estonia: 16 chunks
+- Georgia: 14 chunks
+- Iceland: 9 chunks
+- Missouri: 16 chunks
+- Republic of Gabon: 2 chunks
+- US: 12 chunks
