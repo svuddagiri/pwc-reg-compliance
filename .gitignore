@@ -1,0 +1,21 @@
+# Virtual Environment
+venv/
+**/venv/
+**/regeng/
+.env
+
+# Python cache files
+__pycache__/
+*.py[cod]
+*$py.class
+.pytest_cache/
+
+# Distribution / packaging
+dist/
+build/
+*.egg-info/
+
+# Local development settings
+.idea/
+.vscode/
+*.swp
