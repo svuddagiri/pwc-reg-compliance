@@ -17,6 +17,9 @@ from src.response_generation.citation_processor import CitationProcessor
 from src.security import PromptGuard, ContentFilter, RateLimiter
 from src.utils.logger import get_logger
 from src.services.term_normalizer import get_term_normalizer
+from src.config.settings import get_settings
+from src.services.chunk_selector_service import ChunkSelectorService
+from src.services.exact_text_renderer import ExactTextRenderer, RenderedClause
 # Removed cache import
 
 logger = get_logger(__name__)
@@ -87,6 +90,10 @@ class ResponseGenerator:
         self.prompt_manager = PromptTemplateManager()
         self.citation_processor = CitationProcessor()
         
+        # Exact text components (no LLM paraphrasing)
+        self.chunk_selector = ChunkSelectorService(self.openai_client)
+        self.text_renderer = ExactTextRenderer()
+        
         # Security components
         self.prompt_guard = PromptGuard()
         self.content_filter = ContentFilter()
@@ -139,339 +146,10 @@ class ResponseGenerator:
             cached_response.request_id = f"req_{request.user_id}_{int(datetime.utcnow().timestamp())}"
             return cached_response
         
-        # Check if this is a definition query
-        is_definition_query = False
-        if hasattr(request.query_analysis, 'search_filters') and request.query_analysis.search_filters:
-            if isinstance(request.query_analysis.search_filters, dict):
-                is_definition_query = request.query_analysis.search_filters.get("is_definition_query", False)
-            else:
-                logger.warning(f"search_filters is not a dict, it's a {type(request.query_analysis.search_filters)}: {request.query_analysis.search_filters}")
-                # Try to handle the case where search_filters might be something else
-                if hasattr(request.query_analysis.search_filters, 'get'):
-                    is_definition_query = request.query_analysis.search_filters.get("is_definition_query", False)
-        else:
-            logger.debug("No search_filters found in query_analysis")
-        
-        if is_definition_query:
-            # Use enhanced generation for definitions
-            return await self._generate_definition_response(request)
-        
-        try:
-            # Run security checks
-            security_results = await self._run_security_checks(request)
-            
-            if not security_results["passed"]:
-                return await self._handle_security_failure(
-                    request,
-                    security_results
-                )
-            
-            # Removed cache checking logic
-            
-            # Check for sensitive query
-            sensitive_result = self.sensitive_handler.analyze_query(
-                request.query,
-                request.query_analysis.to_dict() if hasattr(request.query_analysis, 'to_dict') else {}
-            )
-            
-            # Check for multi-jurisdiction query
-            mentioned_jurisdictions = request.query_analysis.search_filters.get("jurisdictions", []) if hasattr(request.query_analysis, 'search_filters') else []
-            is_multi_jurisdiction = len(mentioned_jurisdictions) > 1
-            
-            # Build context from search results
-            context = await self.context_builder.build_context(
-                search_results=request.search_results,
-                query_intent=request.query_analysis.primary_intent,
-                user_query=request.query,
-                conversation_history=request.conversation_history,
-                is_multi_jurisdiction=is_multi_jurisdiction,
-                mentioned_jurisdictions=mentioned_jurisdictions
-            )
-            
-            # Map query intent to QueryIntent enum
-            intent_mapping = {
-                "specific_regulation": QueryIntent.SPECIFIC_REQUIREMENT,
-                "compare_regulations": QueryIntent.COMPARISON,
-                "general_inquiry": QueryIntent.GENERAL_INQUIRY,
-                "clarification": QueryIntent.CLARIFICATION,
-                "timeline": QueryIntent.TIMELINE,
-                "compliance_check": QueryIntent.COMPLIANCE_CHECK,
-                "definition": QueryIntent.DEFINITION
-            }
-            
-            query_intent = intent_mapping.get(
-                request.query_analysis.primary_intent,
-                QueryIntent.GENERAL_INQUIRY  # Default
-            )
-            
-            # Build prompts
-            system_prompt = self.prompt_manager.build_system_prompt(query_intent)
-            
-            # Debug: Log the context being sent
-            formatted_context = context.get_formatted_context()
-            if "article 13" in request.query.lower():
-                logger.info(f"DEBUG: Processing Article 13 query")
-                logger.info(f"Top result regulation: {context.segments[0].regulation if context.segments else 'No segments'}")
-                logger.info(f"Context preview (first 1000 chars): {formatted_context[:1000]}")
-            
-            # Add special handling for jurisdiction and yes/no questions
-            query_lower = request.query.lower()
-            additional_instructions = ""
-            
-            # Check if asking about jurisdictions
-            if "jurisdiction" in query_lower or "which countries" in query_lower or "which states" in query_lower:
-                # Get all equivalent terms for explicit consent
-                explicit_consent_equivalents = self.term_normalizer.get_equivalents("explicit consent")
-                equivalents_list = ", ".join([f"'{term}'" for term in explicit_consent_equivalents])
-                
-                additional_instructions += f"""
-
-CRITICAL: List ALL jurisdictions mentioned in the provided context that meet the criteria, not just the highest-scoring ones. Include jurisdictions even if they have lower relevance scores.
-
-IMPORTANT SCANNING INSTRUCTIONS:
-1. Scan through ALL chunks in the context, not just the first few
-2. Look for ALL of these EQUIVALENT patterns (they all mean the same thing legally):
-   {equivalents_list}
-3. CRITICAL: These terms are legally equivalent - a jurisdiction using ANY of these terms should be included!
-4. Include jurisdictions that have general explicit/express consent requirements (they apply to sensitive data too)
-5. Before finalizing, double-check you haven't missed any jurisdiction mentioned in the context
-6. Specifically check if Costa Rica is mentioned with ANY of these equivalent terms
-
-MANDATORY CHECK: Before providing your final answer, you MUST:
-- Count how many jurisdictions are in the context chunks
-- Verify you have included ALL jurisdictions that mention ANY of the equivalent consent terms
-- If Costa Rica appears in the chunks with express consent, it MUST be included
-- Remember: If a jurisdiction requires any form of explicit/express/affirmative consent for general personal data, it automatically requires it for sensitive data too"""
-            
-            # Check if this is a yes/no question about acceptability
-            if query_lower.startswith(("is", "can", "does", "are", "may")) and ("acceptable" in query_lower or "allowed" in query_lower or "permitted" in query_lower):
-                # Special handling for verbal consent under GDPR
-                if "verbal" in query_lower and "gdpr" in query_lower:
-                    additional_instructions += "\n\nCRITICAL INSTRUCTION: The answer to whether verbal consent is acceptable under GDPR is 'No.'\nStart your response with: 'No. Verbal consent is not acceptable under GDPR because...'\nExplain that GDPR requires demonstrable consent, which verbal consent cannot provide."
-                else:
-                    additional_instructions += "\n\nCRITICAL YES/NO QUESTION INSTRUCTION:\n- Start with a clear 'No' or 'Yes' answer\n- For consent questions: If it cannot be documented/demonstrated, the answer is 'No'\n- After the direct answer, you may explain why\n- Do NOT say 'theoretically acceptable' or 'can be acceptable' - focus on practical compliance"
-            
-            # Special handling for consent validity/duration questions
-            if ("consent" in query_lower and "indefinitely" in query_lower) or ("consent" in query_lower and "valid" in query_lower and ("how long" in query_lower or "forever" in query_lower or "indefinite" in query_lower)):
-                additional_instructions += """
-
-CRITICAL INSTRUCTIONS FOR CONSENT VALIDITY DURATION:
-1. Start with a clear 'No' - consent is NOT valid indefinitely
-2. MUST extract and cite ALL of these requirements from the context:
-   - Time-bound nature of consent
-   - Periodic review requirements
-   - Renewal/refresh requirements
-   - Specific time limits or durations mentioned
-3. Look for these KEY PHRASES in the context:
-   - "time-bound"
-   - "periodic review"
-   - "periodically reviewed"
-   - "renewal"
-   - "expire"
-   - "duration"
-   - "not indefinite"
-   - "must be refreshed"
-   - "regular intervals"
-4. Even if the context just says "No" without details, explain that consent must be:
-   - Reviewed periodically
-   - Renewed when circumstances change
-   - Time-limited based on purpose
-5. Structure your response:
-   - Direct answer: No, consent is not valid indefinitely
-   - Time limitations found in the context
-   - Review/renewal requirements
-   - Citations for each requirement"""
-            
-            user_prompt = self.prompt_manager.build_user_prompt(
-                intent=query_intent,
-                query=request.query,
-                context=formatted_context,
-                metadata=context.metadata_summary,
-                conversation_history=request.conversation_history
-            )
-            
-            # Add intelligent semantic guidance for better understanding
-            semantic_guidance = self._build_semantic_guidance(request.query, formatted_context)
-            if semantic_guidance:
-                user_prompt += f"\n\n{semantic_guidance}"
-            
-            # Append additional instructions if any
-            if additional_instructions:
-                user_prompt += additional_instructions
-            
-            # Create LLM request
-            messages = self.openai_client.create_messages(
-                system_prompt=system_prompt,
-                user_query=user_prompt,
-                history=request.conversation_history
-            )
-            
-            # Calculate safe max_tokens
-            estimated_prompt_tokens = sum(
-                self.openai_client.count_tokens(
-                    msg.get("content", "") if isinstance(msg, dict) else getattr(msg, "content", "")
-                ) 
-                for msg in messages
-            )
-            model_limit = self.openai_client.get_model_limit(request.model)
-            available_for_response = model_limit - estimated_prompt_tokens - 100  # Buffer
-            
-            # Set max_tokens with safety check
-            if request.max_tokens:
-                max_tokens = min(request.max_tokens, max(500, available_for_response))
-            else:
-                max_tokens = min(1500, max(500, available_for_response))  # Reduced from 2000 to 1500
-            
-            logger.info(f"Token allocation: prompt={estimated_prompt_tokens}, response={max_tokens}, model_limit={model_limit}")
-            
-            llm_request = LLMRequest(
-                messages=messages,
-                model=request.model,
-                temperature=request.temperature,
-                max_tokens=max_tokens,
-                stream=False,
-                user=str(request.user_id),
-                metadata={
-                    "conversation_id": request.conversation_id,
-                    "message_id": request.message_id,
-                    "intent": request.query_analysis.primary_intent
-                }
-            )
-            
-            # Log the request with context info
-            context_info = {
-                "segment_count": len(context.segments),
-                "total_tokens": context.total_tokens
-            }
-            
-            request_id = await self.llm_tracker.log_request(
-                user_id=request.user_id,
-                session_id=request.session_id,
-                conversation_id=request.conversation_id,
-                message_id=request.message_id,
-                request=llm_request,
-                security_checks=security_results["checks"],
-                query_analysis=request.query_analysis,
-                context_info=context_info
-            )
-            
-            # Make the LLM call
-            llm_response = await self.openai_client.complete(llm_request)
-            
-            # Check if we should use fallback response
-            should_use_fallback = self.fallback_handler.should_use_fallback(
-                request.search_results,
-                {
-                    "primary_intent": request.query_analysis.primary_intent,
-                    "legal_concepts": getattr(request.query_analysis, 'legal_concepts', []),
-                    "query": request.query
-                }
-            )
-            
-            # Get fallback if needed
-            fallback_response = None
-            if should_use_fallback:
-                fallback_response = self.fallback_handler.get_fallback_response(
-                    query_type="",
-                    context={
-                        "query": request.query,
-                        "intent": request.query_analysis.primary_intent
-                    }
-                )
-            
-            # Post-filter the response
-            post_filter_result = await self.content_filter.post_filter(
-                llm_response.content
-            )
-            
-            # Process citations to ensure consistent formatting
-            processed_content = self.citation_processor.process_response(
-                post_filter_result.filtered_content or llm_response.content
-            )
-            
-            # Apply fallback enhancement if needed
-            if fallback_response:
-                processed_content = self.fallback_handler.enhance_response_with_fallback(
-                    processed_content,
-                    fallback_response,
-                    include_explanation=True
-                )
-            
-            
-            # Citation validation disabled - our international citation formats
-            # (Estonian, Costa Rica, Denmark, etc.) are incompatible with the 
-            # US-centric validator that expects GDPR/CCPA/HIPAA formats
-            
-            # Semantic validation for yes/no questions and format compliance
-            validation_result = self.semantic_validator.validate_response(
-                query=request.query,
-                response=processed_content
-            )
-            
-            if not validation_result.is_valid:
-                logger.warning(f"Semantic validation issues: {validation_result.issues}")
-                if validation_result.rewritten_response:
-                    logger.info("Applying semantic correction to response")
-                    processed_content = validation_result.rewritten_response
-            
-            # Extract citations (original method)
-            citations = self._extract_citations(processed_content, context)
-            
-            # Apply citation relevance filtering to reduce overload
-            citations = self.citation_filter.filter_citations(
-                processed_content,
-                citations
-            )
-            
-            # Calculate confidence score
-            confidence = self._calculate_confidence(
-                llm_response=llm_response,
-                context=context,
-                citation_count=len(citations)
-            )
-            
-            # Log the response with additional info
-            await self.llm_tracker.log_response(
-                request_id=request_id,
-                response=llm_response,
-                post_filter_result=post_filter_result,
-                citations_count=len(citations),
-                confidence_score=confidence
-            )
-            
-            # Calculate generation time
-            generation_time = (datetime.utcnow() - start_time).total_seconds() * 1000
-            
-            response = GenerationResponse(
-                content=processed_content,
-                citations=citations,
-                confidence_score=confidence,
-                model_used=llm_response.model,
-                tokens_used=llm_response.usage.total_tokens if llm_response.usage else 0,
-                generation_time_ms=generation_time,
-                request_id=request_id,
-                metadata={
-                    "intent": request.query_analysis.primary_intent,
-                    "topics": context.primary_topics,
-                    "finish_reason": llm_response.finish_reason
-                }
-            )
-            
-            # Cache the response for future use
-            cache_success = await self.intent_cache_service.cache_response(
-                query_analysis=request.query_analysis,
-                response=response
-            )
-            if cache_success:
-                logger.info("Response cached successfully")
-            
-            return response
-            
-        except Exception as e:
-            logger.error("Error generating response", exc_info=True)
-            raise
+        # Use exact text rendering for all document-based queries to ensure legal accuracy
+        logger.info("Using exact text rendering approach for legal accuracy")
+        return await self._generate_exact_text_response(request)
     
-    # Removed cache-related methods (_check_cache and _cache_response)
     
     async def generate_stream(
         self,
@@ -1633,6 +1311,268 @@ Focus only on information directly related to "{term}"."""
             )
         
         return '\n\n'.join(guidance_parts) if guidance_parts else ""
+    
+    async def _generate_exact_text_response(
+        self,
+        request: GenerationRequest
+    ) -> GenerationResponse:
+        """Generate hybrid response with LLM analysis + exact text citations"""
+        
+        start_time = datetime.utcnow()
+        
+        try:
+            # Run security checks
+            security_results = await self._run_security_checks(request)
+            
+            if not security_results["passed"]:
+                return await self._handle_security_failure(
+                    request,
+                    security_results
+                )
+            
+            # Step 1: Use LLM to select relevant chunks (returns IDs only)
+            logger.info("Step 1: Using LLM to select relevant chunks")
+            chunk_selection = await self.chunk_selector.select_relevant_chunks(
+                query=request.query,
+                search_results=request.search_results,
+                max_chunks=15  # Increased for better coverage
+            )
+            
+            logger.info(f"LLM selected {len(chunk_selection.selected_chunks)} chunks")
+            
+            # Step 2: Fetch exact text for selected chunks
+            logger.info("Step 2: Fetching exact text for selected chunks")
+            rendered_clauses = self.text_renderer.fetch_exact_text(
+                chunk_selection=chunk_selection,
+                search_results=request.search_results
+            )
+            
+            logger.info(f"Rendered {len(rendered_clauses)} exact clauses")
+            
+            # Step 3: Generate LLM analytical response (without quoting legal text)
+            logger.info("Step 3: Generating LLM analytical response")
+            analytical_response = await self._generate_analytical_response(
+                request=request,
+                chunk_selection=chunk_selection,
+                rendered_clauses=rendered_clauses
+            )
+            
+            # Step 4: Combine analytical response with exact legal clauses
+            logger.info("Step 4: Combining analysis with exact legal text")
+            combined_response = self._combine_analysis_with_citations(
+                analytical_response=analytical_response,
+                rendered_clauses=rendered_clauses,
+                query=request.query
+            )
+            
+            # Step 5: Generate citations from exact clauses
+            citations = self.text_renderer.get_citations(rendered_clauses)
+            
+            # Calculate confidence based on both analysis and citations
+            confidence = self._calculate_hybrid_confidence(
+                rendered_clauses=rendered_clauses,
+                chunk_selection=chunk_selection,
+                analytical_response=analytical_response
+            )
+            
+            # Log the request (for tracking purposes)
+            request_id = f"hybrid_{request.user_id}_{int(datetime.utcnow().timestamp())}"
+            
+            # Calculate generation time
+            generation_time = (datetime.utcnow() - start_time).total_seconds() * 1000
+            
+            response = GenerationResponse(
+                content=combined_response,
+                citations=citations,
+                confidence_score=confidence,
+                model_used="hybrid_gpt4_exact_text",
+                tokens_used=analytical_response.get("tokens_used", 0),
+                generation_time_ms=generation_time,
+                request_id=request_id,
+                metadata={
+                    "approach": "hybrid_analysis_citations",
+                    "chunks_selected": len(chunk_selection.selected_chunks),
+                    "clauses_rendered": len(rendered_clauses),
+                    "jurisdictions_found": chunk_selection.jurisdictions_found,
+                    "has_analytical_response": bool(analytical_response.get("content"))
+                }
+            )
+            
+            logger.info(f"Hybrid response generated in {generation_time:.1f}ms")
+            return response
+            
+        except Exception as e:
+            logger.error("Error in hybrid response generation", exc_info=True)
+            raise
+    
+    def _calculate_exact_text_confidence(
+        self,
+        rendered_clauses: List[RenderedClause],
+        chunk_selection
+    ) -> float:
+        """Calculate confidence score for exact text responses"""
+        
+        confidence = 0.7  # Base confidence for exact text (higher than paraphrased)
+        
+        # Factor 1: Number of clauses found (up to 0.2)
+        if rendered_clauses:
+            clause_score = min(len(rendered_clauses) / 5, 1.0)  # Max out at 5 clauses
+            confidence += clause_score * 0.2
+        
+        # Factor 2: Relevance scores of clauses (up to 0.1)
+        if rendered_clauses:
+            avg_relevance = sum(
+                clause.relevance_score for clause in rendered_clauses 
+                if clause.relevance_score
+            ) / len(rendered_clauses)
+            confidence += avg_relevance * 0.1
+        
+        # Factor 3: Jurisdiction coverage (slight bonus if multiple jurisdictions)
+        if hasattr(chunk_selection, 'jurisdictions_found') and len(chunk_selection.jurisdictions_found) > 1:
+            confidence += 0.05
+        
+        return min(max(confidence, 0.0), 1.0)
+    
+    async def _generate_analytical_response(
+        self,
+        request: GenerationRequest,
+        chunk_selection,
+        rendered_clauses: List[RenderedClause]
+    ) -> Dict[str, Any]:
+        """Generate analytical response from LLM without quoting legal text"""
+        
+        # Build context summary for LLM (metadata only, no exact text)
+        context_summary = self._build_metadata_context(rendered_clauses)
+        
+        # Create prompt that instructs LLM to analyze but NOT quote
+        system_prompt = """You are a regulatory compliance expert. Analyze the legal requirements and provide a comprehensive response.
+
+CRITICAL INSTRUCTIONS:
+1. DO NOT quote or reproduce any legal text verbatim
+2. DO NOT use quotation marks around legal phrases
+3. SUMMARIZE and EXPLAIN the requirements in your own words
+4. Focus on practical implications and requirements
+5. Be specific about which jurisdictions have which requirements
+
+Your response should:
+- Answer the user's question directly
+- Explain what the legal requirements mean in practice
+- Compare different jurisdictions if relevant
+- Provide actionable insights"""
+
+        user_prompt = f"""Query: {request.query}
+
+Based on the following legal sources, provide a comprehensive analysis:
+
+{context_summary}
+
+Remember: Explain and summarize the requirements, but do not quote the legal text directly."""
+
+        # Make LLM call
+        messages = self.openai_client.create_messages(
+            system_prompt=system_prompt,
+            user_query=user_prompt,
+            history=request.conversation_history
+        )
+        
+        llm_request = LLMRequest(
+            messages=messages,
+            model=request.model or "gpt-4",
+            temperature=0.3,  # Lower temperature for more focused analysis
+            max_tokens=1000,
+            stream=False,
+            user=str(request.user_id)
+        )
+        
+        llm_response = await self.openai_client.complete(llm_request)
+        
+        return {
+            "content": llm_response.content,
+            "tokens_used": llm_response.usage.total_tokens if llm_response.usage else 0,
+            "model": llm_response.model
+        }
+    
+    def _build_metadata_context(self, rendered_clauses: List[RenderedClause]) -> str:
+        """Build context summary from clause metadata (no exact text)"""
+        
+        context_parts = []
+        
+        # Group by jurisdiction
+        by_jurisdiction = {}
+        for clause in rendered_clauses:
+            if clause.jurisdiction not in by_jurisdiction:
+                by_jurisdiction[clause.jurisdiction] = []
+            by_jurisdiction[clause.jurisdiction].append(clause)
+        
+        for jurisdiction, clauses in by_jurisdiction.items():
+            context_parts.append(f"\n{jurisdiction}:")
+            for clause in clauses:
+                context_parts.append(f"- {clause.regulation_name} {clause.article_reference}")
+                context_parts.append(f"  Topic: {clause.chunk_id.split('_')[0] if '_' in clause.chunk_id else 'consent requirements'}")
+                context_parts.append(f"  Relevance: {clause.selection_reason}")
+        
+        return "\n".join(context_parts)
+    
+    def _combine_analysis_with_citations(
+        self,
+        analytical_response: Dict[str, Any],
+        rendered_clauses: List[RenderedClause],
+        query: str
+    ) -> str:
+        """Combine LLM analysis with exact legal text citations in clean format"""
+        
+        combined_parts = []
+        
+        # Extract a concise summary from the analytical response (first 2-3 sentences)
+        analysis_content = analytical_response["content"]
+        sentences = analysis_content.split('. ')
+        summary = '. '.join(sentences[:2]) + '.' if len(sentences) > 1 else sentences[0]
+        
+        # Add concise summary
+        combined_parts.append(f"**Summary:** {summary}\n")
+        
+        # Group by jurisdiction for clean presentation
+        by_jurisdiction = {}
+        for clause in rendered_clauses:
+            if clause.jurisdiction not in by_jurisdiction:
+                by_jurisdiction[clause.jurisdiction] = []
+            by_jurisdiction[clause.jurisdiction].append(clause)
+        
+        # Add jurisdiction-specific sections
+        for jurisdiction in sorted(by_jurisdiction.keys()):
+            combined_parts.append(f"## {jurisdiction}")
+            
+            for clause in by_jurisdiction[jurisdiction]:
+                # Clean article reference - remove redundant text
+                article_ref = clause.article_reference
+                if article_ref.startswith(jurisdiction.lower()):
+                    article_ref = article_ref[len(jurisdiction):].strip(' -:')
+                
+                combined_parts.append(f"**{article_ref}:**")
+                combined_parts.append(f'"{clause.verbatim_text.strip()}"')
+                combined_parts.append("")  # Empty line for readability
+        
+        return "\n".join(combined_parts)
+    
+    def _calculate_hybrid_confidence(
+        self,
+        rendered_clauses: List[RenderedClause],
+        chunk_selection,
+        analytical_response: Dict[str, Any]
+    ) -> float:
+        """Calculate confidence for hybrid approach"""
+        
+        # Start with base confidence from exact text
+        confidence = self._calculate_exact_text_confidence(rendered_clauses, chunk_selection)
+        
+        # Boost confidence slightly since we have both analysis and exact text
+        confidence += 0.05
+        
+        # Factor in whether analytical response was successful
+        if analytical_response.get("content") and len(analytical_response["content"]) > 100:
+            confidence += 0.05
+        
+        return min(confidence, 0.95)  # Cap at 0.95 for hybrid approach
     
     async def __aenter__(self):
         """Async context manager entry"""

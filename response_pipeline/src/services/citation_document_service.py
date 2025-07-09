@@ -96,7 +96,7 @@ class CitationDocumentService:
                     "internal_path": f"/documents/{config['jurisdiction'].lower().replace(' ', '_')}/{config['document_name']}"
                 }
         
-        logger.warning(f"Could not match citation to internal document: {citation_text}")
+        logger.debug(f"Could not match citation to internal document: {citation_text}")
         return None
     
     def _generate_citation_id(self, citation_text: str) -> str:
