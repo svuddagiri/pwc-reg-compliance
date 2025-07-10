@@ -1444,29 +1444,71 @@ Focus only on information directly related to "{term}"."""
         # Build context summary for LLM (metadata only, no exact text)
         context_summary = self._build_metadata_context(rendered_clauses)
         
+        # Get question type from chunk selection if available
+        question_type = getattr(chunk_selection, 'question_type', 'other') if chunk_selection else 'other'
+        
         # Create prompt that instructs LLM to analyze but NOT quote
-        system_prompt = """You are a regulatory compliance expert. Analyze the legal requirements and provide a comprehensive response.
+        system_prompt = f"""You are a regulatory compliance expert. Your task is to answer the user's specific question based on the legal sources provided.
 
 CRITICAL INSTRUCTIONS:
 1. DO NOT quote or reproduce any legal text verbatim
 2. DO NOT use quotation marks around legal phrases
-3. SUMMARIZE and EXPLAIN the requirements in your own words
-4. Focus on practical implications and requirements
-5. Be specific about which jurisdictions have which requirements
+3. Focus on ANSWERING THE SPECIFIC QUESTION asked
+4. Be concise and direct - don't add information not relevant to the question
+5. Structure your response based on the question type: {question_type}
 
-Your response should:
-- Answer the user's question directly
-- Explain what the legal requirements mean in practice
-- Compare different jurisdictions if relevant
-- Provide actionable insights"""
+RESPONSE STRUCTURE BASED ON QUESTION TYPE:
 
-        user_prompt = f"""Query: {request.query}
+For DEFINITION questions:
+- Start with a clear, concise definition
+- Explain key components or criteria
+- Note any jurisdiction-specific variations
+- Provide practical implications
 
-Based on the following legal sources, provide a comprehensive analysis:
+For COMPARISON questions:
+- Use a structured format (numbered list or table-like structure)
+- Highlight key similarities and differences
+- Address each jurisdiction/item being compared
+- Conclude with a brief summary of main distinctions
+
+For PROCEDURE questions:
+- List steps in chronological order
+- Include timelines and deadlines
+- Identify responsible parties
+- Note any exceptions or special cases
+
+For REQUIREMENT questions:
+- State requirements clearly and directly
+- Group by jurisdiction if multiple
+- Distinguish mandatory vs optional elements
+- Include any conditions or exceptions
+
+For RIGHT questions:
+- Clearly state what rights exist
+- Explain how to exercise them
+- Note any limitations or conditions
+- Include relevant timelines
+
+For LIST questions:
+- Provide a clear, numbered or bulleted list
+- Group items logically
+- Include brief explanations where helpful
+- Summarize total count or scope
+
+Keep your response focused on what the user asked. If they ask for a definition, give the definition. If they ask for a comparison, focus on comparing. Do not provide generic overviews."""
+
+        user_prompt = f"""User's Question: {request.query}
+
+Based on these legal sources, provide a direct answer to the user's question:
 
 {context_summary}
 
-Remember: Explain and summarize the requirements, but do not quote the legal text directly."""
+Instructions:
+1. Answer the specific question asked - don't provide general information
+2. If the question compares jurisdictions, structure your answer as a comparison
+3. If asking about specific aspects (timelines, responsibilities), focus on those
+4. Be concise but complete
+5. Do not quote legal text - summarize in your own words"""
 
         # Make LLM call
         messages = self.openai_client.create_messages(
@@ -1519,38 +1561,38 @@ Remember: Explain and summarize the requirements, but do not quote the legal tex
         rendered_clauses: List[RenderedClause],
         query: str
     ) -> str:
-        """Combine LLM analysis with exact legal text citations in clean format"""
+        """Combine LLM analysis with exact legal text citations in adaptive format"""
         
         combined_parts = []
         
-        # Extract a concise summary from the analytical response (first 2-3 sentences)
+        # Add the full analytical response that directly answers the question
         analysis_content = analytical_response["content"]
-        sentences = analysis_content.split('. ')
-        summary = '. '.join(sentences[:2]) + '.' if len(sentences) > 1 else sentences[0]
+        combined_parts.append(analysis_content)
         
-        # Add concise summary
-        combined_parts.append(f"**Summary:** {summary}\n")
-        
-        # Group by jurisdiction for clean presentation
-        by_jurisdiction = {}
-        for clause in rendered_clauses:
-            if clause.jurisdiction not in by_jurisdiction:
-                by_jurisdiction[clause.jurisdiction] = []
-            by_jurisdiction[clause.jurisdiction].append(clause)
-        
-        # Add jurisdiction-specific sections
-        for jurisdiction in sorted(by_jurisdiction.keys()):
-            combined_parts.append(f"## {jurisdiction}")
+        # Only add legal sources if we have relevant clauses
+        if rendered_clauses:
+            combined_parts.append("\n## Legal Sources\n")
             
-            for clause in by_jurisdiction[jurisdiction]:
-                # Clean article reference - remove redundant text
-                article_ref = clause.article_reference
-                if article_ref.startswith(jurisdiction.lower()):
-                    article_ref = article_ref[len(jurisdiction):].strip(' -:')
+            # Group by jurisdiction for clean presentation
+            by_jurisdiction = {}
+            for clause in rendered_clauses:
+                if clause.jurisdiction not in by_jurisdiction:
+                    by_jurisdiction[clause.jurisdiction] = []
+                by_jurisdiction[clause.jurisdiction].append(clause)
+            
+            # Add jurisdiction-specific sections
+            for jurisdiction in sorted(by_jurisdiction.keys()):
+                combined_parts.append(f"### {jurisdiction}")
                 
-                combined_parts.append(f"**{article_ref}:**")
-                combined_parts.append(f'"{clause.verbatim_text.strip()}"')
-                combined_parts.append("")  # Empty line for readability
+                for clause in by_jurisdiction[jurisdiction]:
+                    # Clean article reference - remove redundant text
+                    article_ref = clause.article_reference
+                    if article_ref.startswith(jurisdiction.lower()):
+                        article_ref = article_ref[len(jurisdiction):].strip(' -:')
+                    
+                    combined_parts.append(f"\n**{article_ref}:**")
+                    combined_parts.append(f'"{clause.verbatim_text.strip()}"')
+                    combined_parts.append("")  # Empty line for readability
         
         return "\n".join(combined_parts)
     
