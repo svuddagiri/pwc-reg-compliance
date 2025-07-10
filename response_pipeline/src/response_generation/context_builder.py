@@ -98,9 +98,11 @@ class BuiltContext:
                 if metadata_str:
                     context_parts.append(metadata_str.strip())
                 
-                # Add the actual content with proper citation
+                # Add the actual content with proper citation, wrapped in triple backticks
                 context_parts.append(f"\n{citation_ref} - Clause {segment.clause_id}:")
+                context_parts.append("```")
                 context_parts.append(segment.content)
+                context_parts.append("```")
                 context_parts.append("")  # Empty line for readability
         
         formatted_context = "\n".join(context_parts)

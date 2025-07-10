@@ -267,7 +267,7 @@ Type 'details' to see detailed semantic search results.
             # Retrieve chunks
             search_results = await self.retriever.retrieve(query_analysis=query_analysis)
             
-            # Generate response
+            # Generate response (model will be determined by response_generator using settings)
             generation_request = GenerationRequest(
                 user_id=self.user_id,
                 session_id=self.session_id,
@@ -278,7 +278,7 @@ Type 'details' to see detailed semantic search results.
                 search_results=search_results.results,
                 conversation_history=self.conversation_history,
                 stream=False,
-                model="gpt-4",
+                model="gpt-4",  # Back to GPT-4 as original
                 temperature=0.0,
                 max_tokens=1500
             )

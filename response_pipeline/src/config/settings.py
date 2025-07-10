@@ -53,7 +53,7 @@ class Settings(BaseSettings):
     azure_openai_concept_model: str = Field(default="gpt-4", description="Model for concept expansion")
     azure_openai_summary_model: str = Field(default="gpt-35-turbo", description="Model for summarization")
     azure_openai_extract_model: str = Field(default="gpt-35-turbo", description="Model for extraction")
-    
+    azure_openai_reasoning_model: str = Field(default="gpt-4", description="Model for final reasoning and response generation")
     
     # Azure SQL Configuration
     sql_use_azure: bool = Field(default=True, description="Use Azure SQL")
