@@ -57,6 +57,17 @@ class RegulatoryChatInterface:
         self.response_generator = ResponseGenerator()
         self.conversation_manager = ConversationManager()
         self.citation_document_service = get_citation_document_service()
+        
+        # Initialize smart context manager with error handling
+        try:
+            from src.services.smart_context_manager import SmartContextManager
+            self.context_manager = SmartContextManager()
+            logger.info("✅ Smart context-aware Q&A initialized successfully")
+        except Exception as e:
+            logger.error(f"❌ Failed to initialize smart context manager: {e}")
+            logger.warning("⚠️ Context-aware features will be disabled")
+            self.context_manager = None
+        
         self.sql_client = get_sql_client()
         self.conversation_history = []
         self.session_id = f"chat_{datetime.now().strftime('%Y%m%d_%H%M%S')}"
@@ -240,17 +251,47 @@ Type 'details' to see detailed semantic search results.
         start_time = time.time()
         self.message_count += 1
         
+        # COMMENTED OUT: Scope checking removed to allow all document queries
         # Check if it's out of scope
-        scope_redirect = self.conversation_manager.check_query_scope(query)
-        if scope_redirect:
-            return {
-                "redirected": True,
-                "redirect_message": scope_redirect,
-                "elapsed_time": time.time() - start_time
-            }
+        # scope_redirect = self.conversation_manager.check_query_scope(query)
+        # if scope_redirect:
+        #     return {
+        #         "redirected": True,
+        #         "redirect_message": scope_redirect,
+        #         "elapsed_time": time.time() - start_time
+        #     }
         
-        # Analyze query
-        query_analysis = await self.query_manager.analyze_query(query)
+        # NEW: Smart context-aware query processing
+        context_result = None
+        if self.context_manager:
+            try:
+                context_result = await self.context_manager.process_query_with_context(
+                    session_id=self.session_id,
+                    message_id=self.message_count,
+                    current_query=query,
+                    conversation_history=self.conversation_history
+                )
+                
+                # Use reformulated query for analysis if it's a follow-up
+                query_to_analyze = context_result.reformulated_query if context_result.is_followup else query
+                
+                logger.info(f"Smart context processing: is_followup={context_result.is_followup}, confidence={context_result.followup_confidence:.2f}")
+                if context_result.is_followup:
+                    logger.info(f"Reformulated query: {context_result.reformulated_query}")
+                    logger.info(f"Reasoning: {context_result.reasoning}")
+                    
+            except Exception as e:
+                logger.error(f"Smart context processing failed: {e}")
+                # Fallback: use original query without context
+                query_to_analyze = query
+                context_result = None
+        else:
+            # Context manager not available, use original query
+            query_to_analyze = query
+            logger.debug("Smart context manager not available, processing without context")
+        
+        # Analyze query (with context expansion if applicable)
+        query_analysis = await self.query_manager.analyze_query(query_to_analyze)
         
         # Check cache first
         from_cache = False
@@ -273,7 +314,7 @@ Type 'details' to see detailed semantic search results.
                 session_id=self.session_id,
                 conversation_id=self.conversation_id,
                 message_id=self.message_count,
-                query=query,
+                query=query_to_analyze,  # Use expanded query if it's a follow-up
                 query_analysis=query_analysis,
                 search_results=search_results.results,
                 conversation_history=self.conversation_history,
@@ -305,13 +346,45 @@ Type 'details' to see detailed semantic search results.
         # Store last search results for details
         self.last_search_results = search_results
         
+        # NEW: Store conversation context for future follow-up questions
+        if self.context_manager and context_result:
+            try:
+                # Create response summary for context
+                response_summary = response.content[:200] + "..." if len(response.content) > 200 else response.content
+                
+                # Extract chunk IDs used in response
+                chunks_used = [result.chunk.id for result in search_results.results[:20]]  # Top 20 chunks
+                
+                # Store context
+                await self.context_manager.store_conversation_context(
+                    session_id=self.session_id,
+                    message_id=self.message_count,
+                    query=query,
+                    response_summary=response_summary,
+                    entities=context_result.entities,
+                    chunks_used=chunks_used
+                )
+                
+                logger.debug(f"Stored context for follow-up detection (session: {self.session_id})")
+                
+            except Exception as e:
+                logger.warning(f"Failed to store conversation context: {e}")
+                # Don't fail the request if context storage fails
+        
         return {
             "query_analysis": query_analysis,
             "search_results": search_results,
             "response": response,
             "elapsed_time": elapsed_time,
             "from_cache": from_cache,
-            "redirected": False
+            "redirected": False,
+            "context_info": {
+                "is_followup": context_result.is_followup if context_result else False,
+                "followup_confidence": context_result.followup_confidence if context_result else 0.0,
+                "reformulated_query": context_result.reformulated_query if context_result and context_result.is_followup else None,
+                "reasoning": context_result.reasoning if context_result else "",
+                "processing_time_ms": context_result.processing_time_ms if context_result else 0.0
+            }
         }
     
     def show_conversation_history(self):

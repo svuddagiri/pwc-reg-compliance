@@ -22,7 +22,12 @@
       "specific consent",
       "unambiguous consent",
       "consent bundling",
-      "consent renewal"
+      "consent renewal",
+      "data portability",
+      "access rights",
+      "rectification rights",
+      "erasure rights",
+      "data subject rights"
     ],
     "question_patterns": [
       ".*consent.*",
@@ -31,7 +36,12 @@
       ".*parental.*permission.*",
       ".*guardian.*approval.*",
       ".*opt-in.*",
-      ".*opt-out.*"
+      ".*opt-out.*",
+      ".*data portability.*",
+      ".*access rights.*",
+      ".*rectification.*",
+      ".*erasure.*",
+      ".*data subject rights.*"
     ]
   },
   "out_of_scope": {
@@ -41,7 +51,6 @@
       "data breach",
       "breach notification",
       "privacy by design",
-      "data portability",
       "data minimization",
       "purpose limitation",
       "accountability",
@@ -49,12 +58,9 @@
       "impact assessment",
       "security measures",
       "encryption",
-      "pseudonymization",
-      "access rights",
-      "rectification rights",
-      "erasure rights"
+      "pseudonymization"
     ],
-    "redirect_message": "I understand you're asking about {detected_topic}. However, I'm currently focused exclusively on consent-related questions under Individual Rights Processing. Would you like to ask something specific about consent, such as consent conditions, withdrawal, or parental consent?",
+    "redirect_message": "I understand you're asking about {detected_topic}. However, I'm currently focused on data protection and privacy rights questions. Would you like to ask something specific about data subject rights, consent, data portability, or other privacy matters?",
     "suggest_alternatives": [
       "What are the conditions for valid consent?",
       "How can consent be withdrawn?",

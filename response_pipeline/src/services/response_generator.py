@@ -1503,12 +1503,20 @@ Based on these legal sources, provide a direct answer to the user's question:
 
 {context_summary}
 
+CRITICAL GROUNDING INSTRUCTIONS:
+1. ONLY use information explicitly provided in the legal sources above
+2. If the legal sources are completely irrelevant to the question (e.g., asking about Denmark but only having US sources), respond with: "The legal sources provided do not contain information regarding [specific topic]. Therefore, I'm unable to provide [specific information requested] based on the legal sources."
+3. If sources contain relevant information but are incomplete, acknowledge what is available and note limitations: "Based on the legal sources provided, I can address [available topics] but additional information about [missing aspects] is not available in these sources."
+4. DO NOT use general knowledge or information not present in the sources
+5. DO NOT declare "no information available" when relevant sources are actually provided - analyze and use the available information
+
 Instructions:
 1. Answer the specific question asked - don't provide general information
 2. If the question compares jurisdictions, structure your answer as a comparison
 3. If asking about specific aspects (timelines, responsibilities), focus on those
 4. Be concise but complete
-5. Do not quote legal text - summarize in your own words"""
+5. Do not quote legal text - summarize in your own words
+6. If sources are irrelevant to the question, use the "not in legal sources" response format"""
 
         # Make LLM call
         messages = self.openai_client.create_messages(
@@ -1535,7 +1543,7 @@ Instructions:
         }
     
     def _build_metadata_context(self, rendered_clauses: List[RenderedClause]) -> str:
-        """Build context summary from clause metadata (no exact text)"""
+        """Build context summary from clause metadata with content preview"""
         
         context_parts = []
         
@@ -1552,6 +1560,10 @@ Instructions:
                 context_parts.append(f"- {clause.regulation_name} {clause.article_reference}")
                 context_parts.append(f"  Topic: {clause.chunk_id.split('_')[0] if '_' in clause.chunk_id else 'consent requirements'}")
                 context_parts.append(f"  Relevance: {clause.selection_reason}")
+                # Add content preview to help LLM understand what information is available
+                if clause.verbatim_text:
+                    preview = clause.verbatim_text[:150] + "..." if len(clause.verbatim_text) > 150 else clause.verbatim_text
+                    context_parts.append(f"  Content Preview: {preview}")
         
         return "\n".join(context_parts)
     

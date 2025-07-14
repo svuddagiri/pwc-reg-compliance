@@ -82,7 +82,27 @@ CREATE TABLE IF NOT EXISTS reg_messages (
 );
 
 -- =============================================
--- SECTION 3: LLM Tracking Tables
+-- SECTION 3: Conversation Context Tables
+-- =============================================
+
+-- Conversation Context table: Stores conversation context for follow-up questions
+CREATE TABLE IF NOT EXISTS reg_conversation_context (
+    context_id INT IDENTITY(1,1) PRIMARY KEY,
+    session_id NVARCHAR(100) NOT NULL,
+    message_id INT NOT NULL,
+    query NVARCHAR(MAX) NOT NULL,
+    query_embedding NVARCHAR(MAX), -- JSON array of floats for fast similarity checks
+    response_summary NVARCHAR(1000), -- Brief summary for context building
+    entities NVARCHAR(MAX), -- JSON with jurisdictions, regulations, concepts extracted
+    chunks_used NVARCHAR(MAX), -- JSON array of chunk IDs used in response
+    created_at DATETIME2 DEFAULT GETUTCDATE(),
+    expires_at DATETIME2, -- Context expiration for cleanup
+    is_active BIT DEFAULT 1,
+    FOREIGN KEY (message_id) REFERENCES reg_messages(message_id) ON DELETE CASCADE
+);
+
+-- =============================================
+-- SECTION 4: LLM Tracking Tables
 -- =============================================
 
 -- LLM Requests table: Tracks all LLM API requests
@@ -175,6 +195,13 @@ CREATE INDEX idx_conversations_updated_at ON reg_conversations(updated_at);
 -- Message indexes
 CREATE INDEX idx_messages_conversation_id ON reg_messages(conversation_id);
 CREATE INDEX idx_messages_created_at ON reg_messages(created_at);
+
+-- Conversation Context indexes
+CREATE INDEX idx_conversation_context_session_id ON reg_conversation_context(session_id);
+CREATE INDEX idx_conversation_context_message_id ON reg_conversation_context(message_id);
+CREATE INDEX idx_conversation_context_created_at ON reg_conversation_context(created_at);
+CREATE INDEX idx_conversation_context_expires_at ON reg_conversation_context(expires_at);
+CREATE INDEX idx_conversation_context_is_active ON reg_conversation_context(is_active);
 
 -- LLM Request indexes
 CREATE INDEX idx_llm_requests_user_id ON reg_llm_requests(user_id);

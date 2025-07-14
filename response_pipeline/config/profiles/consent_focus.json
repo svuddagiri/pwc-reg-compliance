@@ -1,7 +1,7 @@
 {
   "profile_id": "consent_focus",
-  "name": "Individual Rights Processing - Consent Only",
-  "description": "Focuses exclusively on consent-related queries from 41 consent chunks",
+  "name": "Data Protection Rights",
+  "description": "Covers all data protection rights including consent, data portability, access, rectification, and erasure rights",
   "enabled": true,
   "filters": {
     "search_filters": {

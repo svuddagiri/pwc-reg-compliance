@@ -14,7 +14,8 @@
       "option4_combined": "(search.ismatch('Consent', 'clause_subdomain') or search.in(consent_lifecycle_stage, 'obtaining|managing|withdrawing|refusing|transferring', '|') or search.ismatch('\"Consent\"', 'concepts'))",
       "option5_clause_type": "clause_type eq 'consent'",
       "option6_comprehensive": "(clause_type eq 'consent' or search.ismatch('Consent', 'clause_subdomain'))",
-      "recommended": "option5_clause_type"
+      "option7_minimal_filter": "regulation ne 'irrelevant'",
+      "recommended": "option7_minimal_filter"
     },
     "quality_filters": {
       "min_completeness_score": 0.5,

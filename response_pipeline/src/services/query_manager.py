@@ -738,17 +738,18 @@ Return a JSON object with concept names as keys and arrays of related terms as v
                 if "consent" in definition_term.lower():
                     filters["clause_subdomains"] = ["Consent", "consent"]
             
+            # COMMENTED OUT: Profile filters removed to allow searching all documents
             # Apply profile-based filters
             try:
                 # Get search filters from config
                 search_filter_config = self.config_service.get_search_filters()
                 azure_filter = self.config_service.get_azure_search_filter()
                 
-                # Add profile filters to ensure we only get consent chunks
+                # Still apply minimal filter to exclude irrelevant docs
                 filters["profile_filter"] = azure_filter
-                filters["expected_chunks"] = search_filter_config.expected_chunks
+                # filters["expected_chunks"] = search_filter_config.expected_chunks
                 
-                logger.info(f"Applied consent-focus profile filters: {azure_filter}")
+                logger.info(f"Applied minimal profile filter: {azure_filter}")
             except Exception as e:
                 logger.warning(f"Failed to apply profile filters: {e}")
             
